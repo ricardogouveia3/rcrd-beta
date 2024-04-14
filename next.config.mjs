@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: "/beta",
+  // basePath: "/rcrd-beta",
   output: "export",  // <=== enables static exports
   reactStrictMode: true,
 };
