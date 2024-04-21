@@ -1,0 +1,9 @@
+.navbar {
+  border: 1px solid var(--black);
+  border-radius: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.25rem;
+  height: 100%;
+}

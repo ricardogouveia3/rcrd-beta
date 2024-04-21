@@ -1,0 +1,7 @@
+.iconBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--components-gap-25);
+  padding: 0.25rem;
+}
