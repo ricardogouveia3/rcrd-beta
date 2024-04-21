@@ -17,7 +17,13 @@ export default function Home() {
           <Navbar centerButton={false} />
           <IconBar />
         </LateralBarContainer>
-        <SlideMain />
+        <SlideMain>
+          <h1 className={styles.title}>Ricardo Gouveia</h1>
+          <h2 className={styles.subtitle}>
+            <span className={styles.subtitleDev}>developer</span> &{" "}
+            <span className={styles.subtitleDsg}>designer</span>
+          </h2>
+        </SlideMain>
         <LateralBarContainer>
           <RoundLink
             icon="/dribbble.png"

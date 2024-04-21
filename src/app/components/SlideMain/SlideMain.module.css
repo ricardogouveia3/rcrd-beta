@@ -7,13 +7,3 @@
   padding: var(--components-gap-50);
   color: var(--white);
 }
-
-.title {
-  font: 800 6rem/0.8 var(--font-family-sans);
-  letter-spacing: -3px;
-}
-
-.subtitle {
-  font: 400 italic 4rem var(--font-family-sans);
-  letter-spacing: -3px;
-}
