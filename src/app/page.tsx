@@ -1,4 +1,6 @@
-import styles from "./styles/Hero.module.css";
+"use client";
+
+import { styled, useTheme } from "styled-components";
 
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
@@ -9,33 +11,76 @@ import SlideMain from "./components/SlideMain/SlideMain";
 import LateralBarContainer from "./components/LateralBarContainer/LateralBarContainer";
 
 export default function Home() {
+  const theme = useTheme();
+
+  const Main = styled.main`
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: ${theme.spacing.gap50};
+  `;
+
+  const Title = styled.h1`
+    font-weight: 800;
+    font-size: 6rem;
+    line-height: 0.8;
+    color: ${theme.colors.pureWhite};
+    letter-spacing: -3px;
+    margin: 0;
+  `;
+
+  const Subtitle = styled.h2`
+    font-weight: 400;
+    font-style: italic;
+    font-size: 4rem;
+    line-height: 1.5;
+    color: ${theme.colors.pureWhite};
+    letter-spacing: -3px;
+    margin: 0;
+  `;
+
+  const Developer = styled.span`
+    text-decoration: wavy underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 0.225rem;
+    text-decoration-color: ${theme.colors.mediumTurquoise};
+  `;
+
+  const Designer = styled.span`
+    text-decoration: wavy underline;
+    text-underline-offset: 0.5rem;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 0.225rem;
+    text-decoration-color: ${theme.colors.begonia};
+  `;
+
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <Main>
         <LateralBarContainer gap={3}>
           <Navbar centerButton={false} />
           <IconBar />
         </LateralBarContainer>
         <SlideMain>
-          <h1 className={styles.title}>Ricardo Gouveia</h1>
-          <h2 className={styles.subtitle}>
-            <span className={styles.subtitleDev}>developer</span> &{" "}
-            <span className={styles.subtitleDsg}>designer</span>
-          </h2>
+          <Title>Ricardo Gouveia</Title>
+          <Subtitle>
+            <Developer>developer</Developer> & <Designer>designer</Designer>
+          </Subtitle>
         </SlideMain>
         <LateralBarContainer>
           <RoundLink
             icon="/dribbble.png"
             iconSize={35}
             buttonSize={60}
-            backgroundColor="#FD7272"
+            backgroundColor={theme.colors.begonia}
             altText="Github icon"
             linkUrl={"/"}
           />
           <BallDropBar />
         </LateralBarContainer>
-      </main>
+      </Main>
     </>
   );
 }

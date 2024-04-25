@@ -1,52 +1,72 @@
 import Image from "next/image";
-import styles from "./Header.module.css";
+import { styled, useTheme } from "styled-components";
+
 import RoundButton from "../RoundButton/RoundButton";
 
 export default function Header() {
+  const theme = useTheme();
+
+  const Header = styled.header`
+    border: 1px solid ${theme.colors.pureBlack};
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem;
+    margin-bottom: ${theme.spacing.gap100};
+    align-items: center;
+    border-radius: 10vh;
+  `;
+
+  const Logo = styled(Image)`
+    margin-left: 2rem;
+  `;
+
+  const NavList = styled.ul`
+    display: flex;
+    gap: ${theme.spacing.gap50};
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style-type: none;
+  `;
+
+  const NavListLink = styled.a`
+    text-decoration: line-through;
+    color: ${theme.colors.quartz};
+  `;
+
+  const HeaderOptionsButton = styled.a`
+    margin-right: 0.125rem;
+    border-radius: 5vh;
+    padding: 0.25rem;
+  `;
+
   return (
-    <header className={styles.header}>
+    <Header>
       <a href="/">
-        <Image
-          className={styles.headerLogo}
-          src="/logo.png"
-          width={60}
-          height={60}
-          alt="RCRD logo"
-        />
+        <Logo src="/logo.png" width={60} height={60} alt="RCRD logo" />
       </a>
-      <ul className={styles.headerNav}>
+      <NavList>
         <li>
-          <a href="/" className={styles.headerNavLink}>
-            about
-          </a>
+          <NavListLink href="/">about</NavListLink>
         </li>
         <li>
-          <a href="/" className={styles.headerNavLink}>
-            portfolio
-          </a>
+          <NavListLink href="/">portfolio</NavListLink>
         </li>
         <li>
-          <a href="/" className={styles.headerNavLink}>
-            labs
-          </a>
+          <NavListLink href="/">labs</NavListLink>
         </li>
         <li>
-          <a href="/" className={styles.headerNavLink}>
-            posts
-          </a>
+          <NavListLink href="/">posts</NavListLink>
         </li>
         <li>
-          <a href="/" className={styles.headerNavLink}>
-            contact
-          </a>
+          <NavListLink href="/">contact</NavListLink>
         </li>
-      </ul>
+      </NavList>
       <RoundButton
         icon={"/settings.png"}
         buttonSize={60}
         iconSize={35}
         altText={"Gear icon"}
       />
-    </header>
+    </Header>
   );
 }

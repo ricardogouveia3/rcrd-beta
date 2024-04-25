@@ -1,9 +1,19 @@
-import styles from "./Iconbar.module.css";
 import RoundLink from "../RoundLink/RoundLink";
+import styled, { useTheme } from "styled-components";
 
 export default function IconBar() {
+  const theme = useTheme();
+
+  const IconBar = styled.nav`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: ${theme.spacing.gap25};
+    padding: 0.25rem;
+  `;
+
   return (
-    <nav className={styles.iconBar}>
+    <IconBar>
       <RoundLink
         icon="/mail.png"
         iconSize={30}
@@ -15,7 +25,7 @@ export default function IconBar() {
         icon="/linkedin.png"
         iconSize={30}
         buttonSize={60}
-        backgroundColor="#4A4A4A"
+        backgroundColor={theme.colors.quartz}
         altText="LinkedIn icon"
         linkUrl={"/"}
       />
@@ -23,10 +33,10 @@ export default function IconBar() {
         icon="/github.png"
         iconSize={25}
         buttonSize={60}
-        backgroundColor="#4ECDC4"
+        backgroundColor={theme.colors.mediumTurquoise}
         altText="Github icon"
         linkUrl={"/"}
       />
-    </nav>
+    </IconBar>
   );
 }

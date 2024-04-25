@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./RoundLink.module.css";
+import styled, { useTheme } from "styled-components";
 
 type ComponentProps = {
   backgroundColor?: string;
@@ -18,6 +18,17 @@ export default function RoundLink({
   altText,
   linkUrl,
 }: Readonly<ComponentProps>) {
+  const theme = useTheme();
+
+  const RoundLink = styled.a`
+    margin: 0.125rem;
+    border-radius: 5vh;
+    padding: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
+
   const componentStyle = {
     border: backgroundColor ? "none" : "1px solid #000000",
     backgroundColor: backgroundColor ?? "transparent",
@@ -26,9 +37,9 @@ export default function RoundLink({
   };
 
   return (
-    <a className={styles.roundLink} style={componentStyle} href={linkUrl}>
+    <RoundLink style={componentStyle} href={linkUrl}>
       <Image src={icon} width={iconSize} height={iconSize} alt={altText} />
-    </a>
+    </RoundLink>
   );
 }
 

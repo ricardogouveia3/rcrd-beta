@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "./LateralBarContainer.module.css";
+import styled, { useTheme } from "styled-components";
 
 interface ComponentProps {
   children?: ReactNode;
@@ -10,14 +10,22 @@ export default function LateralBarContainer({
   children,
   gap,
 }: Readonly<ComponentProps>) {
+  const theme = useTheme();
+
+  const LateralBarContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: ${theme.spacing.gap100};
+  `;
+
   const componentStyle = {
     gap: gap + "rem",
   };
 
   return (
-    <div className={styles.LateralBarContainer} style={componentStyle}>
-      {children}
-    </div>
+    <LateralBarContainer style={componentStyle}>{children}</LateralBarContainer>
   );
 }
 
