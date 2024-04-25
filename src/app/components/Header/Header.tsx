@@ -29,8 +29,11 @@ export default function Header() {
   `;
 
   const NavListLink = styled.a`
-    text-decoration: line-through;
     color: ${theme.colors.quartz};
+    text-decoration: none;
+    &:hover {
+      text-decoration: line-through;
+    }
   `;
 
   const HeaderOptionsButton = styled.a`
