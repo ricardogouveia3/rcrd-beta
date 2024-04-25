@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 
 type ComponentProps = {
   backgroundColor?: string;
@@ -9,9 +9,15 @@ type ComponentProps = {
   altText: string;
 };
 
-const DefaultProps = {
-  buttonSize: 45,
-};
+const RoundButtonComponent = styled.button`
+  margin: 0.125rem;
+  border-radius: 5vh;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
 
 export default function RoundButton({
   backgroundColor,
@@ -20,18 +26,6 @@ export default function RoundButton({
   buttonSize = 45,
   altText,
 }: Readonly<ComponentProps>) {
-  const theme = useTheme();
-
-  const RoundButton = styled.button`
-    margin: 0.125rem;
-    border-radius: 5vh;
-    padding: 0.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  `;
-
   const componentStyle = {
     border: backgroundColor ? "none" : "1px solid #000000",
     backgroundColor: backgroundColor ?? "transparent",
@@ -40,8 +34,8 @@ export default function RoundButton({
   };
 
   return (
-    <RoundButton style={componentStyle}>
+    <RoundButtonComponent style={componentStyle}>
       <Image src={icon} width={iconSize} height={iconSize} alt={altText} />
-    </RoundButton>
+    </RoundButtonComponent>
   );
 }

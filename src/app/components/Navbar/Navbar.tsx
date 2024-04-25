@@ -1,27 +1,26 @@
+import theme from "@/app/styles/theme";
 import RoundButton from "../RoundButton/RoundButton";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 
 type ComponentProps = {
   centerButton?: boolean;
 };
 
+const NavbarComponent = styled.nav`
+  border: 1px solid ${theme.colors.pureBlack};
+  border-radius: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.25rem;
+  height: 100%;
+`;
+
 export default function Navbar({
   centerButton = true,
 }: Readonly<ComponentProps>) {
-  const theme = useTheme();
-
-  const Navbar = styled.nav`
-    border: 1px solid ${theme.colors.pureBlack};
-    border-radius: 8vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.25rem;
-    height: 100%;
-  `;
-
   return (
-    <Navbar>
+    <NavbarComponent>
       <RoundButton
         icon="/arrow-up.png"
         iconSize={35}
@@ -42,6 +41,6 @@ export default function Navbar({
         buttonSize={60}
         altText="Arrow down icon"
       />
-    </Navbar>
+    </NavbarComponent>
   );
 }

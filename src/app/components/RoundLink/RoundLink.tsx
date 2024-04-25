@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 
 type ComponentProps = {
   backgroundColor?: string;
@@ -10,9 +10,15 @@ type ComponentProps = {
   linkUrl: string;
 };
 
-const DefaultProps = {
-  buttonSize: 45,
-};
+const RoundLinkComponent = styled.a`
+  margin: 0.125rem;
+  border-radius: 5vh;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
 
 export default function RoundLink({
   backgroundColor,
@@ -22,18 +28,6 @@ export default function RoundLink({
   altText,
   linkUrl,
 }: Readonly<ComponentProps>) {
-  const theme = useTheme();
-
-  const RoundLink = styled.a`
-    margin: 0.125rem;
-    border-radius: 5vh;
-    padding: 0.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  `;
-
   const componentStyle = {
     border: backgroundColor ? "none" : "1px solid #000000",
     backgroundColor: backgroundColor ?? "transparent",
@@ -42,8 +36,8 @@ export default function RoundLink({
   };
 
   return (
-    <RoundLink style={componentStyle} href={linkUrl}>
+    <RoundLinkComponent style={componentStyle} href={linkUrl}>
       <Image src={icon} width={iconSize} height={iconSize} alt={altText} />
-    </RoundLink>
+    </RoundLinkComponent>
   );
 }
