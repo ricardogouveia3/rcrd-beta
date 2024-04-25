@@ -10,6 +10,10 @@ type ComponentProps = {
   linkUrl: string;
 };
 
+const DefaultProps = {
+  buttonSize: 45,
+};
+
 export default function RoundLink({
   backgroundColor,
   icon,
@@ -17,6 +21,7 @@ export default function RoundLink({
   buttonSize,
   altText,
   linkUrl,
+  ...DefaultProps
 }: Readonly<ComponentProps>) {
   const theme = useTheme();
 
@@ -42,7 +47,3 @@ export default function RoundLink({
     </RoundLink>
   );
 }
-
-RoundLink.defaultProps = {
-  buttonSize: 45,
-};

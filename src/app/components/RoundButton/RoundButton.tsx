@@ -9,12 +9,17 @@ type ComponentProps = {
   altText: string;
 };
 
+const DefaultProps = {
+  buttonSize: 45,
+};
+
 export default function RoundButton({
   backgroundColor,
   icon,
   iconSize,
   buttonSize,
   altText,
+  ...DefaultProps
 }: Readonly<ComponentProps>) {
   const theme = useTheme();
 
@@ -40,7 +45,3 @@ export default function RoundButton({
     </RoundButton>
   );
 }
-
-RoundButton.defaultProps = {
-  buttonSize: 45,
-};

@@ -6,9 +6,14 @@ interface ComponentProps {
   gap?: number;
 }
 
+const DefaultProps = {
+  gap: 1.5,
+};
+
 export default function LateralBarContainer({
   children,
   gap,
+  ...DefaultProps
 }: Readonly<ComponentProps>) {
   const theme = useTheme();
 
@@ -28,7 +33,3 @@ export default function LateralBarContainer({
     <LateralBarContainer style={componentStyle}>{children}</LateralBarContainer>
   );
 }
-
-LateralBarContainer.defaultProps = {
-  gap: 1.5,
-};

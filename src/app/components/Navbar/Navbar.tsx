@@ -5,7 +5,14 @@ type ComponentProps = {
   centerButton?: boolean;
 };
 
-export default function Navbar({ centerButton }: Readonly<ComponentProps>) {
+const DefaultProps = {
+  centerButton: true,
+};
+
+export default function Navbar({
+  centerButton,
+  ...DefaultProps
+}: Readonly<ComponentProps>) {
   const theme = useTheme();
 
   const Navbar = styled.nav`
@@ -43,7 +50,3 @@ export default function Navbar({ centerButton }: Readonly<ComponentProps>) {
     </Navbar>
   );
 }
-
-Navbar.defaultProps = {
-  centerButton: true,
-};
