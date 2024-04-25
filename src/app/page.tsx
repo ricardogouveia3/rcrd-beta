@@ -11,6 +11,15 @@ import SlideMain from "./components/SlideMain/SlideMain";
 import LateralBarContainer from "./components/LateralBarContainer/LateralBarContainer";
 import theme from "./styles/theme";
 
+const SiteWrapper = styled.div`
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  max-height: 1080px; // needs reviewing
+  display: flex;
+  flex-direction: column;
+`;
+
 const Main = styled.main`
   display: flex;
   width: 100%;
@@ -55,7 +64,7 @@ const Designer = styled.span`
 
 export default function Home() {
   return (
-    <>
+    <SiteWrapper>
       <Header />
       <Main>
         <LateralBarContainer gap={3}>
@@ -80,6 +89,6 @@ export default function Home() {
           <BallDropBar />
         </LateralBarContainer>
       </Main>
-    </>
+    </SiteWrapper>
   );
 }

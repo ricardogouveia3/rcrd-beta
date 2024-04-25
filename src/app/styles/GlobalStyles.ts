@@ -20,7 +20,7 @@ const GlobalStyles = styled.createGlobalStyle`
     padding: ${({ theme }) => theme.spacing.gap100};
     padding-bottom: ${({ theme }) => theme.spacing.gap50};
     display: flex;
-    flex-direction: column;
+    justify-content: center;
   }
 
   main {
