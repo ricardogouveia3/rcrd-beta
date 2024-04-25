@@ -18,10 +18,9 @@ export default function RoundLink({
   backgroundColor,
   icon,
   iconSize,
-  buttonSize,
+  buttonSize = 45,
   altText,
   linkUrl,
-  ...DefaultProps
 }: Readonly<ComponentProps>) {
   const theme = useTheme();
 
@@ -32,6 +31,7 @@ export default function RoundLink({
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   `;
 
   const componentStyle = {

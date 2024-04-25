@@ -17,9 +17,8 @@ export default function RoundButton({
   backgroundColor,
   icon,
   iconSize,
-  buttonSize,
+  buttonSize = 45,
   altText,
-  ...DefaultProps
 }: Readonly<ComponentProps>) {
   const theme = useTheme();
 
@@ -30,6 +29,7 @@ export default function RoundButton({
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   `;
 
   const componentStyle = {
