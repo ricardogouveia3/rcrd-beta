@@ -10,10 +10,11 @@ const Section = styled.section`
   width: 100%;
   border-radius: 3vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
   padding: ${theme.spacing.gap50};
-  color: ${theme.colors.pureWhite};
+  color: ${theme.colors.white};
+  background: repeat center/50% padding-box url("img/textures/static.png")
+    ${({ theme }) => theme.colors.quartz};
 `;
 
 export default function SlideMain({ children }: Readonly<ComponentProps>) {

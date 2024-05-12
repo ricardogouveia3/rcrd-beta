@@ -7,7 +7,7 @@ type ComponentProps = {
 };
 
 const NavbarComponent = styled.nav`
-  border: 1px solid ${theme.colors.pureBlack};
+  border: 1px solid ${theme.colors.black};
   border-radius: 8vh;
   display: flex;
   flex-direction: column;
@@ -22,24 +22,26 @@ export default function Navbar({
   return (
     <NavbarComponent>
       <RoundButton
-        icon="/arrow-up.png"
+        icon="img/icons/arrow-up.png"
         iconSize={35}
         buttonSize={60}
         altText="Arrow up icon"
+        animation="arrow-bounce"
       />
       {centerButton && (
         <RoundButton
-          icon="/center.png"
+          icon="img/icons/center.png"
           iconSize={25}
           buttonSize={60}
           altText="Center icon"
         />
       )}
       <RoundButton
-        icon="/arrow-down.png"
+        icon="img/icons/arrow-down.png"
         iconSize={35}
         buttonSize={60}
         altText="Arrow down icon"
+        animation="arrow-bounce"
       />
     </NavbarComponent>
   );

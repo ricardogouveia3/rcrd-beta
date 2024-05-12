@@ -1,7 +1,7 @@
 const theme = {
   colors: {
-    pureWhite: "#ffffff",
-    pureBlack: "#000000",
+    white: "#ffffff",
+    black: "#000000",
     brightGray: "#efeff0",
     quartz: "#4a4a4a",
     begonia: "#fd7272",

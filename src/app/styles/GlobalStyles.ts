@@ -1,5 +1,3 @@
-"use client";
-
 import { createGlobalStyle } from "styled-components";
 
 const styled = { createGlobalStyle };
@@ -27,12 +25,6 @@ const GlobalStyles = styled.createGlobalStyle`
     display: flex;
     align-items: stretch;
     height: 100%;
-  }
-
-  section {
-    color: var(---white);
-    background: repeat center/50% padding-box url("/static.png")
-      ${({ theme }) => theme.colors.quartz};
   }
 `;
 

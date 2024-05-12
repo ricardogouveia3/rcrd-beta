@@ -8,6 +8,7 @@ type ComponentProps = {
   buttonSize?: number;
   altText: string;
   linkUrl: string;
+  newTab?: boolean;
 };
 
 const RoundLinkComponent = styled.a`
@@ -27,6 +28,7 @@ export default function RoundLink({
   buttonSize = 45,
   altText,
   linkUrl,
+  newTab = false,
 }: Readonly<ComponentProps>) {
   const componentStyle = {
     border: backgroundColor ? "none" : "1px solid #000000",
@@ -36,7 +38,12 @@ export default function RoundLink({
   };
 
   return (
-    <RoundLinkComponent style={componentStyle} href={linkUrl}>
+    <RoundLinkComponent
+      style={componentStyle}
+      href={linkUrl}
+      target={newTab ? "_blank" : ""}
+      rel="noopener noreferrer"
+    >
       <Image src={icon} width={iconSize} height={iconSize} alt={altText} />
     </RoundLinkComponent>
   );

@@ -5,13 +5,20 @@ import RoundButton from "../RoundButton/RoundButton";
 import theme from "@/app/styles/theme";
 
 const HeaderComponent = styled.header`
-  border: 1px solid ${theme.colors.pureBlack};
+  border: 1px solid ${theme.colors.black};
   display: flex;
   justify-content: space-between;
   padding: 0.25rem;
   margin-bottom: ${theme.spacing.gap100};
   align-items: center;
   border-radius: 10vh;
+`;
+
+const LogoContainer = styled.a`
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Logo = styled(Image)`
@@ -43,9 +50,9 @@ const HeaderOptionsButton = styled.a`
 export default function Header() {
   return (
     <HeaderComponent>
-      <a href="/">
-        <Logo src="/logo.png" width={60} height={60} alt="RCRD logo" />
-      </a>
+      <LogoContainer href="/">
+        <Logo src="img/logos/logo.png" width={60} height={60} alt="RCRD logo" />
+      </LogoContainer>
       <NavList>
         <li>
           <NavListLink href="/">about</NavListLink>
@@ -64,10 +71,11 @@ export default function Header() {
         </li>
       </NavList>
       <RoundButton
-        icon={"/settings.png"}
+        icon={"img/icons/settings.png"}
         buttonSize={60}
         iconSize={35}
         altText={"Gear icon"}
+        animation="gear-rotate"
       />
     </HeaderComponent>
   );

@@ -14,27 +14,29 @@ export default function IconBar() {
   return (
     <IconBarComponent>
       <RoundLink
-        icon="/mail.png"
+        icon="img/icons/mail.png"
         iconSize={30}
         buttonSize={60}
         altText="Mail icon"
         linkUrl={"/"}
       />
       <RoundLink
-        icon="/linkedin.png"
+        icon="img/logos/linkedin.png"
         iconSize={30}
         buttonSize={60}
         backgroundColor={theme.colors.quartz}
         altText="LinkedIn icon"
-        linkUrl={"/"}
+        linkUrl={"https://www.linkedin.com/in/ricardogouveia3/"}
+        newTab={true}
       />
       <RoundLink
-        icon="/github.png"
+        icon="img/logos/github.png"
         iconSize={25}
         buttonSize={60}
         backgroundColor={theme.colors.mediumTurquoise}
         altText="Github icon"
-        linkUrl={"/"}
+        linkUrl={"https://github.com/ricardogouveia3"}
+        newTab={true}
       />
     </IconBarComponent>
   );
