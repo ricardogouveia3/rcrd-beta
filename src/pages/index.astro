@@ -1,79 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+
+const getTime = () =>
+  new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    timeZone: "America/Sao_Paulo",
+    timeZoneName: "short",
+  }).format(new Date());
+
+  const getYear = () =>
+  new Intl.DateTimeFormat("en-US", {year: "numeric"}).format(new Date());
+
 ---
 
-<Layout title="Welcome to Astro.">
-	<main class="m-auto p-4 w-[800px] text-xl text-white max-width-calc-100-2rem">
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="RCRD - Ricardo Gouveia - Creative Developer Based in São Paulo, Brazil">
+  <section class="text-white uppercase bg-[#3A3A3A] p-4 w-screen max-w-full h-[66vh] flex flex-col">
 
-<style>
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>
+    <div class="flex flex-col w-full h-full justify-between">
+      <div class="w-full flex justify-between font-mono	font-medium">
+        <img src="./logo.svg" alt="" width="50">
+        <span>UI designer</span>
+        <span>São Paulo</span>
+        <span>{getTime}</span>
+        <button class="flex font-mono uppercase font-bold hover:bg-white hover:text-[#3A3A3A] px-4 pr-0">Menu</button>
+      </div>
+
+      <div class="font-medium text-7xl leading-normal	">
+        <p>creative developer</p>
+        <p>based in São Paulo</p>
+      </div>
+
+      <div class="w-full flex justify-between font-mono	font-medium">
+        <span>Ricardo Gouveia</span>
+        <span>Front-end Developer</span>
+        <span>Brazil</span>
+        <span>Scroll to view more</span>
+        <span>{getYear}</span>
+      </div>
+    </div>
+
+
+  </section>
+</Layout>

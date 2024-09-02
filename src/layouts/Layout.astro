@@ -16,7 +16,7 @@ const { title, description } = Astro.props;
     <meta name="keywords" content="front-end, developer, portfolio, web">
     <meta name="description" itemprop="description" content={description}>
     <meta name="author" content="Ricardo Gouveia">
-		<meta name="viewport" content="width=device-width,initial-scale:1" />
+		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
     <link rel="canonical" href="https://rcrd.dev">
 
@@ -26,12 +26,12 @@ const { title, description } = Astro.props;
 
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link rel="shortcut icon" href="./favicon.ico">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
     <link rel="logo" type="image/svg" href="./logo.svg">
 
 		<title>{title}</title>
 
-    <meta name="theme-color" content="#4ecdc4">
+    <meta name="theme-color" content="#4a4a4a">
 
     <meta property="og:image" itemprop="image" content="./opengraph.jpg">
     <meta property="og:title" content={title}>
@@ -40,7 +40,7 @@ const { title, description } = Astro.props;
     <meta property="og:site_name" content="rcrd.dev">
     <meta property="og:description" content={description}>
 	</head>
-	<body>
+	<body class="min-h-screen h-max	flex flex-col">
 		<slot />
 	</body>
 </html>
