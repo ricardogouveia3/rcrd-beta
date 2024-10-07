@@ -20,14 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install copyfiles
-        run: npm install copyfiles --save-dev
-
       - name: Build the site
         run: NODE_ENV=production npm run build
-
-      - name: Copy assets to root
-        run: npx copyfiles -u 2 "src/assets/{flags,icons,logos}/**" ./
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
