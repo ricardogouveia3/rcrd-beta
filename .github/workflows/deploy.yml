@@ -1,0 +1,42 @@
+name: Deploy Vite SSG to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install pnpm
+        run: corepack enable
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Install copyfiles
+        run: pnpm add -D copyfiles
+
+      - name: Build the site
+        run: NODE_ENV=production pnpm run build
+
+      - name: Copy assets to root
+        run: pnpm exec copyfiles -u 2 "src/assets/{flags,icons,logos}/**" ./
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: beta.rcrd.dev
