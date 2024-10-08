@@ -5,7 +5,7 @@ function App() {
     <>
       <img src={reactLogo} alt="" />
       <p>Hello, world!</p>
-      <p>test new artifact</p>
+      <p>test new artifact - 2</p>
     </>
   );
 }
