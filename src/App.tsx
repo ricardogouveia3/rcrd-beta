@@ -1,9 +1,9 @@
-import react from 'assets/react.svg';
+import reactLogo from "./assets/react.svg";
 
 function App() {
   return (
     <>
-      <img src={react} alt="" />
+      <img src={reactLogo} alt="" />
       <p>Hello, world!</p>
     </>
   );
