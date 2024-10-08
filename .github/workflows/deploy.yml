@@ -20,7 +20,7 @@ jobs:
       - name : Setup PNPM
         uses: pnpm/action-setup@v4
 
-      - name: Build project
+      - name: Install dependencies
         run: pnpm install
 
       - name: Build project
