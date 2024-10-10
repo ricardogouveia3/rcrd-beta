@@ -37,7 +37,7 @@ export default function App() {
           </p>
         </Card>
 
-        <Card classNames="lg:col-start-2 lg:col-span-1 rounded-lg">
+        <Card classNames="lg:col-start-2 lg:col-span-1 rounded-lg" loading={true}>
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
             Scalable Infrastructure
           </p>
