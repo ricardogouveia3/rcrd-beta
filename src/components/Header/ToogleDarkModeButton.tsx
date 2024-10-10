@@ -1,16 +1,16 @@
-import { useState } from "react";
 import HeaderButton from "./HeaderButton";
 
-export default function ToggleButton() {
-  const [isTrue, setIsTrue] = useState(true);
+type ToggleButtonProps = {
+  onClick: () => void;
+  isDarkMode: boolean;
+};
 
-  const handleToggle = () => {
-    setIsTrue(!isTrue);
-  };
-
+export default function ToggleButton({ onClick, isDarkMode }: Readonly<ToggleButtonProps>) {
   return (
-    <HeaderButton onClick={handleToggle}>
-      {isTrue ? "🌙" : "☀️"}
+    <HeaderButton onClick={onClick} aria-label="Toggle dark mode">
+      {isDarkMode ? "☀️" : "🌙"}
     </HeaderButton>
   );
 }
+
+
