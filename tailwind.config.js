@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
+        'noise-dark': "url('./assets/noise-dark.png')",
         'noise-light': "url('./assets/noise-light.png')",
       },
     },
