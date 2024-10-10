@@ -6,7 +6,7 @@ type ToggleButtonProps = {
 };
 
 export default function ToggleButton({ onClick, isDarkMode }: Readonly<ToggleButtonProps>) {
-  const toggleButtonClassnames = `bg-indigo-800 hover:bg-indigo-600 dark:bg-sky-600 dark:hover:bg-sky-500 dark:border-gray-500 border-gray-500`;
+  const toggleButtonClassnames = `bg-white hover:bg-indigo-600 dark:bg-quartz-d60 dark:hover:bg-sky-500 border-gray-300 dark:border-gray-500 rounded-lg sm:rounded-full`;
   return (
     <HeaderButton onClick={onClick} aria-label="Toggle dark mode" classNames={toggleButtonClassnames}>
       {isDarkMode ? "🌞" : "🌙"}
