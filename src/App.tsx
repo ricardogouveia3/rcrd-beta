@@ -57,7 +57,7 @@ export default function App() {
       </header>
 
       <CardGrid>
-        <Card classNames="lg:row-span-2 rounded-lg">
+        <Card classNames="lg:row-span-2 lg:col-span-3 rounded-lg">
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
             Powerful APIs
           </p>
@@ -66,16 +66,16 @@ export default function App() {
           </p>
         </Card>
 
-        <Card classNames="lg:col-start-2 lg:col-span-1 rounded-lg" loading={true}>
+        <Card classNames="lg:col-start-4 lg:col-span-3 rounded-lg" loading={true}>
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
-            Scalable Infrastructure
+            Loading State
           </p>
           <p className="text-sm/6 text-gray-600 dark:text-gray-400 text-center">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida, lacus non auctor ultricies, ante neque gravida magna, lobortis pellentesque magna nunc sit amet neque. Morbi molestie auctor odio, sit amet dignissim dui eleifend in. Quisque euismod pharetra fringilla.
           </p>
         </Card>
 
-        <Card classNames="lg:col-start-3 lg:col-span-1 rounded-lg">
+        <Card classNames="lg:col-start-7 lg:col-span-3 rounded-lg">
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
             Scalable Infrastructure
           </p>
@@ -84,7 +84,7 @@ export default function App() {
           </p>
         </Card>
 
-        <Card classNames="lg:col-start-2 lg:col-span-2 lg:row-start-2 rounded-lg">
+        <Card classNames="lg:col-start-4 lg:col-span-6 lg:row-start-2 rounded-lg">
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
             Fast Deployments
           </p>
@@ -93,7 +93,7 @@ export default function App() {
           </p>
         </Card>
 
-        <Card classNames="lg:row-span-2 rounded-lg">
+        <Card classNames="lg:row-span-2 lg:col-span-3 rounded-lg">
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
             Advanced Security
           </p>
@@ -102,7 +102,6 @@ export default function App() {
           </p>
         </Card>
         <Footer />
-
       </CardGrid>
     </AppContainer>
   );

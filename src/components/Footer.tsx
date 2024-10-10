@@ -1,8 +1,14 @@
 import Card from "./Card/Card";
 
-export default function Footer() {
+type FooterProps = {
+  classNames?: string;
+}
+
+const defaultClassNames = `lg:col-span-12`;
+
+export default function Footer({ classNames = defaultClassNames }: Readonly<FooterProps>) {
   return (
-    <Card classNames="lg:col-span-4 rounded-lg text-sm text-black dark:text-white text-center" contentClassnames={"p-3 flex flex-col gap-3"}>
+    <Card classNames={`${classNames}  rounded-lg text-sm text-black dark:text-white text-center`}>
       <p className="text-center font-semibold">
         2024 - Ricardo Gouveia - <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR" target="_blank" className="underline">CC BY-SA 4.0</a><span className="text-xs text-gray-500 font-normal block mt-1">(unless otherwise specified and/or in content replicated from other sources | Logos and trademarks belong to their respective owners)</span>
       </p>
