@@ -8,21 +8,50 @@ import HeaderMenuItem from "./components/Header/HeaderMenuItem";
 import ToggleButton from "./components/Header/ToogleDarkModeButton";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(true)
+  const [selectedMenuItem, setSelectedMenuItem] = useState<string>('Home')
 
-  const handleToggle = () => {
-    setDarkMode(!darkMode);
-  };
+  const handleToggle = () => { setDarkMode(!darkMode) }
 
   return (
     <AppContainer darkMode={darkMode}>
       <header className="flex justify-center gap-3">
         <HeaderMenu>
-          <HeaderMenuItem selected={true}>Home</HeaderMenuItem>
-          <HeaderMenuItem>About</HeaderMenuItem>
-          <HeaderMenuItem>Projects</HeaderMenuItem>
-          <HeaderMenuItem>Posts</HeaderMenuItem>
-          <HeaderMenuItem>Contact</HeaderMenuItem>
+          <HeaderMenuItem
+            item="Home"
+            selectedMenuItem={selectedMenuItem}
+            setSelectedMenuItem={setSelectedMenuItem}
+          >
+            Home
+          </HeaderMenuItem>
+          <HeaderMenuItem
+            item="About"
+            selectedMenuItem={selectedMenuItem}
+            setSelectedMenuItem={setSelectedMenuItem}
+          >
+            About
+          </HeaderMenuItem>
+          <HeaderMenuItem
+            item="Projects"
+            selectedMenuItem={selectedMenuItem}
+            setSelectedMenuItem={setSelectedMenuItem}
+          >
+            Projects
+          </HeaderMenuItem>
+          <HeaderMenuItem
+            item="Posts"
+            selectedMenuItem={selectedMenuItem}
+            setSelectedMenuItem={setSelectedMenuItem}
+          >
+            Posts
+          </HeaderMenuItem>
+          <HeaderMenuItem
+            item="Contact"
+            selectedMenuItem={selectedMenuItem}
+            setSelectedMenuItem={setSelectedMenuItem}
+          >
+            Contact
+          </HeaderMenuItem>
         </HeaderMenu>
         <ToggleButton onClick={handleToggle} isDarkMode={darkMode} />
       </header>
