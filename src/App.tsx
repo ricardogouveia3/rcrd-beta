@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import HeaderMenu from "./components/Header/HeaderMenu"
 import HeaderMenuItem from "./components/Header/HeaderMenuItem";
 import ToggleButton from "./components/Header/ToogleDarkModeButton";
+import MarqueeElement from "./components/Marquee/Marquee";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true)
@@ -56,7 +57,7 @@ export default function App() {
         <ToggleButton onClick={handleToggle} isDarkMode={darkMode} />
       </header>
 
-      <CardGrid>
+      <CardGrid classNames={`lg:grid-cols-12 lg:grid-rows-4`}>
         <Card classNames="lg:row-span-2 lg:col-span-3 rounded-lg">
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
             Powerful APIs
@@ -84,14 +85,25 @@ export default function App() {
           </p>
         </Card>
 
-        <Card classNames="lg:col-start-4 lg:col-span-6 lg:row-start-2 rounded-lg">
-          <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
-            Fast Deployments
-          </p>
-          <p className="text-sm/6 text-gray-600 dark:text-gray-400 text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida, lacus non auctor ultricies, ante neque gravida magna, lobortis pellentesque magna nunc sit amet neque. Morbi molestie auctor odio, sit amet dignissim dui eleifend in. Quisque euismod pharetra fringilla. Vivamus volutpat ipsum sed nibh mollis interdum. Quisque ut mattis lorem. Fusce vestibulum nulla id lacus dictum, in condimentum ante luctus. Fusce sagittis viverra bibendum. Donec pretium dolor elit, mattis ultricies nibh convallis eget. Vestibulum in orci et sem lobortis vehicula nec non urna.
-          </p>
-        </Card>
+        <div className="lg:col-start-4 lg:col-span-6 lg:row-start-2 flex flex-col gap-4">
+
+          <Card classNames="rounded-lg">
+            <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
+              Fast Deployments
+            </p>
+            <p className="text-sm/6 text-gray-600 dark:text-gray-400 text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida, lacus non auctor ultricies, ante neque gravida magna, lobortis pellentesque magna nunc sit amet neque. Morbi molestie auctor odio, sit amet dignissim dui eleifend in. Quisque euismod pharetra fringilla. Vivamus volutpat ipsum sed nibh mollis interdum. Quisque ut mattis lorem. Fusce vestibulum nulla id lacus dictum, in condimentum ante luctus. Fusce sagittis viverra bibendum. Donec pretium dolor elit, mattis ultricies nibh convallis eget. Vestibulum in orci et sem lobortis vehicula nec non urna.
+            </p>
+          </Card>
+
+          <Card classNames="rounded-lg">
+            <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white">
+              I can work with:
+            </p>
+            <MarqueeElement />
+          </Card>
+        </div>
+
 
         <Card classNames="lg:row-span-2 lg:col-span-3 rounded-lg">
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">

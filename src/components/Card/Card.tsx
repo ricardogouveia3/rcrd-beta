@@ -12,7 +12,7 @@ export default function Card({ children, classNames = '', contentClassnames = 'p
   const isLoading = loading ? `flex` : `hidden`;
 
   return (
-    <div className={`relative bg-white hover:bg-gray-100 dark:bg-quartz-d60/75 hover:dark:bg-quartz-d70/75 flex h-full flex-col overflow-hidden border border-quartz-l80 hover:border-quartz-l70 dark:border-quartz-d10 dark:hover:border-quartz-d30  transition-all ease-in-out ${classNames}`}>
+    <div className={`relative bg-white hover:bg-gray-100 dark:bg-quartz-d60/75 hover:dark:bg-quartz-d70/75 flex flex-col overflow-hidden border border-quartz-l80 hover:border-quartz-l70 dark:border-quartz-d10 dark:hover:border-quartz-d30  transition-all ease-in-out ${classNames}`}>
       <div className={`${contentClassnames}`}>
         {children}
       </div>
