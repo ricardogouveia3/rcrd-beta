@@ -57,7 +57,7 @@ export default function App() {
         <ToggleButton onClick={handleToggle} isDarkMode={darkMode} />
       </header>
 
-      <CardGrid classNames={`lg:grid-cols-12 lg:grid-rows-4`}>
+      <CardGrid classNames={`lg:grid-cols-12`}>
         <Card classNames="lg:row-span-2 lg:col-span-3 rounded-lg">
           <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white text-center">
             Powerful APIs
@@ -96,10 +96,7 @@ export default function App() {
             </p>
           </Card>
 
-          <Card classNames="rounded-lg">
-            <p className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white">
-              I can work with:
-            </p>
+          <Card classNames="rounded-lg" contentClassnames="">
             <MarqueeElement />
           </Card>
         </div>
