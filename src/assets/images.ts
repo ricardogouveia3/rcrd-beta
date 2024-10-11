@@ -1,19 +1,21 @@
-import avatar from "./avatar.jpg";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+import avatar from "./avatar.webp";
 
-import angular from "./logos/angular.svg";
-import bootstrap from "./logos/bootstrap.svg";
-import css3 from "./logos/css3.svg";
-import figma from "./logos/figma.svg";
-import git from "./logos/git.svg";
-import html5 from "./logos/html5.svg";
-import js from "./logos/js.svg";
-import nextjs from "./logos/nextjs.svg";
-import reactNative from "./logos/react-native.svg";
-import react from "./logos/react.svg";
-import sass from "./logos/sass.svg";
-import typescript from "./logos/typescript.svg";
-import vue from "./logos/vuejs.svg";
-import wordpress from "./logos/wordpress.svg";
+import angular from "@logos/angular.webp";
+import bootstrap from "@logos/bootstrap.webp";
+import css3 from "@logos/css3.webp";
+import figma from "@logos/figma.webp";
+import git from "@logos/git.webp";
+import html5 from "@logos/html5.webp";
+import js from "@logos/js.webp";
+import nextjs from "@logos/nextjs.webp";
+import reactNative from "@logos/react-native.webp";
+import react from "@logos/react.webp";
+import sass from "@logos/sass.webp";
+import typescript from "@logos/typescript.webp";
+import vue from "@logos/vuejs.webp";
+import wordpress from "@logos/wordpress.webp";
 
 const images = {
   avatar: avatar,
