@@ -2,6 +2,7 @@ import images from "../assets/images";
 
 function getImage(imageKey: string): string | undefined {
   const imageMap: Record<string, string> = {
+    avatar: images.avatar,
     angular: images.logos.angular,
     bootstrap: images.logos.bootstrap,
     css3: images.logos.css3,

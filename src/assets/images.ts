@@ -1,3 +1,5 @@
+import avatar from "./avatar.jpg";
+
 import angular from "./logos/angular.svg";
 import bootstrap from "./logos/bootstrap.svg";
 import css3 from "./logos/css3.svg";
@@ -14,6 +16,7 @@ import vue from "./logos/vuejs.svg";
 import wordpress from "./logos/wordpress.svg";
 
 const images = {
+  avatar: avatar,
   logos: {
     angular: angular,
     bootstrap: bootstrap,
