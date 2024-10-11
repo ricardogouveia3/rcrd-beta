@@ -18,7 +18,11 @@ const typescript = getImage("typescript");
 const vue = getImage("vue");
 const wordpress = getImage("wordpress");
 
-export default function MarqueeElement() {
+type MarqueeElementProps = {
+  darkMode?: boolean;
+}
+
+export default function MarqueeElement({ darkMode = true }: MarqueeElementProps) {
   const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
 
   const handleInteraction = () => {
@@ -27,6 +31,15 @@ export default function MarqueeElement() {
 
   const handleLeaveOrBlur = () => {
     setIsHoveredOrFocused(false);
+  };
+
+  const marqueeGradientColor = () => {
+    if (darkMode) {
+      if (isHoveredOrFocused) { return "#161616" }
+      return "#1e1e1e"
+    }
+    if (isHoveredOrFocused) { return "#f3f4f6" }
+    return "#ffffff"
   };
 
   return (
@@ -42,7 +55,7 @@ export default function MarqueeElement() {
         I can work with:
       </p>
       <div className="mt-3 flex flex-col gap-2">
-        <Marquee play={!isHoveredOrFocused} direction="left">
+        <Marquee play={!isHoveredOrFocused} direction="left" autoFill={true} gradient={true} gradientColor={marqueeGradientColor()} speed={20}>
           <MarqueeItem icon={angular}>Angular</MarqueeItem>
           <MarqueeItem icon={bootstrap}>Bootstrap</MarqueeItem>
           <MarqueeItem icon={css3}>CSS3</MarqueeItem>
@@ -51,7 +64,7 @@ export default function MarqueeElement() {
           <MarqueeItem icon={html5}>HTML5</MarqueeItem>
           <MarqueeItem icon={nextjs}>NextJS</MarqueeItem>
         </Marquee>
-        <Marquee play={!isHoveredOrFocused} direction="right">
+        <Marquee play={!isHoveredOrFocused} direction="right" autoFill={true} gradient={true} gradientColor={marqueeGradientColor()} speed={20}>
           <MarqueeItem icon={js}>JavaScript</MarqueeItem>
           <MarqueeItem icon={reactNative}>React Native</MarqueeItem>
           <MarqueeItem icon={react}>React</MarqueeItem>

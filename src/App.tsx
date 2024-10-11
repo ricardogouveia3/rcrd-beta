@@ -97,7 +97,7 @@ export default function App() {
           </Card>
 
           <Card classNames="rounded-lg" contentClassnames="">
-            <MarqueeElement />
+            <MarqueeElement darkMode={darkMode} />
           </Card>
         </div>
 
