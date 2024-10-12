@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 export default {
   darkMode: 'selector',
   content: [
@@ -7,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['"Inter"', ...defaultTheme.fontFamily.sans],
+      },
       backgroundImage: {
         'noise-dark': "url('./assets/noise-dark.webp')",
         'noise-light': "url('./assets/noise-light.webp')",
