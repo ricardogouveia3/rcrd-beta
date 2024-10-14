@@ -5,7 +5,9 @@ export default function AboutMe() {
   const avatar = getImage("avatar");
   const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
 
-  const hoverClassnames = isHoveredOrFocused ? `decoration-cyan-500` : ``;
+  const hoverLinkClassnames = isHoveredOrFocused ? `decoration-cyan-500` : ``;
+  const hoverPhotoClassnames = isHoveredOrFocused ? `scale-110 p-0 rotate-6` : ``;
+
 
   const handleInteraction = () => {
     setIsHoveredOrFocused(true);
@@ -26,7 +28,7 @@ export default function AboutMe() {
       <img
         src={avatar}
         alt="Ricardo Gouveia"
-        className="max-w-32 rounded-full mb-3 p-2 border-4 border-black dark:border-white"
+        className={`max-w-32 rounded-full mb-3 p-2 border-4 border-black dark:border-white transition-all ${hoverPhotoClassnames}`}
       />
       <h1 className="font-bold text-4xl mb-3 tracking-tight">Ricardo Gouveia</h1>
       <h2 className="font-medium text-2xl text-quartz-l30 tracking-tight">
@@ -35,7 +37,7 @@ export default function AboutMe() {
         <a
           href="https://www.thoughtworks.com/"
           target="_blank"
-          className={`font-bold inline-block text-black dark:text-white underline decoration-wavy underline-offset-8 transition-colors ${hoverClassnames}`}
+          className={`font-bold inline-block text-black dark:text-white underline decoration-wavy underline-offset-8 transition-colors ${hoverLinkClassnames}`}
         >
           Thoughtworks
         </a>
