@@ -19,7 +19,7 @@ export default function AboutMe() {
 
   return (
     <div
-      className="text-black dark:text-white"
+      className="text-black dark:text-white p-4 lg:p-6"
       onMouseOver={handleInteraction}
       onFocus={handleInteraction}
       onMouseLeave={handleLeaveOrBlur}

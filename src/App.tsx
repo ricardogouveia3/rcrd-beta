@@ -62,7 +62,7 @@ export default function App() {
 
       <CardGrid classNames={`lg:grid-cols-12`}>
 
-        <Card classNames="lg:row-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-1 rounded-lg">
+        <Card classNames="lg:row-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-1 rounded-lg" contentClassnames="">
           <AboutMe />
         </Card>
 
