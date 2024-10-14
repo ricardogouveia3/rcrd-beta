@@ -7,12 +7,11 @@ import HeaderMenu from "./components/Header/HeaderMenu";
 import HeaderMenuItem from "./components/Header/HeaderMenuItem";
 import ToggleButton from "./components/Header/ToogleDarkModeButton";
 import MarqueeElement from "./components/Marquee/Marquee";
-import getImage from "./utils/imageMapping";
+import AboutMe from "./components/AboutMe";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [selectedMenuItem, setSelectedMenuItem] = useState<string>("Home");
-  const avatar = getImage("avatar");
 
   const handleToggle = () => {
     setDarkMode(!darkMode);
@@ -61,22 +60,10 @@ export default function App() {
         <ToggleButton onClick={handleToggle} isDarkMode={darkMode} />
       </header>
 
-      {/* Rest of the content */}
       <CardGrid classNames={`lg:grid-cols-12`}>
+
         <Card classNames="lg:row-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-1 rounded-lg">
-          <div className="text-black dark:text-white">
-            <img
-              src={avatar}
-              alt="Ricardo Gouveia"
-              className="max-w-32 rounded-full mb-3 p-2 border-4 border-black dark:border-white"
-            />
-            <h1 className="font-bold text-4xl mb-3 tracking-tight">Ricardo Gouveia</h1>
-            <h2 className="font-medium text-2xl text-quartz-l30 tracking-tight">
-              a <strong className="text-black dark:text-white">front-end developer</strong> and{" "}
-              <strong className="text-black dark:text-white">UI designer</strong> currently working at{" "}
-              <strong className="text-black dark:text-white">Thoughtworks</strong>
-            </h2>
-          </div>
+          <AboutMe />
         </Card>
 
         <Card classNames="lg:row-span-2 lg:col-start-7 lg:row-start-1 rounded-lg lg:col-span-6 rounded-lg" loading={true}>
