@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import { ViteMinifyPlugin } from "vite-plugin-minify";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { EsLinter, linterPlugin, TypeScriptLinter } from "vite-plugin-linter";
+import svgr from "vite-plugin-svgr";
 import gzipPlugin from "rollup-plugin-gzip";
 import { fileURLToPath } from "url";
 
@@ -15,6 +16,7 @@ export default defineConfig((configEnv) => ({
   assetsInclude: ["**/*.webp", "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg"],
   plugins: [
     react(),
+    svgr(),
     ViteMinifyPlugin({}),
     ViteImageOptimizer({}),
     gzipPlugin(),

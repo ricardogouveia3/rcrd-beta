@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import HeaderMenu from "./components/Header/HeaderMenu";
 import HeaderMenuItem from "./components/Header/HeaderMenuItem";
 import ToggleButton from "./components/Header/ToogleDarkModeButton";
-import MarqueeElement from "./components/Marquee/Marquee";
+import MarqueeElement from "./components/Marquee/MarqueeElement";
 import AboutMe from "./components/AboutMe";
 
 export default function App() {

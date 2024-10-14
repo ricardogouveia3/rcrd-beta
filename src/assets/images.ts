@@ -1,37 +1,37 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-import angular from "@logos/angular.webp";
-import bootstrap from "@logos/bootstrap.webp";
-import css3 from "@logos/css3.webp";
-import figma from "@logos/figma.webp";
-import git from "@logos/git.webp";
-import html5 from "@logos/html5.webp";
-import js from "@logos/js.webp";
-import nextjs from "@logos/nextjs.webp";
-import reactNative from "@logos/react-native.webp";
-import react from "@logos/react.webp";
-import sass from "@logos/sass.webp";
-import typescript from "@logos/typescript.webp";
-import vue from "@logos/vuejs.webp";
-import wordpress from "@logos/wordpress.webp";
+/// <reference types="vite-plugin-svgr/client" />
+
+import AngularIcon from "@logos/angular.svg?react";
+import BootstrapIcon from "@logos/bootstrap.svg?react";
+import Css3Icon from "@logos/css3.svg?react";
+import FigmaIcon from "@logos/figma.svg?react";
+import GitIcon from "@logos/git.svg?react";
+import Html5Icon from "@logos/html5.svg?react";
+import JsIcon from "@logos/js.svg?react";
+import NextjsIcon from "@logos/nextjs.svg?react";
+import ReactNativeIcon from "@logos/react-native.svg?react";
+import ReactIcon from "@logos/react.svg?react";
+import SassIcon from "@logos/sass.svg?react";
+import TypescriptIcon from "@logos/typescript.svg?react";
+import VueIcon from "@logos/vuejs.svg?react";
+import WordpressIcon from "@logos/wordpress.svg?react";
 
 const images = {
   avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
   logos: {
-    angular: angular,
-    bootstrap: bootstrap,
-    css3: css3,
-    figma: figma,
-    git: git,
-    html5: html5,
-    js: js,
-    nextjs: nextjs,
-    reactNative: reactNative,
-    react: react,
-    sass: sass,
-    typescript: typescript,
-    vue: vue,
-    wordpress: wordpress,
+    angular: AngularIcon,
+    bootstrap: BootstrapIcon,
+    css3: Css3Icon,
+    figma: FigmaIcon,
+    git: GitIcon,
+    html5: Html5Icon,
+    js: JsIcon,
+    nextjs: NextjsIcon,
+    reactNative: ReactNativeIcon,
+    react: ReactIcon,
+    sass: SassIcon,
+    typescript: TypescriptIcon,
+    vue: VueIcon,
+    wordpress: WordpressIcon,
   },
 };
 
