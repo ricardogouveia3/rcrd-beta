@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-import avatar from "./avatar.webp";
-
 import angular from "@logos/angular.webp";
 import bootstrap from "@logos/bootstrap.webp";
 import css3 from "@logos/css3.webp";
@@ -18,7 +16,7 @@ import vue from "@logos/vuejs.webp";
 import wordpress from "@logos/wordpress.webp";
 
 const images = {
-  avatar: avatar,
+  avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
   logos: {
     angular: angular,
     bootstrap: bootstrap,
