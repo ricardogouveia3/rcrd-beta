@@ -15,6 +15,12 @@ import TypescriptIcon from "@logos/typescript.svg?react";
 import VueIcon from "@logos/vuejs.svg?react";
 import WordpressIcon from "@logos/wordpress.svg?react";
 
+import bluesky from "@logos/bluesky.svg?react";
+import dribbble from "@logos/dribbble.svg?react";
+import email from "@logos/email.svg?react";
+import github from "@logos/github.svg?react";
+import linkedin from "@logos/linkedin.svg?react";
+
 const images = {
   avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
   logos: {
@@ -32,6 +38,11 @@ const images = {
     typescript: TypescriptIcon,
     vue: VueIcon,
     wordpress: WordpressIcon,
+    bluesky: bluesky,
+    dribbble: dribbble,
+    email: email,
+    github: github,
+    linkedin: linkedin,
   },
 };
 

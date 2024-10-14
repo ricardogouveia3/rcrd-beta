@@ -2,12 +2,12 @@ import { useState } from "react";
 import AppContainer from "./components/AppContainer";
 import Card from "./components/Card/Card";
 import CardGrid from "./components/Card/Grid";
-import Footer from "./components/Footer";
-import HeaderMenu from "./components/Header/HeaderMenu";
-import HeaderMenuItem from "./components/Header/HeaderMenuItem";
-import ToggleButton from "./components/Header/ToogleDarkModeButton";
 import MarqueeElement from "./components/Marquee/MarqueeElement";
 import AboutMe from "./components/AboutMe";
+import SocialLink from "./components/SocialLink";
+import images from "./assets/images";
+import Header from "./sections/Header";
+import Footer from "./sections/Footer";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -19,46 +19,12 @@ export default function App() {
 
   return (
     <AppContainer darkMode={darkMode}>
-      <header className="flex justify-center gap-3">
-        <HeaderMenu selectedMenuItem={selectedMenuItem}>
-          <HeaderMenuItem
-            item="Home"
-            selectedMenuItem={selectedMenuItem}
-            setSelectedMenuItem={setSelectedMenuItem}
-          >
-            Home
-          </HeaderMenuItem>
-          <HeaderMenuItem
-            item="About"
-            selectedMenuItem={selectedMenuItem}
-            setSelectedMenuItem={setSelectedMenuItem}
-          >
-            About
-          </HeaderMenuItem>
-          <HeaderMenuItem
-            item="Projects"
-            selectedMenuItem={selectedMenuItem}
-            setSelectedMenuItem={setSelectedMenuItem}
-          >
-            Projects
-          </HeaderMenuItem>
-          <HeaderMenuItem
-            item="Posts"
-            selectedMenuItem={selectedMenuItem}
-            setSelectedMenuItem={setSelectedMenuItem}
-          >
-            Posts
-          </HeaderMenuItem>
-          <HeaderMenuItem
-            item="Contact"
-            selectedMenuItem={selectedMenuItem}
-            setSelectedMenuItem={setSelectedMenuItem}
-          >
-            Contact
-          </HeaderMenuItem>
-        </HeaderMenu>
-        <ToggleButton onClick={handleToggle} isDarkMode={darkMode} />
-      </header>
+      <Header
+        darkMode={darkMode}
+        handleToggle={handleToggle}
+        selectedMenuItem={selectedMenuItem}
+        setSelectedMenuItem={setSelectedMenuItem}
+      />
 
       <CardGrid classNames={`lg:grid-cols-12`}>
 
@@ -73,11 +39,15 @@ export default function App() {
           </p>
         </Card>
 
-        <Card classNames="lg:row-span-1 lg:col-span-8 lg:col-start-1 lg:row-start-3 rounded-lg">
+        <Card classNames="lg:row-span-1 lg:col-span-8 lg:col-start-1 lg:row-start-3 rounded-lg" contentClassnames="p-4 lg:p-6 flex flex-col gap-4">
           <p className="text-lg/7 font-medium text-gray-950 dark:text-white">Get in touch:</p>
-          <p className="text-sm/6 text-gray-600 dark:text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida, lacus non auctor ultricies, ante neque gravida magna, lobortis pellentesque magna nunc sit amet neque.
-          </p>
+          <div className="flex gap-2 flex-wrap">
+            <SocialLink icon={images.logos.bluesky} link="https://bsky.app/profile/rcrd.dev">BlueSky</SocialLink>
+            <SocialLink icon={images.logos.github} link="https://github.com/ricardogouveia3">Github</SocialLink>
+            <SocialLink icon={images.logos.linkedin} link="https://www.linkedin.com/in/ricardogouveia3/">Linkedin</SocialLink>
+            <SocialLink icon={images.logos.dribbble} link="https://dribbble.com/ricardogouveia3">Dribbble</SocialLink>
+            <SocialLink icon={images.logos.email} link="mailto:me@rcrd.dev">Email</SocialLink>
+          </div>
         </Card>
 
         <Card classNames="lg:col-start-1 lg:col-span-8 lg:row-start-4 lg:row-span-1 rounded-lg" contentClassnames="">
