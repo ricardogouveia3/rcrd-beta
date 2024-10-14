@@ -28,10 +28,11 @@ export default function AboutMe() {
       <img
         src={avatar}
         alt="Ricardo Gouveia"
-        className={`max-w-32 rounded-full mb-3 p-2 border-4 border-black dark:border-white transition-all ${hoverPhotoClassnames}`}
+        className={`max-w-24 lg:max-w-32 rounded-full mb-3 p-2 border-4 border-black dark:border-white transition-all ${hoverPhotoClassnames}`}
       />
       <h1 className="font-bold text-4xl mb-3 tracking-tight">Ricardo Gouveia</h1>
-      <h2 className="font-medium text-2xl text-quartz-l30 tracking-tight">
+
+      <h2 className="font-medium text-2xl text-quartz-l30 tracking-tight mb-2">
         a <span className="text-black dark:text-white">front-end developer</span> and{" "}
         <span className="text-black dark:text-white">UI designer</span> currently working at{" "}
         <a
