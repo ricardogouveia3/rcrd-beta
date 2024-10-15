@@ -20,7 +20,7 @@ export default function HeaderMenuItem({
     <li className="flex flex-grow">
       <button
         aria-current={isSelected ? 'page' : undefined}
-        className={`${classNames} box-border text-black dark:text-white text-sm rounded-lg sm:rounded-full px-4 py-2 w-full z-10`}
+        className={`${classNames} box-border text-black dark:text-white text-sm sm:rounded-full px-4 py-2 w-full z-10`}
         onClick={() => setSelectedMenuItem(item)}>
         {children}
       </button>

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 /// <reference types="vite-plugin-svgr/client" />
 
 import AngularIcon from "@logos/angular.svg?react";
@@ -20,6 +23,13 @@ import dribbble from "@logos/dribbble.svg?react";
 import email from "@logos/email.svg?react";
 import github from "@logos/github.svg?react";
 import linkedin from "@logos/linkedin.svg?react";
+import instagram from "@logos/instagram.svg?react";
+
+import sun from "@icons/sun.svg?react";
+import moon from "@icons/moon.svg?react";
+
+import br from "@flags/flag-br.png";
+import gb from "@flags/flag-gb.png";
 
 const images = {
   avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
@@ -43,6 +53,15 @@ const images = {
     email: email,
     github: github,
     linkedin: linkedin,
+    instagram: instagram,
+  },
+  icons: {
+    sun: sun,
+    moon: moon,
+  },
+  flags: {
+    br: br,
+    gb: gb,
   },
 };
 

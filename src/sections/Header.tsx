@@ -1,21 +1,33 @@
 import { FC } from "react";
 import HeaderMenu from "../components/Header/HeaderMenu";
 import HeaderMenuItem from "../components/Header/HeaderMenuItem";
-import ToggleButton from "../components/Header/ToogleDarkModeButton";
+import HeaderToggleButton from "../components/Header/HeaderToggleButton";
+import images from "../assets/images";
 
 type HeaderProps = {
   darkMode: boolean;
-  handleToggle: () => void;
+  handleDarkModeToggle: () => void;
+  handleLanguageToggle: () => void;
   selectedMenuItem: string;
   setSelectedMenuItem: (item: string) => void;
 };
 
 const Header: FC<HeaderProps> = ({
   darkMode,
-  handleToggle,
+  handleDarkModeToggle,
+  handleLanguageToggle,
   selectedMenuItem,
   setSelectedMenuItem,
 }) => {
+
+  const ToogleDarkModeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>> = darkMode
+    ? images.icons.sun
+    : images.icons.moon;
+
+  const ToogleLanguageIcon: string = darkMode // change this
+    ? images.flags.br
+    : images.flags.gb;
+
   return (
     <header className="flex justify-center gap-3">
       <HeaderMenu selectedMenuItem={selectedMenuItem}>
@@ -56,7 +68,11 @@ const Header: FC<HeaderProps> = ({
         </HeaderMenuItem>
       </HeaderMenu>
 
-      <ToggleButton onClick={handleToggle} isDarkMode={darkMode} />
+      <div className="flex flex-col sm:flex-row gap-1">
+        <HeaderToggleButton onClick={handleDarkModeToggle} icon={ToogleDarkModeIcon} />
+        <HeaderToggleButton onClick={handleLanguageToggle} icon={ToogleLanguageIcon} />
+      </div>
+
     </header>
   );
 };

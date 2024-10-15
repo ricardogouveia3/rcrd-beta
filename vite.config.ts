@@ -37,6 +37,8 @@ export default defineConfig((configEnv) => ({
   resolve: {
     alias: {
       "@logos": path.resolve(__dirname, "./src/assets/logos"),
+      "@icons": path.resolve(__dirname, "./src/assets/icons"),
+      "@flags": path.resolve(__dirname, "./src/assets/flags"),
     },
   },
   build: {

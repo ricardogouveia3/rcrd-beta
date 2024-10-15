@@ -13,15 +13,20 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [selectedMenuItem, setSelectedMenuItem] = useState<string>("Home");
 
-  const handleToggle = () => {
+  const handleDarkModeToggle = () => {
     setDarkMode(!darkMode);
+  };
+
+  const handleLanguageToggle = () => {
+    return;
   };
 
   return (
     <AppContainer darkMode={darkMode}>
       <Header
         darkMode={darkMode}
-        handleToggle={handleToggle}
+        handleDarkModeToggle={handleDarkModeToggle}
+        handleLanguageToggle={handleLanguageToggle}
         selectedMenuItem={selectedMenuItem}
         setSelectedMenuItem={setSelectedMenuItem}
       />
@@ -43,6 +48,7 @@ export default function App() {
           <p className="text-lg/7 font-medium text-gray-950 dark:text-white">Get in touch:</p>
           <div className="flex gap-2 flex-wrap">
             <SocialLink icon={images.logos.bluesky} link="https://bsky.app/profile/rcrd.dev">BlueSky</SocialLink>
+            <SocialLink icon={images.logos.instagram} link="https://instagram.com/ricardogouveia3">Instagram</SocialLink>
             <SocialLink icon={images.logos.github} link="https://github.com/ricardogouveia3">Github</SocialLink>
             <SocialLink icon={images.logos.linkedin} link="https://www.linkedin.com/in/ricardogouveia3/">Linkedin</SocialLink>
             <SocialLink icon={images.logos.dribbble} link="https://dribbble.com/ricardogouveia3">Dribbble</SocialLink>
