@@ -20,22 +20,15 @@ export const iconsMap: Record<
   wordpress: images.logos.wordpress,
 };
 
-export const marqueeItemsLeft: { key: keyof typeof iconsMap; label: string }[] =
-  [
-    { key: "angular", label: "Angular" },
-    { key: "bootstrap", label: "Bootstrap" },
-    { key: "css3", label: "CSS3" },
-    { key: "figma", label: "Figma" },
-    { key: "git", label: "Git" },
-    { key: "html5", label: "HTML5" },
-    { key: "nextjs", label: "NextJS" },
-  ];
-
-export const marqueeItemsRight: {
-  key: keyof typeof iconsMap;
-  label: string;
-}[] = [
+const marqueeItems = [
+  { key: "angular", label: "Angular" },
+  { key: "bootstrap", label: "Bootstrap" },
+  { key: "css3", label: "CSS3" },
+  { key: "figma", label: "Figma" },
+  { key: "git", label: "Git" },
+  { key: "html5", label: "HTML5" },
   { key: "js", label: "JavaScript" },
+  { key: "nextjs", label: "NextJS" },
   { key: "reactNative", label: "React Native" },
   { key: "react", label: "React" },
   { key: "sass", label: "Sass" },
@@ -43,3 +36,13 @@ export const marqueeItemsRight: {
   { key: "vue", label: "VueJS" },
   { key: "wordpress", label: "Wordpress" },
 ];
+
+function shuffleArray<T>(array: T[]): T[] {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+const shuffledItems = shuffleArray(marqueeItems);
+const half = Math.ceil(shuffledItems.length / 2);
+
+export const marqueeItemsLeft = shuffledItems.slice(0, half);
+export const marqueeItemsRight = shuffledItems.slice(half);

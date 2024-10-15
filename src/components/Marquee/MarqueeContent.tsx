@@ -1,15 +1,13 @@
-import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import MarqueeItem from "./MarqueeItem";
 import { iconsMap, marqueeItemsLeft, marqueeItemsRight } from "../../data/MarqueeData";
 
+type MarqueeContentProps = {
+  darkMode?: boolean;
+  isHoveredOrFocused?: boolean;
+};
 
-const MarqueeContent = ({ darkMode }: { darkMode?: boolean }) => {
-  const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
-
-  const handleInteraction = () => setIsHoveredOrFocused(true);
-  const handleLeaveOrBlur = () => setIsHoveredOrFocused(false);
-
+const MarqueeContent = ({ darkMode = true, isHoveredOrFocused = false }: Readonly<MarqueeContentProps>) => {
   const marqueeGradientColor = () => {
     let color;
     if (darkMode) {
@@ -32,13 +30,7 @@ const MarqueeContent = ({ darkMode }: { darkMode?: boolean }) => {
   };
 
   return (
-    <div
-      className="mt-3 flex flex-col gap-2"
-      onMouseOver={handleInteraction}
-      onFocus={handleInteraction}
-      onMouseLeave={handleLeaveOrBlur}
-      onBlur={handleLeaveOrBlur}
-    >
+    <div className="mt-3 flex flex-col gap-2">
       <Marquee play={!isHoveredOrFocused} direction="left" gradient={true} gradientColor={marqueeGradientColor()} speed={20}>
         {renderMarqueeItems(marqueeItemsLeft)}
       </Marquee>
