@@ -13,6 +13,7 @@ import SocialSection from "./sections/Social.section";
 import PhraseSection from "./sections/Phrase.section";
 import ExperienceSection from "./sections/Experience.section";
 import Contact from "./sections/Contact.section";
+import PostsSection from "./sections/Posts.section";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -59,12 +60,7 @@ export default function App() {
 
         <ExperienceSection />
 
-        <Card classNames="lg:col-start-1 lg:col-span-7 lg:row-start-6 rounded-lg">
-          <p className="text-lg/7 font-medium text-gray-950 dark:text-white text-center">Posts</p>
-          <p className="text-sm/6 text-gray-600 dark:text-gray-400 text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida, lacus non auctor ultricies, ante neque gravida magna, lobortis pellentesque magna nunc sit amet neque.
-          </p>
-        </Card>
+        <PostsSection />
 
         <Contact />
 
