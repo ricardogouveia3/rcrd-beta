@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 
 const inputStyles =
   "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg p-2.5 dark:bg-quartz-d70 dark:placeholder-gray-400 dark:text-white border border-quartz-l80 hover:border-quartz-l70 dark:border-quartz-d10 dark:hover:border-quartz-d30";
@@ -12,6 +13,9 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+
+  const { isAboveLg } = useBreakpoint("lg");
+  const textAreaLines = isAboveLg ? 10 : 5;
 
   const handleCheckboxChange = () => {
     setIsHuman((prev) => !prev);
@@ -64,7 +68,7 @@ export default function Contact() {
           </label>
           <textarea
             id="message"
-            rows={10}
+            rows={textAreaLines}
             className={inputStyles}
             value={message}
             onChange={handleInputChange}

@@ -18,6 +18,6 @@
     "incremental": false,
     "types": ["node"]
   },
-  "include": ["src", "vite.config.ts", "src/types/images.d.ts"],
+  "include": ["src/**/*", "types/**/*", "vite.config.ts", "tailwind.config.js"],
   "exclude": ["node_modules"]
 }

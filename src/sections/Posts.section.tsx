@@ -5,22 +5,25 @@ import Card from "../components/Card/Card";
 import PostsItem from "../components/PostItem";
 
 import { PostProps } from "../types/Post.type";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 
 export default function PostsSection() {
   const [posts, setPosts] = useState<PostProps[]>([]);
   const [loading, setLoading] = useState(true);
+  const { isAboveLg } = useBreakpoint("lg");
+  const maxRendered = isAboveLg ? 4 : 3;
 
   useEffect(() => {
     blogAPI.getData()
       .then((data) => {
-        setPosts(data.slice(0, 4));
+        setPosts(data.slice(0, maxRendered));
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching posts:", error);
         setLoading(false);
       });
-  }, []);
+  }, [maxRendered]);
 
   return (
     <Card classNames="lg:col-start-1 lg:col-span-7 lg:row-start-6 rounded-lg" loading={loading}>
