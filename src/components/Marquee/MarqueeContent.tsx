@@ -10,12 +10,12 @@ type MarqueeContentProps = {
 
 const MarqueeContent = ({ darkMode = true, isHoveredOrFocused = false }: Readonly<MarqueeContentProps>) => {
   const { isAboveSm } = useBreakpoint("sm");
-  const marqueeGradient = isAboveSm;
+  const marqueeGradientWidth = isAboveSm ? 100 : 20;
 
   const marqueeGradientColor = () => {
     let color;
     if (darkMode) {
-      color = isHoveredOrFocused ? "#161616" : "#1e1e1e";
+      color = isHoveredOrFocused ? "#191919" : "#1e1e1e";
     } else {
       color = isHoveredOrFocused ? "#f3f4f6" : "#ffffff";
     }
@@ -35,10 +35,10 @@ const MarqueeContent = ({ darkMode = true, isHoveredOrFocused = false }: Readonl
 
   return (
     <div className="mt-3 flex flex-col gap-2">
-      <Marquee play={!isHoveredOrFocused} direction="left" gradient={marqueeGradient} gradientColor={marqueeGradientColor()} speed={20}>
+      <Marquee play={!isHoveredOrFocused} direction="left" gradient={true} gradientColor={marqueeGradientColor()} gradientWidth={marqueeGradientWidth} speed={20}>
         {renderMarqueeItems(marqueeItemsLeft)}
       </Marquee>
-      <Marquee play={!isHoveredOrFocused} direction="right" gradient={marqueeGradient} gradientColor={marqueeGradientColor()} speed={20}>
+      <Marquee play={!isHoveredOrFocused} direction="right" gradient={true} gradientColor={marqueeGradientColor()} gradientWidth={marqueeGradientWidth} speed={20}>
         {renderMarqueeItems(marqueeItemsRight)}
       </Marquee>
     </div>
