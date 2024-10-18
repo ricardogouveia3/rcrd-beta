@@ -31,7 +31,7 @@ export default function Contact() {
   const isFormValid = email && subject && message && isHuman;
 
   return (
-    <Card classNames="lg:col-start-8 lg:col-span-5 lg:row-start-6 rounded-lg">
+    <Card classNames="lg:col-start-8 lg:col-span-5 lg:row-start-6 rounded-lg" contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
       <h3 className="text-lg/7 mb-4 font-medium text-gray-950 dark:text-white">
         Leave a message:
       </h3>
