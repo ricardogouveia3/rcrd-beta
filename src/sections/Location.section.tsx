@@ -28,8 +28,8 @@ export default function LocationSection() {
   useEffect(() => {
     async function fetchWeather() {
       try {
-        const weatherData: WeatherInfo = await getWeather(coordinates.LATITUDE, coordinates.LONGITUDE);
-        setWeatherInfo(weatherData);
+        const weatherData = await getWeather(coordinates.LATITUDE, coordinates.LONGITUDE);
+        if (weatherData) setWeatherInfo(weatherData);
       } catch (error) {
         console.error("Error fetching weather data:", error);
       } finally {
