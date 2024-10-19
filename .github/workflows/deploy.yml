@@ -29,6 +29,8 @@ jobs:
         run: pnpm install
 
       - name: Build project
+        env:
+          VITE_OPENWEATHER_API_KEY: ${{ secrets.VITE_OPENWEATHER_API_KEY }}
         run: pnpm run build
 
       - name: Upload Pages Artifact
