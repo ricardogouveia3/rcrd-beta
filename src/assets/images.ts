@@ -31,6 +31,8 @@ import moon from "@icons/moon.svg?react";
 import br from "@flags/flag-br.png";
 import gb from "@flags/flag-gb.png";
 
+import spbr from "@maps/sao-paulo.png";
+
 const images = {
   avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
   logos: {
@@ -62,6 +64,9 @@ const images = {
   flags: {
     br: br,
     gb: gb,
+  },
+  maps: {
+    spbr: spbr,
   },
 };
 

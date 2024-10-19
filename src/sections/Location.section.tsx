@@ -1,20 +1,61 @@
+import { useState, useEffect } from "react";
+import { getWeather } from "../api/weather";
 import Card from "../components/Card/Card";
+import { WeatherInfo } from "../types/WeatherInfo";
+import { getCurrentTime } from "../utils/time";
+import LocationMap from "../components/Location/LocationMap";
+import LocationInfo from "../components/Location/LocationInfo";
+import { COORDINATES, MAP_SP_BR, TIMEZONES } from "../constants/constants";
 
 export default function LocationSection() {
+  const [weatherInfo, setWeatherInfo] = useState<WeatherInfo | null>(null);
+  const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
+
+  const [loading, setLoading] = useState(true);
+
+  const map = { ...MAP_SP_BR }
+  const coordinates = COORDINATES.SAO_PAULO;
+  const timezones = TIMEZONES.SAO_PAULO;
+
+  const handleInteraction = () => {
+    setIsHoveredOrFocused(true);
+  };
+
+  const handleLeaveOrBlur = () => {
+    setIsHoveredOrFocused(false);
+  };
+
+  useEffect(() => {
+    async function fetchWeather() {
+      try {
+        const weatherData: WeatherInfo = await getWeather(coordinates.LATITUDE, coordinates.LONGITUDE);
+        setWeatherInfo(weatherData);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchWeather();
+  }, [coordinates]);
+
   return (
     <Card
-      classNames="lg:row-span-2 lg:col-start-7 lg:row-start-1 rounded-lg lg:col-span-6 rounded-lg"
-      loading={true}
+      classNames="lg:row-span-2 lg:col-start-7 lg:row-start-1 rounded-lg lg:col-span-6"
+      contentClassnames="w-full h-full"
+      loading={loading}
     >
-      <p className="text-lg/7 font-medium text-gray-950 dark:text-white text-center">
-        Loading State
-      </p>
-      <p className="text-sm/6 text-gray-600 dark:text-gray-400 text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida,
-        lacus non auctor ultricies, ante neque gravida magna, lobortis
-        pellentesque magna nunc sit amet neque. Morbi molestie auctor odio, sit
-        amet dignissim dui eleifend in. Quisque euismod pharetra fringilla.
-      </p>
+      <div
+        onMouseOver={handleInteraction}
+        onFocus={handleInteraction}
+        onMouseLeave={handleLeaveOrBlur}
+        onBlur={handleLeaveOrBlur}
+        className="flex flex-col lg:flex-row h-full">
+
+        <LocationMap isHoveredOrFocused={isHoveredOrFocused} map={map} info={!!weatherInfo} />
+        {weatherInfo && (<LocationInfo loading={loading} weatherInfo={weatherInfo} currentTime={getCurrentTime(timezones)} />)}
+      </div>
     </Card>
   );
 }
