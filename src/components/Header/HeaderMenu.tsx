@@ -26,11 +26,11 @@ export default function HeaderMenu({ children, selectedMenuItem }: Readonly<Head
   }, [selectedMenuItem]);
 
   return (
-    <nav className="relative rounded-lg sm:rounded-full card-background flex border border-quartz-800 dark:border-quartz-450 p-[2px] max-w-full overflow-hidden">
+    <nav className="relative rounded-lg sm:rounded-full card-background flex card-border p-[2px] max-w-full overflow-hidden">
       <ul ref={menuRef} className="relative flex items-center sm:gap-2 flex-wrap sm:flex-nowrap box-border w-full">
         {children}
         <div
-          className="hidden lg:inline-block absolute bottom-0 lg:h-full rounded-full transition-all duration-300 ease-in-out border border-quartz-800 dark:border-quartz-450 bg-quartz-800 dark:bg-quartz-150 z-0"
+          className="hidden lg:inline-block absolute bottom-0 lg:h-full rounded-full transition-all duration-300 ease-in-out card-border bg-quartz-800 dark:bg-quartz-150 z-0"
           style={{ ...indicatorStyle }}
         />
       </ul>

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import HeaderMenu from "../components/Header/HeaderMenu";
 import HeaderMenuItem from "../components/Header/HeaderMenuItem";
-import HeaderToggleButton from "../components/Header/HeaderToggleButton";
+import ToggleButton from "../components/Buttons/ToggleButton";
 import images from "../assets/images";
 
 type HeaderProps = {
@@ -69,8 +69,8 @@ const Header: FC<HeaderProps> = ({
       </HeaderMenu>
 
       <div className="flex flex-col sm:flex-row gap-1">
-        <HeaderToggleButton onClick={handleDarkModeToggle} icon={ToogleDarkModeIcon} />
-        <HeaderToggleButton onClick={handleLanguageToggle} icon={ToogleLanguageIcon} />
+        <ToggleButton onClick={handleDarkModeToggle} icon={ToogleDarkModeIcon} />
+        <ToggleButton onClick={handleLanguageToggle} icon={ToogleLanguageIcon} />
       </div>
 
     </header>

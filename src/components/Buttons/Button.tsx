@@ -12,7 +12,7 @@ export default function Button({ children, type, disabled }: Readonly<ButtonProp
     <button
       type={type}
       disabled={disabled}
-      className={`py-3 px-5 text-sm font-medium text-center text-black dark:text-white rounded-lg w-full hover:bg-quartz-950 dark:hover:bg-quartz-100 border card-border ${disabledClassnames}`}>
+      className={`py-3 px-5 text-sm font-medium text-center text-black dark:text-white rounded-lg w-full hover-background card-border ${disabledClassnames}`}>
       {children}
     </button>
   );
