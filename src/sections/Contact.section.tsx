@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
 import { useBreakpoint } from "../hooks/useBreakpoint";
+import Button from "../components/Buttons/Button";
 
 const inputStyles =
-  "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg p-2.5 dark:bg-quartz-d70 dark:placeholder-gray-400 dark:text-white border border-quartz-l80 hover:border-quartz-l70 dark:border-quartz-d10 dark:hover:border-quartz-d30";
+  "block w-full text-sm text-gray-900 bg-gray-50 rounded-lg p-2.5 dark:bg-quartz-150 dark:placeholder-gray-400 dark:text-white border border-quartz-900 hover:border-quartz-850 dark:border-quartz-450 dark:hover:border-quartz-350";
 
 const labelStyles =
   "block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300";
@@ -75,7 +76,7 @@ export default function Contact() {
             required
           ></textarea>
         </div>
-        <div className="flex items-center ps-4 border rounded border-quartz-l80 dark:border-quartz-d10">
+        <div className="flex items-center ps-4 border rounded border-quartz-900 dark:border-quartz-450">
           <input
             id="bordered-checkbox-1"
             type="checkbox"
@@ -88,13 +89,7 @@ export default function Contact() {
             I'm a human
           </label>
         </div>
-        <button
-          type="submit"
-          disabled={!isFormValid}
-          className={`py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-quartz-l10 w-full hover:bg-quartz dark:bg-quartz-d70 dark:hover:bg-quartz-d80 border border-quartz-l80 hover:border-quartz-l70 dark:border-quartz-d10 dark:hover:border-quartz-d30 ${!isFormValid ? 'opacity-50 cursor-not-allowed' : ''}`}
-        >
-          Send message
-        </button>
+        <Button type="submit" disabled={!isFormValid}>Send message</Button>
       </form>
     </Card>
   );

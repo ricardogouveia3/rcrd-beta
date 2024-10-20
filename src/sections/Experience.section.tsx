@@ -12,7 +12,7 @@ export default function ExperienceSection() {
   return (
     <Card classNames="lg:col-start-10 lg:col-span-3 lg:row-start-5 rounded-lg">
       <h3 className="text-lg/7 mb-4 font-medium text-gray-950 dark:text-white">Work experience:</h3>
-      <ol className="relative border-s border-quartz-l80 dark:border-quartz-d20 flex flex-col items-stretch">
+      <ol className="relative border-s border-quartz-900 dark:border-quartz-400 flex flex-col items-stretch">
         {itemsToRender.map((experience: Experience) => (
           <ExperienceItem
             key={experience.id}

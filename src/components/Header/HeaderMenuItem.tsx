@@ -14,7 +14,7 @@ export default function HeaderMenuItem({
   setSelectedMenuItem
 }: Readonly<HeaderMenuItemProps>) {
   const isSelected = selectedMenuItem === item;
-  const classNames = isSelected ? 'bg-gray-300 dark:bg-quartz-d70 border-quartz-l60 dark:border-quartz-d10 lg:bg-transparent lg:dark:bg-transparent' : '';
+  const classNames = isSelected ? 'bg-gray-300 dark:bg-quartz-150 border-quartz-800 dark:border-quartz-450 lg:bg-transparent lg:dark:bg-transparent' : '';
 
   return (
     <li className="flex flex-grow">

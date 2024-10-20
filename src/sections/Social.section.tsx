@@ -1,6 +1,6 @@
 import images from "../assets/images";
 import Card from "../components/Card/Card";
-import SocialLink from "../components/SocialLink";
+import SocialLink from "../components/Buttons/SocialLink";
 
 export default function SocialSection() {
   return (

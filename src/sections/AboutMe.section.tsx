@@ -35,7 +35,7 @@ export default function AboutMe() {
         )}
         <h1 className="font-bold text-2xl lg:text-4xl mb-1 lg:mb-3 tracking-tight">Ricardo Gouveia</h1>
 
-        <h2 className="font-medium text-lg md:text-xl lg:text-2xl text-quartz-l30 tracking-tight mb-2">
+        <h2 className="font-medium text-lg md:text-xl lg:text-2xl text-quartz-650 tracking-tight mb-2">
           a <span className="text-black dark:text-white font-bold">front-end developer</span> and{" "}
           <span className="text-black dark:text-white font-bold">UI designer</span> currently working at{" "}
           <a

@@ -10,7 +10,7 @@ export default function LocationInfo({ loading = false, weatherInfo, currentTime
   return (
     <div>
       {(!loading && weatherInfo) && (
-        <div className="p-4 lg:p-6 h-full flex flex-col font-medium text-quartz-l30 tracking-tight">
+        <div className="p-4 lg:p-6 h-full flex flex-col font-medium text-quartz-650 tracking-tight">
           <span className="text-sm">
             Based in
           </span>

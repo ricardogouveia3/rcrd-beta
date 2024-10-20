@@ -6,6 +6,7 @@ import PostsItem from "../components/PostItem";
 
 import { PostProps } from "../types/Post.type";
 import { useBreakpoint } from "../hooks/useBreakpoint";
+import ButtonLink from "../components/Buttons/ButtonLink";
 
 export default function PostsSection() {
   const [posts, setPosts] = useState<PostProps[]>([]);
@@ -29,7 +30,7 @@ export default function PostsSection() {
     <Card classNames="lg:col-start-1 lg:col-span-7 lg:row-start-6 rounded-lg" loading={loading}>
       <header className="flex flex-row justify-between mb-4 items-center">
         <h4 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">Latest posts:</h4>
-        <a href="https://dev.to/rcrd" target="_blank" className="flex justify-center items-center py-2 px-4 text-sm font-medium text-center text-white rounded-lg bg-quartz-l10 w-fit hover:bg-quartz dark:bg-quartz-d70 dark:hover:bg-quartz-d80 border border-quartz-l80 hover:border-quartz-l70 dark:border-quartz-d10 dark:hover:border-quartz-d30">See all posts</a>
+        <ButtonLink round="lg" link="https://dev.to/rcrd">See all posts</ButtonLink>
       </header>
 
       {!loading && (
