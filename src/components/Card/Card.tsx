@@ -9,16 +9,12 @@ type CardProps = {
 }
 
 export default function Card({ children, classNames = '', contentClassnames = 'p-4 lg:p-6', loading = false }: Readonly<CardProps>) {
-  const isLoading = loading ? `flex` : `hidden`;
-
   return (
     <div className={`relative card-border card-background flex flex-col overflow-hidden cursor-default transition-all ease-in-out ${classNames}`}>
       <div className={`${contentClassnames}`}>
         {children}
       </div>
-      <div className={`${isLoading} absolute h-full w-full bg-black/80 justify-center items-center`}>
-        <Spinner />
-      </div>
+      <Spinner isLoading={loading} />
     </div>
   );
 }
