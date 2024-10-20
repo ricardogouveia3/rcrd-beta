@@ -17,24 +17,25 @@ import SocialSection from "./sections/Social.section";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(true);
-  const [selectedMenuItem, setSelectedMenuItem] = useState<string>("Home");
+  const [language, setLanguage] = useState('en');
+
 
   const handleDarkModeToggle = () => {
     setDarkMode(!darkMode);
   };
 
   const handleLanguageToggle = () => {
-    return;
+    const newLanguage = language === 'en' ? 'pt-br' : 'en';
+    setLanguage(newLanguage);
   };
 
   return (
     <AppContainer darkMode={darkMode}>
       <Header
         darkMode={darkMode}
+        language={language}
         handleDarkModeToggle={handleDarkModeToggle}
         handleLanguageToggle={handleLanguageToggle}
-        selectedMenuItem={selectedMenuItem}
-        setSelectedMenuItem={setSelectedMenuItem}
       />
 
       {/* <CardGrid classNames={`lg:grid-cols-12 md:grid-cols-6 sm:grid-cols-1`}> */}

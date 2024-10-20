@@ -4,14 +4,14 @@ import images from "../assets/images";
 
 type HeaderProps = {
   darkMode: boolean;
+  language: string;
   handleDarkModeToggle: () => void;
   handleLanguageToggle: () => void;
-  selectedMenuItem: string;
-  setSelectedMenuItem: (item: string) => void;
 };
 
 const Header: FC<HeaderProps> = ({
   darkMode,
+  language,
   handleDarkModeToggle,
   handleLanguageToggle,
 }) => {
@@ -20,7 +20,7 @@ const Header: FC<HeaderProps> = ({
     ? images.icons.sun
     : images.icons.moon;
 
-  const ToogleLanguageIcon: string = darkMode // change this
+  const ToogleLanguageIcon: string = language === 'pt-br'
     ? images.flags.br
     : images.flags.gb;
 
