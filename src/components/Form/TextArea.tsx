@@ -12,10 +12,10 @@ type TextAreaProps = {
 };
 
 const inputDefaultStyles =
-  "block w-full text-sm text-quartz-300 rounded-lg p-2.5 dark:placeholder-quartz-750 dark:text-white bg-transparent border card-border";
+  "block w-full text-sm default-text-color rounded-lg p-2.5 dark:placeholder-quartz-750 bg-transparent border default-border";
 
 const labelDefaultStyles =
-  "block mb-2 text-sm font-medium text-quartz-300 dark:text-quartz-800";
+  "block mb-2 text-sm font-medium default-text-color";
 
 const TextArea = ({ id, label, value, onChange, rows = 5, required = false, inputStyles = inputDefaultStyles, labelStyles = labelDefaultStyles }: TextAreaProps) => (
   <div>

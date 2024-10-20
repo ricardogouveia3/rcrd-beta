@@ -30,7 +30,7 @@ export default function ButtonLink({ children, link, round }: Readonly<ButtonPro
     <a
       href={link}
       target="_blank"
-      className={`flex justify-center items-center py-2 px-4 text-sm font-medium text-center text-black dark:text-white ${roundClassName} w-fit hover-background border card-border`}
+      className={`flex justify-center items-center py-2 px-4 text-sm font-medium text-center default-text-color ${roundClassName} w-fit hover-background border default-border`}
     >
       {children}
     </a>

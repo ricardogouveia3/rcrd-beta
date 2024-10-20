@@ -10,9 +10,9 @@ type SocialLinkProps = {
 export default function SocialLink({ children, icon: Icon, link }: Readonly<SocialLinkProps>) {
   return (
     <ButtonLink link={link} round="full">
-      {Icon && <Icon className="w-4 text-black dark:text-white" />}
+      {Icon && <Icon className="w-4 default-text-color" />}
       &nbsp;
-      <span className="text-xs font-semibold text-black dark:text-white">{children}</span>
+      <span className="text-xs font-semibold default-text-color">{children}</span>
     </ButtonLink>
   );
 }
