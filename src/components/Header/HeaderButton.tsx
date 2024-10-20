@@ -6,7 +6,7 @@ type HeaderButtonProps = {
   classNames?: string;
 };
 
-const defaultClassNames = `bg-white dark:bg-quartz-200 hover:bg-gray-100 dark:hover:bg-gray-700 dark:border-gray-500 border-gray-300 rounded-full`;
+const defaultClassNames = `bg-white dark:bg-quartz-200 hover:bg-quartz-900 dark:hover:bg-quartz-500 dark:border-quartz-9500 border-quartz-800 rounded-full`;
 
 export default function HeaderButton({ children, onClick, classNames = defaultClassNames }: Readonly<HeaderButtonProps>) {
   return (
