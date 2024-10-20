@@ -25,8 +25,10 @@ export default function PostsSection() {
       });
   }, [maxRendered]);
 
+  const gridClassNames = `lg:col-start-1 md:col-span-4 lg:col-span-7 md:row-start-6 lg:row-start-5`;
+
   return (
-    <Card classNames="lg:col-start-1 lg:col-span-7 lg:row-start-6 rounded-lg" loading={loading}>
+    <Card classNames={`${gridClassNames}`} loading={loading}>
       <header className="flex flex-row justify-between mb-4 items-center">
         <h4 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">Latest posts:</h4>
         <ButtonLink round="lg" link="https://dev.to/rcrd">See all posts</ButtonLink>

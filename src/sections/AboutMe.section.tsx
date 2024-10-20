@@ -17,8 +17,10 @@ export default function AboutMe() {
     setIsHoveredOrFocused(false);
   };
 
+  const gridClassNames = `md:col-span-3 lg:col-span-6 col-start-1 row-start-1`;
+
   return (
-    <Card classNames="lg:row-span-2 lg:col-span-6 lg:col-start-1 lg:row-start-1 rounded-lg" contentClassnames="">
+    <Card classNames={`${gridClassNames}`} contentClassnames="">
       <div
         className="default-text-color p-4 lg:p-6"
         onMouseOver={handleInteraction}

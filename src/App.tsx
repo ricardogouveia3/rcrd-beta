@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import AppContainer from "./components/AppContainer";
-import CardGrid from "./components/Card/Grid";
+import AppContainer from "./components/Containers/AppContainer";
+import MainWrapper from "./components/Containers/SectionContainer";
 
 import AboutMe from "./sections/AboutMe.section";
 import Contact from "./sections/Contact.section";
@@ -38,8 +38,7 @@ export default function App() {
         handleLanguageToggle={handleLanguageToggle}
       />
 
-      {/* <CardGrid classNames={`lg:grid-cols-12 md:grid-cols-6 sm:grid-cols-1`}> */}
-      <CardGrid classNames={`lg:grid-cols-12`}>
+      <MainWrapper>
         <AboutMe />
         <LocationSection />
         <SocialSection />
@@ -50,7 +49,7 @@ export default function App() {
         <PostsSection />
         <Contact />
         <Footer />
-      </CardGrid>
+      </MainWrapper>
     </AppContainer>
   );
 }

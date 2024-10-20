@@ -12,8 +12,10 @@ export default function MarqueeSection({ darkMode = true }: Readonly<MarqueeSect
   const handleInteraction = () => setIsHoveredOrFocused(true);
   const handleLeaveOrBlur = () => setIsHoveredOrFocused(false);
 
+  const gridClassNames = `lg:col-start-1 md:col-span-4 lg:col-span-8 lg:row-span-1`;
+
   return (
-    <Card classNames="lg:col-start-1 lg:col-span-8 lg:row-start-4 lg:row-span-1 rounded-lg" contentClassnames="">
+    <Card classNames={`${gridClassNames}`} contentClassnames="">
       <section className="p-4 lg:p-6" aria-labelledby="marquee-header" onMouseOver={handleInteraction}
         onFocus={handleInteraction}
         onMouseLeave={handleLeaveOrBlur}

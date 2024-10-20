@@ -12,10 +12,12 @@ const ExperienceItem = ({ jobTitle, company, startDate, endDate }: Readonly<Expe
     <li className="mb-4 lg:mb-7 ms-4 last:mb-0">
       <div className="absolute w-3 h-3 bg-quartz-700 rounded-full mt-1.5 -start-1.5 border border-white dark:border-quartz-100 dark:bg-quartz-400" />
 
-      <h4 className={`font-medium default-text-color  ${experienceStyle}`}>
+      <h4 className={`font-medium default-text-color text-wrap  ${experienceStyle}`}>
         {jobTitle}
-        <span className="smooth-text-color font-normal">&nbsp;@&nbsp;</span>
-        {company}
+        <div>
+          <span className="smooth-text-color font-normal">&nbsp;@&nbsp;</span>
+          {company}
+        </div>
       </h4>
 
       <time className="mb-1 text-sm font-normal italic leading-none smooth-text-color">

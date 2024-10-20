@@ -21,8 +21,10 @@ export default function Contact() {
 
   const isFormValid = !!(email && subject && message && isHuman);
 
+  const gridClassNames = `col-start-1 lg:col-start-8 md:col-span-6 lg:col-span-5`;
+
   return (
-    <Card classNames="lg:col-start-8 lg:col-span-5 lg:row-start-6 rounded-lg" contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
+    <Card classNames={`${gridClassNames}`} contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
       <h3 className="text-lg/7 mb-4 font-medium text-gray-950 dark:text-white">
         Leave a message:
       </h3>

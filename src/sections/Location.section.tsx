@@ -31,9 +31,11 @@ export default function LocationSection() {
     fetchWeather();
   }, [coordinates]);
 
+  const gridClassNames = `md:col-start-4 lg:col-start-7 row-start-2 md:row-start-1 md:col-span-3 lg:col-span-6`;
+
   return (
     <Card
-      classNames="lg:row-span-2 lg:col-start-7 lg:row-start-1 rounded-lg lg:col-span-6"
+      classNames={`${gridClassNames}`}
       contentClassnames="w-full h-full"
       loading={loading}
     >

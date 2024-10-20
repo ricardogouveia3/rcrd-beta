@@ -3,8 +3,10 @@ import Card from "../components/Card/Card";
 import SocialLink from "../components/Buttons/SocialLink";
 
 export default function SocialSection() {
+  const gridClassNames = `md:col-span-4 lg:col-span-8 lg:col-start-1 lg:row-start-2`;
+
   return (
-    <Card classNames="lg:row-span-1 lg:col-span-8 lg:col-start-1 lg:row-start-3 rounded-lg" contentClassnames="p-4 lg:p-6 flex flex-col gap-4">
+    <Card classNames={`${gridClassNames}`} contentClassnames="p-4 lg:p-6 flex flex-col gap-4">
       <p className="text-lg/7 font-medium text-gray-950 dark:text-white">Get in touch:</p>
       <div className="flex gap-2 flex-wrap">
         <SocialLink icon={images.logos.bluesky} link="https://bsky.app/profile/rcrd.dev">BlueSky</SocialLink>
