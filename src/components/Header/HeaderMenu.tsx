@@ -26,7 +26,7 @@ export default function HeaderMenu({ children, selectedMenuItem }: Readonly<Head
   }, [selectedMenuItem]);
 
   return (
-    <nav className="relative rounded-lg sm:rounded-full bg-white dark:bg-quartz-200 flex border border-quartz-800 dark:border-quartz-450 p-[2px] max-w-full overflow-hidden">
+    <nav className="relative rounded-lg sm:rounded-full card-background flex border border-quartz-800 dark:border-quartz-450 p-[2px] max-w-full overflow-hidden">
       <ul ref={menuRef} className="relative flex items-center sm:gap-2 flex-wrap sm:flex-nowrap box-border w-full">
         {children}
         <div

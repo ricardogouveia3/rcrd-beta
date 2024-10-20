@@ -7,7 +7,7 @@ type MarqueeItemProps = {
 
 export default function MarqueeItem({ children, icon }: Readonly<MarqueeItemProps>) {
   return (
-    <div className="flex items-center px-4 mx-2 py-2 border rounded-lg gap-2 justify-center border-quartz-900 dark:border-quartz-450">
+    <div className="flex items-center px-4 mx-2 py-2 border rounded-lg gap-2 justify-center card-border">
       {typeof icon === 'string' ? (
         <img src={icon} alt="" className="h-4" />
       ) : (

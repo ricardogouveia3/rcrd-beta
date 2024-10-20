@@ -9,7 +9,7 @@ type PostsItemProps = {
 export default function PostsItem({ title, description, link, imgSrc, imgAlt = `Auto generated description: ${title}` }: Readonly<PostsItemProps>) {
   return (
     <article>
-      <a href={link} target="_blank" className="flex flex-col items-center rounded-lg overflow-hidden md:flex-row w-full md:h-32 border border-quartz-900 dark:border-quartz-450">
+      <a href={link} target="_blank" className="flex flex-col items-center rounded-lg overflow-hidden md:flex-row w-full md:h-32 border card-border">
         <img className="object-cover w-full h-48 md:w-auto md:max-w-52 md:h-full" src={imgSrc} alt={imgAlt} />
         <div className="flex flex-col justify-center p-4 leading-normal py-3 gap-2">
           <h5 className="text-base font-bold text-quartz-300 dark:text-white">{title}</h5>

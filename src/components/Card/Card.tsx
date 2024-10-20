@@ -12,7 +12,7 @@ export default function Card({ children, classNames = '', contentClassnames = 'p
   const isLoading = loading ? `flex` : `hidden`;
 
   return (
-    <div className={`relative bg-white dark:bg-quartz-200 flex flex-col overflow-hidden border border-quartz-900 dark:border-quartz-450 cursor-default transition-all ease-in-out ${classNames}`}>
+    <div className={`relative card-border card-background flex flex-col overflow-hidden cursor-default transition-all ease-in-out ${classNames}`}>
       <div className={`${contentClassnames}`}>
         {children}
       </div>

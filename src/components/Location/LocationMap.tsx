@@ -9,7 +9,7 @@ type LocationMapProps = {
 };
 
 export default function LocationMap({ isHoveredOrFocused, map, info = false }: Readonly<LocationMapProps>) {
-  const hoverBorderstyle = isHoveredOrFocused ? 'border-quartz-900 dark:border-quartz-450' : 'border-quartz-850 dark:border-quartz-350';
+  const hoverBorderstyle = isHoveredOrFocused ? 'card-border' : 'border-quartz-850 dark:border-quartz-350';
   const mapStyleIfInfoLoaded = info ? `lg:w-[60%] border-b lg:border-b-0 lg:border-r ${hoverBorderstyle}` : 'lg:w-full max-h-80';
 
   return (

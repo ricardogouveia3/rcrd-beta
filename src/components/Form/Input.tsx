@@ -10,7 +10,7 @@ type InputProps = {
 };
 
 const inputDefaultStyles =
-  "block w-full text-sm text-quartz-300 rounded-lg p-2.5 dark:placeholder-quartz-750 dark:text-white bg-transparent border border-quartz-900 dark:border-quartz-450";
+  "block w-full text-sm text-quartz-300 rounded-lg p-2.5 dark:placeholder-quartz-750 dark:text-white bg-transparent border card-border";
 
 const labelDefaultStyles =
   "block mb-2 text-sm font-medium text-quartz-300 dark:text-quartz-800";
