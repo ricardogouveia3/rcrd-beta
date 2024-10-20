@@ -6,7 +6,6 @@ export const blogAPI = {
       .then((res) => res.json())
       .catch(() => {
         console.error("Unable to fetch posts data from Dev.to");
-        return [];
       });
   },
 };

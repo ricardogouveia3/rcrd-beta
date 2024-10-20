@@ -22,7 +22,6 @@ export default function PostsSection() {
       })
       .catch((error) => {
         console.error("Error fetching posts:", error);
-        setLoading(false);
       });
   }, [maxRendered]);
 
