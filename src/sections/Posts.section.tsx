@@ -25,7 +25,7 @@ export default function PostsSection() {
       });
   }, [maxRendered]);
 
-  const gridClassNames = `lg:col-start-1 md:col-span-4 lg:col-span-7 md:row-start-6 lg:row-start-5`;
+  const gridClassNames = `lg:col-start-1 md:col-span-4 lg:col-span-7 md:row-start-5 lg:row-start-5`;
 
   return (
     <Card classNames={`${gridClassNames}`} loading={loading}>

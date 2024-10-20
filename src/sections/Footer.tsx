@@ -1,7 +1,7 @@
 import Card from "../components/Card/Card";
 import { currentYear } from "../utils/date";
 
-const gridClassNames = `md:col-span-6 lg:col-span-12`;
+const gridClassNames = `md:col-span-6 lg:col-span-12 md:row-start-7 lg:row-start-6`;
 
 export default function Footer() {
   return (
