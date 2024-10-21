@@ -1,8 +1,10 @@
 import { useState } from "react";
 import images from "../assets/images";
 import Card from "../components/Card/Card";
+import { useTranslation } from "react-i18next";
 
 export default function AboutMe() {
+  const { t } = useTranslation();
   const avatar = images.avatar;
   const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
 
@@ -38,8 +40,8 @@ export default function AboutMe() {
         <h1 className="font-bold text-2xl lg:text-4xl mb-1 lg:mb-3 tracking-tight">Ricardo Gouveia</h1>
 
         <h2 className="font-medium text-lg md:text-xl lg:text-2xl smooth-text-color tracking-tight mb-2">
-          a <span className="default-text-color font-bold">front-end developer</span> and{" "}
-          <span className="default-text-color font-bold">UI designer</span> currently working at{" "}
+          {t('aboutMe.a')} <span className="default-text-color font-bold">{t('aboutMe.primaryRole')}</span> {t('aboutMe.and')}&nbsp;
+          <span className="default-text-color font-bold">{t('aboutMe.secondaryRole')}</span> {t('aboutMe.currentlyWorking')}&nbsp;
           <a
             href="https://www.thoughtworks.com/"
             target="_blank"

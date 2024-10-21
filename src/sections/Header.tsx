@@ -21,8 +21,8 @@ const Header: FC<HeaderProps> = ({
     : images.icons.moon;
 
   const ToogleLanguageIcon: string = language === 'pt-br'
-    ? images.flags.br
-    : images.flags.gb;
+    ? images.flags.gb
+    : images.flags.br;
 
   return (
     <header className="flex justify-center gap-3">

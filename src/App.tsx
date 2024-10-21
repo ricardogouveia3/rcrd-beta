@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import i18n from "@utils/i18n";
 
 import AppContainer from "./components/Containers/AppContainer";
 import MainWrapper from "./components/Containers/SectionContainer";
@@ -19,7 +20,6 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [language, setLanguage] = useState('en');
 
-
   const handleDarkModeToggle = () => {
     setDarkMode(!darkMode);
   };
@@ -28,6 +28,10 @@ export default function App() {
     const newLanguage = language === 'en' ? 'pt-br' : 'en';
     setLanguage(newLanguage);
   };
+
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language]);
 
   return (
     <AppContainer darkMode={darkMode}>

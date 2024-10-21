@@ -22,6 +22,14 @@ export default defineConfig((configEnv) => ({
     gzipPlugin(),
     linterPlugin({
       include: ["./src/**/*.ts", "./src/**/*.tsx"],
+      exclude: [
+        "./src/assets/*",
+        "./src/locales/*",
+        "./src/data/*",
+        "./src/utils/*",
+        "./src/constants/*",
+        "./src/api/*",
+      ],
       linters: [
         new EsLinter({
           configEnv: configEnv,
@@ -36,6 +44,16 @@ export default defineConfig((configEnv) => ({
   ],
   resolve: {
     alias: {
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@sections": path.resolve(__dirname, "./src/sections"),
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
+      "@types": path.resolve(__dirname, "./src/types"),
+      "@apis": path.resolve(__dirname, "./src/api"),
+      "@constants": path.resolve(__dirname, "./src/constants"),
+      "@utils": path.resolve(__dirname, "./src/utils"),
+      "@data": path.resolve(__dirname, "./src/data"),
+      "@locales": path.resolve(__dirname, "./src/locales"),
+      "@assets": path.resolve(__dirname, "./src/assets"),
       "@logos": path.resolve(__dirname, "./src/assets/logos"),
       "@icons": path.resolve(__dirname, "./src/assets/icons"),
       "@flags": path.resolve(__dirname, "./src/assets/flags"),

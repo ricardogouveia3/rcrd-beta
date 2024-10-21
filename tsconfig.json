@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "target": "ES2022",
     "useDefineForClassFields": true,
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -16,7 +17,25 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "incremental": false,
-    "types": ["node"]
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@sections/*": ["src/sections/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@types/*": ["src/types/*"],
+      "@apis/*": ["src/api/*"],
+      "@constants/*": ["src/constants/*"],
+      "@utils/*": ["src/utils/*"],
+      "@data/*": ["src/data/*"],
+      "@locales/*": ["src/locales/*"],
+      "@assets/*": ["src/assets/*"],
+      "@logos/*": ["src/assets/logos/*"],
+      "@icons/*": ["src/assets/icons/*"],
+      "@flags/*": ["src/assets/flags/*"],
+      "@maps/*": ["src/assets/maps/*"]
+    }
   },
   "include": ["src/**/*", "types/**/*", "vite.config.ts", "tailwind.config.js"],
   "exclude": ["node_modules"]

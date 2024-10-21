@@ -1,0 +1,29 @@
+{
+  "aboutMe": {
+    "a": "um",
+    "primaryRole": "desenvolvedor front-end",
+    "and": "e",
+    "secondaryRole": "designer de UI",
+    "currentlyWorking": "trabalhando na"
+  },
+  "contact": {},
+  "experience": {},
+  "footer": {},
+  "header": {},
+  "location": {
+    "based": "Atualmente em",
+    "city": "São Paulo, Brasil"
+  },
+  "marquee": {
+    "stack": "Tecnologias:"
+  },
+  "phrase": {
+    "first": "Como desenvolvedor front-end, crio experiências de usuário por meio de um código limpo e uma componentização cuidadosa.",
+    "second": "Com expertise em Angular, React e mais, venho construindo soluções digitais desde 2015, focado em criar interfaces responsivas e envolventes que atendam aos padrões modernos da web."
+  },
+  "posts": {},
+  "projects": {},
+  "social": {
+    "getInTouch": "Entre em contato:"
+  }
+}

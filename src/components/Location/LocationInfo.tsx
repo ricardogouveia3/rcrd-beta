@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { WeatherInfo } from "../../types/WeatherInfo";
 
 type LocationInfoProps = {
@@ -7,16 +8,18 @@ type LocationInfoProps = {
 };
 
 export default function LocationInfo({ loading = false, weatherInfo, currentTime }: Readonly<LocationInfoProps>) {
+  const { t } = useTranslation();
+
   return (
     <div>
       {(!loading && weatherInfo) && (
         <div className="p-4 lg:p-6 h-full flex flex-col font-medium smooth-text-color tracking-tight">
           <span className="text-sm">
-            Based in
+            {t('location.based')}
           </span>
           <div className="h-full flex lg:flex-col justify-between">
             <div>
-              <p className="default-text-color font-bold text-lg">São Paulo, Brazil</p>
+              <p className="default-text-color font-bold text-lg">{t('location.city')}</p>
               <span className="text-sm">{weatherInfo.coordinates.latitude}, {weatherInfo.coordinates.longitude}</span>
             </div>
 

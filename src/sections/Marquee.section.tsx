@@ -1,12 +1,14 @@
 import { useState } from "react";
 import MarqueeContent from "../components/Marquee/MarqueeContent";
 import Card from "../components/Card/Card";
+import { useTranslation } from "react-i18next";
 
 type MarqueeSectionProps = {
   darkMode?: boolean;
 };
 
 export default function MarqueeSection({ darkMode = true }: Readonly<MarqueeSectionProps>) {
+  const { t } = useTranslation();
   const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
 
   const handleInteraction = () => setIsHoveredOrFocused(true);
@@ -21,7 +23,7 @@ export default function MarqueeSection({ darkMode = true }: Readonly<MarqueeSect
         onMouseLeave={handleLeaveOrBlur}
         onBlur={handleLeaveOrBlur}>
         <p id="marquee-header" className="text-lg/7 font-medium tracking-tight text-gray-950 dark:text-white">
-          I can work with:
+          {t("marquee.stack")}
         </p>
         <MarqueeContent darkMode={darkMode} isHoveredOrFocused={isHoveredOrFocused} />
       </section>
