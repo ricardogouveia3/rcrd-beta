@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      gridColumn: {
+        'span-16': 'span 16 / span 16',
+      },
       fontFamily: {
         'sans': ['"Inter"', ...defaultTheme.fontFamily.sans],
       },
