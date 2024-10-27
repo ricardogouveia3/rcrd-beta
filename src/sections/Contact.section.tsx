@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
 import ContactForm from "../components/Form/ContactForm";
+import gridClassNames from "@layout/grid";
 
 export default function Contact() {
   const [isHuman, setIsHuman] = useState(false);
@@ -21,10 +22,9 @@ export default function Contact() {
 
   const isFormValid = !!(email && subject && message && isHuman);
 
-  const gridClassNames = `col-start-1 lg:col-start-8 md:col-span-6 lg:col-span-5 lg:row-start-5 md:row-start-6`;
 
   return (
-    <Card classNames={`${gridClassNames}`} contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
+    <Card classNames={gridClassNames.contact} contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
       <h3 className="text-lg/7 mb-4 font-medium text-gray-950 dark:text-white">
         Leave a message:
       </h3>

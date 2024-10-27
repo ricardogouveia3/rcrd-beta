@@ -6,6 +6,7 @@ import { getCurrentTime } from "../utils/time";
 import LocationMap from "../components/Location/LocationMap";
 import LocationInfo from "../components/Location/LocationInfo";
 import { COORDINATES, MAP_SP_BR, TIMEZONES } from "../constants/constants";
+import gridClassNames from "@layout/grid";
 
 export default function LocationSection() {
   const [weatherInfo, setWeatherInfo] = useState<WeatherInfo | null>(null);
@@ -31,11 +32,9 @@ export default function LocationSection() {
     fetchWeather();
   }, [coordinates]);
 
-  const gridClassNames = `md:col-start-4 lg:col-start-7 row-start-2 md:row-start-1 md:col-span-3 lg:col-span-6`;
-
   return (
     <Card
-      classNames={`${gridClassNames}`}
+      classNames={`${gridClassNames.location}`}
       contentClassnames="w-full h-full"
       loading={loading}
     >

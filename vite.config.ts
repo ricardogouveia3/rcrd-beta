@@ -53,6 +53,7 @@ export default defineConfig((configEnv) => ({
       "@utils": path.resolve(__dirname, "./src/utils"),
       "@data": path.resolve(__dirname, "./src/data"),
       "@locales": path.resolve(__dirname, "./src/locales"),
+      "@layout": path.resolve(__dirname, "./src/layout"),
       "@assets": path.resolve(__dirname, "./src/assets"),
       "@logos": path.resolve(__dirname, "./src/assets/logos"),
       "@icons": path.resolve(__dirname, "./src/assets/icons"),

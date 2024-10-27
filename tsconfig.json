@@ -31,6 +31,7 @@
       "@data/*": ["src/data/*"],
       "@locales/*": ["src/locales/*"],
       "@assets/*": ["src/assets/*"],
+      "@layout/*": ["src/layout/*"],
       "@logos/*": ["src/assets/logos/*"],
       "@icons/*": ["src/assets/icons/*"],
       "@flags/*": ["src/assets/flags/*"],

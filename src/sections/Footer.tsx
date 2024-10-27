@@ -1,11 +1,10 @@
+import gridClassNames from "@layout/grid";
 import Card from "../components/Card/Card";
 import { currentYear } from "../utils/date";
 
-const gridClassNames = `md:col-span-6 lg:col-span-12 md:row-start-7 lg:row-start-6`;
-
 export default function Footer() {
   return (
-    <Card classNames={`${gridClassNames}  rounded-lg text-sm default-text-color text-center`}>
+    <Card classNames={`${gridClassNames.footer}  rounded-lg text-sm default-text-color text-center`}>
       <p className="text-center font-semibold">
         {currentYear} - Ricardo Gouveia - <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR" target="_blank" className="underline">CC BY-SA 4.0</a><span className="text-xs smooth-text-color font-normal block mt-1">(unless otherwise specified and/or in content replicated from other sources | Logos and trademarks belong to their respective owners)</span>
       </p>

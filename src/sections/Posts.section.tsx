@@ -7,6 +7,7 @@ import PostsItem from "../components/PostItem";
 import { PostProps } from "../types/Post.type";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import ButtonLink from "../components/Buttons/ButtonLink";
+import gridClassNames from "@layout/grid";
 
 export default function PostsSection() {
   const [posts, setPosts] = useState<PostProps[]>([]);
@@ -25,10 +26,8 @@ export default function PostsSection() {
       });
   }, [maxRendered]);
 
-  const gridClassNames = `lg:col-start-1 md:col-span-4 lg:col-span-7 md:row-start-5 lg:row-start-5`;
-
   return (
-    <Card classNames={`${gridClassNames}`} loading={loading}>
+    <Card classNames={`${gridClassNames.posts}`} loading={loading}>
       <header className="flex flex-row justify-between mb-4 items-center">
         <h4 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">Latest posts:</h4>
         <ButtonLink round="lg" link="https://dev.to/rcrd">See all posts</ButtonLink>

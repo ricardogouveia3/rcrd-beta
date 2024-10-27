@@ -26,12 +26,10 @@ const Header: FC<HeaderProps> = ({
 
   return (
     <header className="flex justify-center gap-3">
-
       <div className="flex flex-row gap-2">
         <ToggleButton onClick={handleDarkModeToggle} icon={ToogleDarkModeIcon} />
         <ToggleButton onClick={handleLanguageToggle} icon={ToogleLanguageIcon} />
       </div>
-
     </header>
   );
 };
