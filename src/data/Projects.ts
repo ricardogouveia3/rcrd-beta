@@ -1,6 +1,5 @@
 const projects = [
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 1",
     description: "Project 1 description",
     link: "https://github.com",
@@ -18,7 +17,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 2",
     description: "Project 2 description",
     link: "https://github.com",
@@ -36,7 +34,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 3",
     description: "Project 3 description",
     link: "https://github.com",
@@ -54,7 +51,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 4",
     description: "Project 4 description",
     link: "https://github.com",
@@ -72,7 +68,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 5",
     description: "Project 5 description",
     link: "https://github.com",
@@ -90,7 +85,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 6",
     description: "Project 6 description",
     link: "https://github.com",
@@ -108,7 +102,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 7",
     description: "Project 7 description",
     link: "https://github.com",
@@ -126,7 +119,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 8",
     description: "Project 8 description",
     link: "https://github.com",
@@ -144,7 +136,6 @@ const projects = [
     ],
   },
   {
-    id: Math.floor(Math.random() * 1000000),
     title: "Project 9",
     description: "Project 9 description",
     link: "https://github.com",
