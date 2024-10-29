@@ -17,62 +17,36 @@ export default function ProjectSection() {
 
       <div className={`grid ${gridCols} gap-4`}>
         {itemsToRender[2] && (
-          <div className="grid gap-4 grid-rows-4">
-            <div className="h-full max-w-full rounded-lg">
-              <ProjectItem key={itemsToRender[0].id} project={itemsToRender[0]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg row-span-2">
-              <ProjectItem key={itemsToRender[1].id} project={itemsToRender[1]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg">
-              <ProjectItem key={itemsToRender[2].id} project={itemsToRender[2]} />
-            </div>
+          <div className="grid gap-4">
+            <ProjectItem key={itemsToRender[0].id} project={itemsToRender[0]} />
+            <ProjectItem key={itemsToRender[1].id} project={itemsToRender[1]} expanded={true} />
+            <ProjectItem key={itemsToRender[2].id} project={itemsToRender[2]} />
           </div>
         )}
 
         {itemsToRender[5] && (
-          <div className="grid gap-4 grid-rows-4">
-            <div className="h-full max-w-full rounded-lg row-span-2">
-              <ProjectItem key={itemsToRender[3].id} project={itemsToRender[3]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg r">
-              <ProjectItem key={itemsToRender[4].id} project={itemsToRender[4]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg">
-              <ProjectItem key={itemsToRender[5].id} project={itemsToRender[5]} />
-            </div>
+          <div className="grid gap-4">
+            <ProjectItem key={itemsToRender[3].id} project={itemsToRender[3]} expanded={true} />
+            <ProjectItem key={itemsToRender[4].id} project={itemsToRender[4]} />
+            <ProjectItem key={itemsToRender[5].id} project={itemsToRender[5]} />
           </div>
         )}
 
         {itemsToRender[8] && (
-          <div className="grid gap-4 grid-rows-4">
-            <div className="h-full max-w-full rounded-lg">
-              <ProjectItem key={itemsToRender[6].id} project={itemsToRender[6]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg">
-              <ProjectItem key={itemsToRender[7].id} project={itemsToRender[7]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg row-span-2">
-              <ProjectItem key={itemsToRender[8].id} project={itemsToRender[8]} />
-            </div>
+          <div className="grid gap-4">
+            <ProjectItem key={itemsToRender[6].id} project={itemsToRender[6]} />
+            <ProjectItem key={itemsToRender[7].id} project={itemsToRender[7]} />
+            <ProjectItem key={itemsToRender[8].id} project={itemsToRender[8]} expanded={true} />
           </div>
         )}
-
-        {itemsToRender[8] && (
-          <div className="grid gap-4 grid-rows-4">
-            <div className="h-full max-w-full rounded-lg">
-              <ProjectItem key={itemsToRender[6].id} project={itemsToRender[6]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg row-span-2">
-              <ProjectItem key={itemsToRender[7].id} project={itemsToRender[7]} />
-            </div>
-            <div className="h-full max-w-full rounded-lg">
-              <ProjectItem key={itemsToRender[8].id} project={itemsToRender[8]} />
-            </div>
+        {itemsToRender[11] && (
+          <div className="grid gap-4">
+            <ProjectItem key={itemsToRender[9].id} project={itemsToRender[9]} />
+            <ProjectItem key={itemsToRender[10].id} project={itemsToRender[10]} expanded={true} />
+            <ProjectItem key={itemsToRender[11].id} project={itemsToRender[11]} />
           </div>
         )}
       </div>
-
     </Card>
   );
 }
