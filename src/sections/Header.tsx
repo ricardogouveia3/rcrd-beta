@@ -1,6 +1,6 @@
 import { FC } from "react";
 import ToggleButton from "../components/Buttons/ToggleButton";
-import images from "../assets/images";
+import { flags, icons } from "@assets/images";
 
 type HeaderProps = {
   darkMode: boolean;
@@ -17,12 +17,12 @@ const Header: FC<HeaderProps> = ({
 }) => {
 
   const ToogleDarkModeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>> = darkMode
-    ? images.icons.sun
-    : images.icons.moon;
+    ? icons.sun
+    : icons.moon;
 
   const ToogleLanguageIcon: string = language === 'pt-br'
-    ? images.flags.gb
-    : images.flags.br;
+    ? flags.gb
+    : flags.br;
 
   return (
     <header className="flex justify-center gap-3">

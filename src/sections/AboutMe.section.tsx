@@ -1,8 +1,8 @@
 import { useState } from "react";
-import images from "../assets/images";
 import Card from "../components/Card/Card";
 import { useTranslation } from "react-i18next";
 import gridClassNames from "@layout/grid";
+import { images } from "@assets/images";
 
 export default function AboutMe() {
   const { t } = useTranslation();

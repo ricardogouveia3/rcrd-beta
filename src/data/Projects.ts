@@ -37,6 +37,7 @@ const projects = [
       "Astro",
       "Tailwind",
     ],
+    expanded: true,
   },
   {
     id: 3,
@@ -75,6 +76,7 @@ const projects = [
       "Astro",
       "Tailwind",
     ],
+    expanded: true,
   },
   {
     id: 5,
@@ -170,6 +172,7 @@ const projects = [
       "Astro",
       "Tailwind",
     ],
+    expanded: true,
   },
   {
     id: 10,
@@ -189,6 +192,7 @@ const projects = [
       "Astro",
       "Tailwind",
     ],
+    expanded: true,
   },
   {
     id: 11,

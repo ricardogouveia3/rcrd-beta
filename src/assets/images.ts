@@ -33,41 +33,40 @@ import gb from "@flags/flag-gb.png";
 
 import spbr from "@maps/sao-paulo.png";
 
-const images = {
-  avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
-  logos: {
-    angular: AngularIcon,
-    bootstrap: BootstrapIcon,
-    css3: Css3Icon,
-    figma: FigmaIcon,
-    git: GitIcon,
-    html5: Html5Icon,
-    js: JsIcon,
-    nextjs: NextjsIcon,
-    reactNative: ReactNativeIcon,
-    react: ReactIcon,
-    sass: SassIcon,
-    typescript: TypescriptIcon,
-    vue: VueIcon,
-    wordpress: WordpressIcon,
-    bluesky: bluesky,
-    dribbble: dribbble,
-    email: email,
-    github: github,
-    linkedin: linkedin,
-    instagram: instagram,
-  },
-  icons: {
-    sun: sun,
-    moon: moon,
-  },
-  flags: {
-    br: br,
-    gb: gb,
-  },
-  maps: {
-    spbr: spbr,
-  },
+export const icons = {
+  sun: sun,
+  moon: moon,
 };
 
-export default images;
+export const flags = {
+  br: br,
+  gb: gb,
+};
+
+export const logos = {
+  angular: AngularIcon,
+  bootstrap: BootstrapIcon,
+  css3: Css3Icon,
+  figma: FigmaIcon,
+  git: GitIcon,
+  html5: Html5Icon,
+  js: JsIcon,
+  nextjs: NextjsIcon,
+  reactNative: ReactNativeIcon,
+  react: ReactIcon,
+  sass: SassIcon,
+  typescript: TypescriptIcon,
+  vue: VueIcon,
+  wordpress: WordpressIcon,
+  bluesky: bluesky,
+  dribbble: dribbble,
+  email: email,
+  github: github,
+  linkedin: linkedin,
+  instagram: instagram,
+};
+
+export const images = {
+  avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
+  mapspbr: spbr,
+};

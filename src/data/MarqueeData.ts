@@ -1,23 +1,23 @@
-import images from "../assets/images";
+import { logos } from "@assets/images";
 
 export const iconsMap: Record<
   string,
   React.ComponentType<React.SVGProps<SVGSVGElement>>
 > = {
-  angular: images.logos.angular,
-  bootstrap: images.logos.bootstrap,
-  css3: images.logos.css3,
-  figma: images.logos.figma,
-  git: images.logos.git,
-  html5: images.logos.html5,
-  js: images.logos.js,
-  nextjs: images.logos.nextjs,
-  reactNative: images.logos.reactNative,
-  react: images.logos.react,
-  sass: images.logos.sass,
-  typescript: images.logos.typescript,
-  vue: images.logos.vue,
-  wordpress: images.logos.wordpress,
+  angular: logos.angular,
+  bootstrap: logos.bootstrap,
+  css3: logos.css3,
+  figma: logos.figma,
+  git: logos.git,
+  html5: logos.html5,
+  js: logos.js,
+  nextjs: logos.nextjs,
+  reactNative: logos.reactNative,
+  react: logos.react,
+  sass: logos.sass,
+  typescript: logos.typescript,
+  vue: logos.vue,
+  wordpress: logos.wordpress,
 };
 
 const marqueeItems = [

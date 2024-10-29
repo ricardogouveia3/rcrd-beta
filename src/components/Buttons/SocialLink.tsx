@@ -1,16 +1,18 @@
 import { ReactNode } from "react";
 import ButtonLink from "./ButtonLink";
+import Icon from "@components/Icon"; // Importe o tipo IconName
+import { IconName } from "../../types/Icon";
 
 type SocialLinkProps = {
   children: ReactNode;
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  iconName?: IconName;  // Use IconName em vez de string
   link: string;
 };
 
-export default function SocialLink({ children, icon: Icon, link }: Readonly<SocialLinkProps>) {
+export default function SocialLink({ children, iconName, link }: Readonly<SocialLinkProps>) {
   return (
     <ButtonLink link={link} round="full">
-      {Icon && <Icon className="w-4 default-text-color" />}
+      {iconName && <Icon name={iconName} />}
       &nbsp;
       <span className="text-xs font-semibold default-text-color">{children}</span>
     </ButtonLink>

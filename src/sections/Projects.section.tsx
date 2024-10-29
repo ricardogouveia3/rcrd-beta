@@ -6,8 +6,6 @@ import ProjectItem from "@components/ProjectItem";
 import { Project } from "../types/Project.type.ts";
 
 const ProjectSection = () => {
-  const expandedItems = [1, 3, 8, 9];
-
   const isAbove2xl = useBreakpoint("2xl").isAbove2xl;
   const isAboveLg = useBreakpoint("lg").isAboveLg;
   const isAboveMd = useBreakpoint("md").isAboveMd;
@@ -33,13 +31,12 @@ const ProjectSection = () => {
       <div className={`grid ${gridCols} gap-4`}>
         {projectGroups.map((group, index) => (
           <div key={index} className="grid gap-4">
-            {group.map((project, idx) => {
-              const globalIndex = index * 3 + idx;
+            {group.map((project) => {
               return (
                 <ProjectItem
                   key={project.id}
                   project={project}
-                  expanded={expandedItems.includes(globalIndex)}
+                  expanded={project.expanded}
                 />
               );
             })}

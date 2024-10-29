@@ -5,4 +5,5 @@ export type Project = {
   link: string;
   imgSrc: string;
   tags: string[];
+  expanded?: boolean;
 };
