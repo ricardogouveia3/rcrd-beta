@@ -1,40 +1,20 @@
-import { logos } from "@assets/images";
-
-export const iconsMap: Record<
-  string,
-  React.ComponentType<React.SVGProps<SVGSVGElement>>
-> = {
-  angular: logos.angular,
-  bootstrap: logos.bootstrap,
-  css3: logos.css3,
-  figma: logos.figma,
-  git: logos.git,
-  html5: logos.html5,
-  js: logos.js,
-  nextjs: logos.nextjs,
-  reactNative: logos.reactNative,
-  react: logos.react,
-  sass: logos.sass,
-  typescript: logos.typescript,
-  vue: logos.vue,
-  wordpress: logos.wordpress,
-};
+import { IconName } from "../types/Icon";
 
 const marqueeItems = [
-  { key: "angular", label: "Angular" },
-  { key: "bootstrap", label: "Bootstrap" },
-  { key: "css3", label: "CSS3" },
-  { key: "figma", label: "Figma" },
-  { key: "git", label: "Git" },
-  { key: "html5", label: "HTML5" },
-  { key: "js", label: "JavaScript" },
-  { key: "nextjs", label: "NextJS" },
-  { key: "reactNative", label: "React Native" },
-  { key: "react", label: "React" },
-  { key: "sass", label: "Sass" },
-  { key: "typescript", label: "Typescript" },
-  { key: "vue", label: "VueJS" },
-  { key: "wordpress", label: "Wordpress" },
+  { iconName: "angular" as IconName, label: "Angular" },
+  { iconName: "bootstrap" as IconName, label: "Bootstrap" },
+  { iconName: "css3" as IconName, label: "CSS3" },
+  { iconName: "figma" as IconName, label: "Figma" },
+  { iconName: "git" as IconName, label: "Git" },
+  { iconName: "html5" as IconName, label: "HTML5" },
+  { iconName: "js" as IconName, label: "JavaScript" },
+  { iconName: "nextjs" as IconName, label: "NextJS" },
+  { iconName: "reactNative" as IconName, label: "React Native" },
+  { iconName: "react" as IconName, label: "React" },
+  { iconName: "sass" as IconName, label: "Sass" },
+  { iconName: "typescript" as IconName, label: "Typescript" },
+  { iconName: "vue" as IconName, label: "VueJS" },
+  { iconName: "wordpress" as IconName, label: "Wordpress" },
 ];
 
 function shuffleArray<T>(array: T[]): T[] {

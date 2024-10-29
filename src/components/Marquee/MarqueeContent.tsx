@@ -1,7 +1,8 @@
 import Marquee from "react-fast-marquee";
 import MarqueeItem from "./MarqueeItem";
-import { iconsMap, marqueeItemsLeft, marqueeItemsRight } from "../../data/MarqueeData";
+import { marqueeItemsLeft, marqueeItemsRight } from "../../data/MarqueeData";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
+import { IconName } from "../../types/Icon";
 
 type MarqueeContentProps = {
   darkMode?: boolean;
@@ -11,14 +12,12 @@ type MarqueeContentProps = {
 const MarqueeContent = ({ darkMode = true, isHoveredOrFocused = false }: Readonly<MarqueeContentProps>) => {
   const { isAboveSm } = useBreakpoint("sm");
   const marqueeGradientWidth = isAboveSm ? 100 : 20;
-
   const marqueeGradientColor = darkMode ? "#242424" : "#ffffff";
 
-  const renderMarqueeItems = (items: { key: keyof typeof iconsMap; label: string }[]) => {
-    return items.map(({ key, label }) => {
-      const Icon = iconsMap[key];
+  const renderMarqueeItems = (items: { iconName: IconName, label: string }[]) => {
+    return items.map(({ iconName, label }) => {
       return (
-        <MarqueeItem key={key} icon={<Icon className="w-4 text-current" />}>
+        <MarqueeItem iconName={iconName} key={label}>
           {label}
         </MarqueeItem>
       );
