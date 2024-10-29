@@ -5,48 +5,49 @@ import projects from "@data/Projects";
 import ProjectItem from "@components/ProjectItem";
 import { Project } from "../types/Project.type.ts";
 
-export default function ProjectSection() {
+const ProjectSection = () => {
+  const expandedItems = [1, 3, 8, 9];
+
+  const isAbove2xl = useBreakpoint("2xl").isAbove2xl;
+  const isAboveLg = useBreakpoint("lg").isAboveLg;
   const isAboveMd = useBreakpoint("md").isAboveMd;
-  const maxRendered = isAboveMd ? projects.length : 3;
-  const itemsToRender = projects.slice(0, maxRendered) as Project[];
-  const gridCols = isAboveMd ? "grid-cols-4" : "grid-cols-1";
+
+  const getGridSettings = (projects: Project[]) => {
+    if (isAbove2xl) return { gridCols: projects.length >= 12 ? "grid-cols-4" : "grid-cols-3", maxRendered: projects.length };
+    if (isAboveLg) return { gridCols: projects.length >= 9 ? "grid-cols-3" : "grid-cols-2", maxRendered: 9 };
+    if (isAboveMd) return { gridCols: projects.length >= 6 ? "grid-cols-2" : "grid-cols-1", maxRendered: 6 };
+    return { gridCols: "grid-cols-1", maxRendered: 3 };
+  };
+
+  const { gridCols, maxRendered } = getGridSettings(projects);
+  const itemsToRender = projects.slice(0, maxRendered);
+
+  const projectGroups = Array.from({ length: Math.ceil(itemsToRender.length / 3) }, (_, i) =>
+    itemsToRender.slice(i * 3, i * 3 + 3)
+  );
 
   return (
     <Card classNames={`${gridClassNames.projects}`} contentClassnames="p-4 lg:p-6 flex flex-col gap-4">
-      <h3 className="text-lg/7 mb-4 font-medium text-gray-950 dark:text-white">Projects:</h3>
+      <h3 className="text-lg/7 mb-4 font-medium default-text-color">Projects:</h3>
 
       <div className={`grid ${gridCols} gap-4`}>
-        {itemsToRender[2] && (
-          <div className="grid gap-4">
-            <ProjectItem key={itemsToRender[0].id} project={itemsToRender[0]} />
-            <ProjectItem key={itemsToRender[1].id} project={itemsToRender[1]} expanded={true} />
-            <ProjectItem key={itemsToRender[2].id} project={itemsToRender[2]} />
+        {projectGroups.map((group, index) => (
+          <div key={index} className="grid gap-4">
+            {group.map((project, idx) => {
+              const globalIndex = index * 3 + idx;
+              return (
+                <ProjectItem
+                  key={project.id}
+                  project={project}
+                  expanded={expandedItems.includes(globalIndex)}
+                />
+              );
+            })}
           </div>
-        )}
-
-        {itemsToRender[5] && (
-          <div className="grid gap-4">
-            <ProjectItem key={itemsToRender[3].id} project={itemsToRender[3]} expanded={true} />
-            <ProjectItem key={itemsToRender[4].id} project={itemsToRender[4]} />
-            <ProjectItem key={itemsToRender[5].id} project={itemsToRender[5]} />
-          </div>
-        )}
-
-        {itemsToRender[8] && (
-          <div className="grid gap-4">
-            <ProjectItem key={itemsToRender[6].id} project={itemsToRender[6]} />
-            <ProjectItem key={itemsToRender[7].id} project={itemsToRender[7]} />
-            <ProjectItem key={itemsToRender[8].id} project={itemsToRender[8]} expanded={true} />
-          </div>
-        )}
-        {itemsToRender[11] && (
-          <div className="grid gap-4">
-            <ProjectItem key={itemsToRender[9].id} project={itemsToRender[9]} />
-            <ProjectItem key={itemsToRender[10].id} project={itemsToRender[10]} expanded={true} />
-            <ProjectItem key={itemsToRender[11].id} project={itemsToRender[11]} />
-          </div>
-        )}
+        ))}
       </div>
     </Card>
   );
-}
+};
+
+export default ProjectSection;

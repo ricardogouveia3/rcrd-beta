@@ -1,7 +1,7 @@
 import { Project } from "../types/Project.type.ts";
 
 export default function ProjectItem({ project, expanded = false }: Readonly<{ project: Project, expanded?: boolean }>) {
-  const height = expanded ? "h-60" : "h-full";
+  const height = expanded ? "min-h-60" : "h-full";
   const tagsToRender = project.tags.slice(0, 4);
 
   return (
