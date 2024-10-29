@@ -24,7 +24,6 @@
       "@components/*": ["src/components/*"],
       "@sections/*": ["src/sections/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@types/*": ["src/types/*"],
       "@apis/*": ["src/api/*"],
       "@constants/*": ["src/constants/*"],
       "@utils/*": ["src/utils/*"],
