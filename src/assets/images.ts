@@ -38,10 +38,7 @@ export const icons = {
   moon: moon,
 };
 
-export const flags = {
-  br: br,
-  gb: gb,
-};
+export const flags = {};
 
 export const logos = {
   angular: AngularIcon,
@@ -68,5 +65,7 @@ export const logos = {
 
 export const images = {
   avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
-  mapspbr: spbr,
+  map_spbr: spbr,
+  flag_br: br,
+  flag_gb: gb,
 };

@@ -1,7 +1,7 @@
 import { images } from "@assets/images";
 
 export const MAP_SP_BR = {
-  imgSrc: images.mapspbr,
+  imgSrc: images.map_spbr,
   alt: "São Paulo Downtown Map",
   link: "https://www.openstreetmap.org/#map=13/-23.55085/-46.63130",
 };
