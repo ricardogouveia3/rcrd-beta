@@ -49,7 +49,7 @@ export default function SocialLink({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {iconName && <Icon name={iconName} />}
+      {iconName && <Icon name={iconName} color={textColor} />}
       &nbsp;
       <span
         className="text-xs font-semibold"

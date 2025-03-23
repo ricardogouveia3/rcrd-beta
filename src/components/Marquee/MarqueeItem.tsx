@@ -25,7 +25,7 @@ export default function MarqueeItem({ children, iconName, hoverColor = "#000000"
       className="flex items-center px-4 mx-2 py-2 border rounded-lg gap-2 justify-center default-border transition-colors duration-300"
       style={{ backgroundColor: bgColor }}
     >
-      <Icon name={iconName} />
+      <Icon name={iconName} color={ isHoveredOrFocused ? getContrastColor(hoverColor) : defaultTextColor } />
       <span className="text-xs font-semibold default-text-color"
         style={
           { color: isHoveredOrFocused ? getContrastColor(hoverColor) : defaultTextColor }

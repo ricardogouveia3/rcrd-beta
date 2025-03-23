@@ -9,4 +9,5 @@ export type IconName = LogoKey | IconKey | FlagKey;
 export type IconProps = {
   name: IconName;
   className?: string;
+  color?: string;
 };
