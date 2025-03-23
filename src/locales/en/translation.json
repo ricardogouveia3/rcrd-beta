@@ -6,7 +6,19 @@
     "secondaryRole": "UI designer",
     "currentlyWorking": "currently working @"
   },
-  "contact": {},
+  "contact": {
+    "title": "Leave a message",
+    "email": "Your e-mail",
+    "subject": "Subject",
+    "message": "Message",
+    "captcha": "I'm human",
+    "button": {
+      "send": "Send",
+      "sendSuccess": "Message sent!",
+      "sendError": "Error sending message",
+      "sending": "Sending..."
+    }
+  },
   "experience": {},
   "footer": {},
   "header": {},

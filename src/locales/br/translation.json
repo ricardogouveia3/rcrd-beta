@@ -6,7 +6,19 @@
     "secondaryRole": "designer de UI",
     "currentlyWorking": "trabalhando na"
   },
-  "contact": {},
+  "contact": {
+    "button": {
+      "send": "Enviar",
+      "sendSuccess": "Mensagem enviada!",
+      "sendError": "Erro ao enviar mensagem",
+      "sending": "Enviando..."
+    },
+    "email": "Seu e-mail",
+    "captcha": "Não sou um robô",
+    "message": "Mensagem",
+    "subject": "Assunto",
+    "title": "Deixe uma mensagem"
+  },
   "experience": {},
   "footer": {},
   "header": {},

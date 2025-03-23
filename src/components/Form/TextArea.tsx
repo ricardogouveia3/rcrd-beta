@@ -4,6 +4,7 @@ type TextAreaProps = {
   id: string;
   label: string;
   value: string;
+  name?: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   rows?: number;
   required?: boolean;
@@ -17,7 +18,7 @@ const inputDefaultStyles =
 const labelDefaultStyles =
   "block mb-2 text-sm font-medium default-text-color";
 
-const TextArea = ({ id, label, value, onChange, rows = 5, required = false, inputStyles = inputDefaultStyles, labelStyles = labelDefaultStyles }: TextAreaProps) => (
+const TextArea = ({ id, label, value, name, onChange, rows = 5, required = false, inputStyles = inputDefaultStyles, labelStyles = labelDefaultStyles }: TextAreaProps) => (
   <div>
     <label htmlFor={id} className={labelStyles}>
       {label}
@@ -26,6 +27,7 @@ const TextArea = ({ id, label, value, onChange, rows = 5, required = false, inpu
       id={id}
       rows={rows}
       className={inputStyles}
+      name={name}
       value={value}
       onChange={onChange}
       required={required}
