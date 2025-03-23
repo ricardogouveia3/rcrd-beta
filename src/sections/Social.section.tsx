@@ -5,7 +5,11 @@ import gridClassNames from "@layout/grid";
 import { IconName } from "src/types/Icon";
 import { socialItems } from "@data/Social";
 
-export default function SocialSection() {
+type SocialSectionProps = {
+  darkMode?: boolean;
+};
+
+export default function SocialSection({ darkMode = true }: Readonly<SocialSectionProps>) {
   const { t } = useTranslation();
 
   const renderSocialItems = (
@@ -17,6 +21,7 @@ export default function SocialSection() {
         key={label}
         hoverColor={hoverColor}
         link={link}
+        darkMode={darkMode}
       >
         {label}
       </SocialLink>

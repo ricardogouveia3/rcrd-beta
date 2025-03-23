@@ -45,7 +45,7 @@ export default function App() {
       <MainWrapper>
         <AboutMe />
         <LocationSection />
-        <SocialSection />
+        <SocialSection darkMode={darkMode} />
         <MarqueeSection darkMode={darkMode} />
         <PhraseSection />
         <ProjectSection />

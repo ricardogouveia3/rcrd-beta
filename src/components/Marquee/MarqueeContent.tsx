@@ -23,7 +23,8 @@ const MarqueeContent = ({ darkMode = true, isHoveredOrFocused = false }: Readonl
         iconName={iconName}
         key={label}
         hoverColor={hoverColor}
-        isHoveredOrFocused={isHoveredOrFocused} // Passando a prop
+        isHoveredOrFocused={isHoveredOrFocused}
+        darkMode={darkMode}
       >
         {label}
       </MarqueeItem>

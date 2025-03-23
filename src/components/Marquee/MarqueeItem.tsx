@@ -1,16 +1,19 @@
 import Icon from "@components/Icon";
 import { IconName } from "../../types/Icon";
 import { ReactNode, useEffect, useState } from "react";
+import { getContrastColor } from "@utils/color";
 
 type MarqueeItemProps = {
   children: ReactNode;
   iconName: IconName;
   hoverColor?: string;
   isHoveredOrFocused?: boolean;
+  darkMode?: boolean;
 };
 
-export default function MarqueeItem({ children, iconName, hoverColor, isHoveredOrFocused = false }: Readonly<MarqueeItemProps>) {
-  const defaultColor = "transparent";
+export default function MarqueeItem({ children, iconName, hoverColor = "#000000", isHoveredOrFocused = false, darkMode = true }: Readonly<MarqueeItemProps>) {
+  const defaultColor = "unset";
+  const defaultTextColor = darkMode ? "#FFFFFF" : "#1A202C";
   const [bgColor, setBgColor] = useState(defaultColor);
 
   useEffect(() => {
@@ -23,7 +26,10 @@ export default function MarqueeItem({ children, iconName, hoverColor, isHoveredO
       style={{ backgroundColor: bgColor }}
     >
       <Icon name={iconName} />
-      <span className="text-xs font-semibold default-text-color">{children}</span>
+      <span className="text-xs font-semibold default-text-color"
+        style={
+          { color: isHoveredOrFocused ? getContrastColor(hoverColor) : defaultTextColor }
+        }>{children}</span>
     </div>
   );
 }
