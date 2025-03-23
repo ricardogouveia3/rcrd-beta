@@ -14,23 +14,43 @@ const MarqueeContent = ({ darkMode = true, isHoveredOrFocused = false }: Readonl
   const marqueeGradientWidth = isAboveSm ? 100 : 20;
   const marqueeGradientColor = darkMode ? "#242424" : "#ffffff";
 
-  const renderMarqueeItems = (items: { iconName: IconName, label: string }[]) => {
-    return items.map(({ iconName, label }) => {
-      return (
-        <MarqueeItem iconName={iconName} key={label}>
-          {label}
-        </MarqueeItem>
-      );
-    });
+  const renderMarqueeItems = (
+    items: { iconName: IconName; label: string; hoverColor?: string }[],
+    isHoveredOrFocused: boolean
+  ) => {
+    return items.map(({ iconName, label, hoverColor }) => (
+      <MarqueeItem
+        iconName={iconName}
+        key={label}
+        hoverColor={hoverColor}
+        isHoveredOrFocused={isHoveredOrFocused} // Passando a prop
+      >
+        {label}
+      </MarqueeItem>
+    ));
   };
 
   return (
     <div className="mt-3 flex flex-col gap-2">
-      <Marquee play={!isHoveredOrFocused} direction="left" gradient={true} gradientColor={marqueeGradientColor} gradientWidth={marqueeGradientWidth} speed={20}>
-        {renderMarqueeItems(marqueeItemsLeft)}
+      <Marquee
+        play={!isHoveredOrFocused}
+        direction="left"
+        gradient={true}
+        gradientColor={marqueeGradientColor}
+        gradientWidth={marqueeGradientWidth}
+        speed={10}
+      >
+        {renderMarqueeItems(marqueeItemsLeft, isHoveredOrFocused)}
       </Marquee>
-      <Marquee play={!isHoveredOrFocused} direction="right" gradient={true} gradientColor={marqueeGradientColor} gradientWidth={marqueeGradientWidth} speed={20}>
-        {renderMarqueeItems(marqueeItemsRight)}
+      <Marquee
+        play={!isHoveredOrFocused}
+        direction="right"
+        gradient={true}
+        gradientColor={marqueeGradientColor}
+        gradientWidth={marqueeGradientWidth}
+        speed={20}
+      >
+        {renderMarqueeItems(marqueeItemsRight, isHoveredOrFocused)}
       </Marquee>
     </div>
   );

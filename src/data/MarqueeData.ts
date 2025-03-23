@@ -1,20 +1,36 @@
 import { IconName } from "../types/Icon";
 
 const marqueeItems = [
-  { iconName: "angular" as IconName, label: "Angular" },
-  { iconName: "bootstrap" as IconName, label: "Bootstrap" },
-  { iconName: "css3" as IconName, label: "CSS3" },
-  { iconName: "figma" as IconName, label: "Figma" },
-  { iconName: "git" as IconName, label: "Git" },
-  { iconName: "html5" as IconName, label: "HTML5" },
-  { iconName: "js" as IconName, label: "JavaScript" },
-  { iconName: "nextjs" as IconName, label: "NextJS" },
-  { iconName: "reactNative" as IconName, label: "React Native" },
-  { iconName: "react" as IconName, label: "React" },
-  { iconName: "sass" as IconName, label: "Sass" },
-  { iconName: "typescript" as IconName, label: "Typescript" },
-  { iconName: "vue" as IconName, label: "VueJS" },
-  { iconName: "wordpress" as IconName, label: "Wordpress" },
+  { iconName: "angular" as IconName, label: "Angular", hoverColor: "#c3002f" },
+  {
+    iconName: "bootstrap" as IconName,
+    label: "Bootstrap",
+    hoverColor: "#0d6efd",
+  },
+  { iconName: "css3" as IconName, label: "CSS3", hoverColor: "#2965f1" },
+  { iconName: "figma" as IconName, label: "Figma", hoverColor: "#a259ff" },
+  { iconName: "git" as IconName, label: "Git", hoverColor: "#F1502F" },
+  { iconName: "html5" as IconName, label: "HTML5", hoverColor: "#e34c26" },
+  { iconName: "js" as IconName, label: "JavaScript", hoverColor: "#F0DB4F" },
+  { iconName: "nextjs" as IconName, label: "NextJS", hoverColor: "#000000" },
+  {
+    iconName: "reactNative" as IconName,
+    label: "React Native",
+    hoverColor: "#88dded",
+  },
+  { iconName: "react" as IconName, label: "React", hoverColor: "#61DBFB" },
+  { iconName: "sass" as IconName, label: "Sass", hoverColor: "#cc6699" },
+  {
+    iconName: "typescript" as IconName,
+    label: "Typescript",
+    hoverColor: "#007acc",
+  },
+  { iconName: "vue" as IconName, label: "VueJS", hoverColor: "#41B883" },
+  {
+    iconName: "wordpress" as IconName,
+    label: "Wordpress",
+    hoverColor: "#21759b",
+  },
 ];
 
 function shuffleArray<T>(array: T[]): T[] {
