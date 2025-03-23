@@ -4,14 +4,9 @@ import ContactForm from "../components/Form/ContactForm";
 import gridClassNames from "@layout/grid";
 
 export default function Contact() {
-  const [isHuman, setIsHuman] = useState(false);
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-
-  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsHuman(e.target.checked);
-  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -20,7 +15,7 @@ export default function Contact() {
     if (id === "message") setMessage(value);
   };
 
-  const isFormValid = !!(email && subject && message && isHuman);
+  const isFormValid = !!(email && subject && message);
 
 
   return (
@@ -29,11 +24,9 @@ export default function Contact() {
         Leave a message:
       </h3>
       <ContactForm
-        isHuman={isHuman}
         email={email}
         subject={subject}
         message={message}
-        handleCheckboxChange={handleCheckboxChange}
         handleInputChange={handleInputChange}
         isFormValid={isFormValid}
       />

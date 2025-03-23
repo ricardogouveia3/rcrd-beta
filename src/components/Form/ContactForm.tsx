@@ -1,36 +1,35 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import InputField from "./Input";
 import TextArea from "./TextArea";
-import CaptchaCheckbox from "./CaptchaCheckbox";
 import Button from "../Buttons/Button";
 import { useBreakpoint } from "@hooks/useBreakpoint.ts";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 type ContactFormProps = {
-    isHuman: boolean;
     email: string;
     subject: string;
     message: string;
-    handleCheckboxChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     isFormValid: boolean;
 };
 
-const ContactForm = ({ isHuman, email, subject, message, handleCheckboxChange, handleInputChange, isFormValid }: ContactFormProps) => {
+const ContactForm = ({ email, subject, message, handleInputChange, isFormValid }: ContactFormProps) => {
     const { t } = useTranslation();
     const { isAboveLg } = useBreakpoint("lg");
     const [textAreaLines] = useState(isAboveLg ? 10 : 5);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [buttonText, setButtonText] = useState(t("contact.button.send"));
+    const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
     useEffect(() => {
-        setButtonText(t("contact.button.send"))
+        setButtonText(t("contact.button.send"));
     }, [t]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!isFormValid) return;
+        if (!isFormValid || !recaptchaToken) return;
 
         setIsSubmitting(true);
         setButtonText(t("contact.button.sending"));
@@ -39,6 +38,7 @@ const ContactForm = ({ isHuman, email, subject, message, handleCheckboxChange, h
             email,
             subject,
             message,
+            "g-recaptcha-response": recaptchaToken,
         };
 
         try {
@@ -92,13 +92,10 @@ const ContactForm = ({ isHuman, email, subject, message, handleCheckboxChange, h
                 onChange={handleInputChange}
                 required
             />
-            <CaptchaCheckbox
-                id="bordered-checkbox-1"
-                checked={isHuman}
-                onChange={handleCheckboxChange}
-                label={t("contact.captcha")}
-            />
-            <Button type="submit" disabled={!isFormValid || isSubmitting}>
+
+            <ReCAPTCHA sitekey="6Lfeev0qAAAAAOxvaQ7TikINLNisNWtEudEnR4Ia" onChange={setRecaptchaToken} />
+
+            <Button type="submit" disabled={!isFormValid || isSubmitting || !recaptchaToken}>
                 {buttonText}
             </Button>
         </form>

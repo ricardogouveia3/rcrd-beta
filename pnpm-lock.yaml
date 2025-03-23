@@ -20,6 +20,9 @@ importers:
       react-fast-marquee:
         specifier: ^1.6.5
         version: 1.6.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-google-recaptcha:
+        specifier: ^3.1.0
+        version: 3.1.0(react@18.3.1)
       react-i18next:
         specifier: ^15.0.3
         version: 15.0.3(i18next@23.16.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -45,6 +48,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
+      '@types/react-google-recaptcha':
+        specifier: ^2.1.9
+        version: 2.1.9
       '@typescript-eslint/eslint-plugin':
         specifier: ^8.8.1
         version: 8.8.1(@typescript-eslint/parser@8.8.1(eslint@9.12.0(jiti@1.21.6))(typescript@5.6.2))(eslint@9.12.0(jiti@1.21.6))(typescript@5.6.2)
@@ -821,6 +827,9 @@ packages:
 
   '@types/react-dom@18.3.0':
     resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
+
+  '@types/react-google-recaptcha@2.1.9':
+    resolution: {integrity: sha512-nT31LrBDuoSZJN4QuwtQSF3O89FVHC4jLhM+NtKEmVF5R1e8OY0Jo4//x2Yapn2aNHguwgX5doAq8Zo+Ehd0ug==}
 
   '@types/react@18.3.11':
     resolution: {integrity: sha512-r6QZ069rFTjrEYgFdOck1gK7FLVsgJE7tTz0pQBczlBNUhBNk0MQH4UbnFSwjpQLMkLzgqvBBa+qGpLje16eTQ==}
@@ -1645,6 +1654,9 @@ packages:
   hmac-drbg@1.0.1:
     resolution: {integrity: sha512-Tti3gMqLdZfhOQY1Mzf/AanLiqh1WTiJgEj26ZuYQ9fbkLomzGchCws4FyrSd4VkpBfiNhaE1On+lOz894jvXg==}
 
+  hoist-non-react-statics@3.3.2:
+    resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
+
   html-minifier-terser@7.2.0:
     resolution: {integrity: sha512-tXgn3QfqPIpGl9o+K5tpcj3/MN4SfLtsx2GWwBC3SSd0tXQGyF3gsSqad8loJgKZGM3ZxbYDd5yhiBIdWpmvLA==}
     engines: {node: ^14.13.1 || >=16.0.0}
@@ -2208,6 +2220,11 @@ packages:
   randomfill@1.0.4:
     resolution: {integrity: sha512-87lcbR8+MhcWcUiQ+9e+Rwx8MyR2P7qnt15ynUlbm3TU/fjbgz4GsvfSUDTemtCCtVCqb4ZcEFlyPNTh9bBTLw==}
 
+  react-async-script@1.2.0:
+    resolution: {integrity: sha512-bCpkbm9JiAuMGhkqoAiC0lLkb40DJ0HOEJIku+9JDjxX3Rcs+ztEOG13wbrOskt3n2DTrjshhaQ/iay+SnGg5Q==}
+    peerDependencies:
+      react: '>=16.4.1'
+
   react-dom@18.3.1:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -2218,6 +2235,11 @@ packages:
     peerDependencies:
       react: '>= 16.8.0 || ^18.0.0'
       react-dom: '>= 16.8.0 || ^18.0.0'
+
+  react-google-recaptcha@3.1.0:
+    resolution: {integrity: sha512-cYW2/DWas8nEKZGD7SCu9BSuVz8iOcOLHChHyi7upUuVhkpkhYG/6N3KDiTQ3XAiZ2UAZkfvYKMfAHOzBOcGEg==}
+    peerDependencies:
+      react: '>=16.4.1'
 
   react-i18next@15.0.3:
     resolution: {integrity: sha512-BlO1P+oLKjjIxDBQ0GkAIMacgjfMbnvops+3Y5nZXF7UJ99v4KCWr0Na1azJXC8AMiNWp4kgUcFCJM7U9ZsUDg==}
@@ -3298,6 +3320,10 @@ snapshots:
   '@types/prop-types@15.7.13': {}
 
   '@types/react-dom@18.3.0':
+    dependencies:
+      '@types/react': 18.3.11
+
+  '@types/react-google-recaptcha@2.1.9':
     dependencies:
       '@types/react': 18.3.11
 
@@ -4447,6 +4473,10 @@ snapshots:
       minimalistic-assert: 1.0.1
       minimalistic-crypto-utils: 1.0.1
 
+  hoist-non-react-statics@3.3.2:
+    dependencies:
+      react-is: 16.13.1
+
   html-minifier-terser@7.2.0:
     dependencies:
       camel-case: 4.1.2
@@ -5013,6 +5043,12 @@ snapshots:
       randombytes: 2.1.0
       safe-buffer: 5.2.1
 
+  react-async-script@1.2.0(react@18.3.1):
+    dependencies:
+      hoist-non-react-statics: 3.3.2
+      prop-types: 15.8.1
+      react: 18.3.1
+
   react-dom@18.3.1(react@18.3.1):
     dependencies:
       loose-envify: 1.4.0
@@ -5023,6 +5059,12 @@ snapshots:
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  react-google-recaptcha@3.1.0(react@18.3.1):
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-async-script: 1.2.0(react@18.3.1)
 
   react-i18next@15.0.3(i18next@23.16.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
