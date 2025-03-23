@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useState } from "react";
 import ButtonLink from "./ButtonLink";
 import Icon from "@components/Icon";
 import { IconName } from "../../types/Icon";
-import { getContrastColor } from "@utils/color";  // Função que calcula a cor de contraste
+import { getContrastColor } from "@utils/color";
 
 type SocialLinkProps = {
   children: ReactNode;
@@ -46,14 +46,14 @@ export default function SocialLink({
       hoverColor={hoverColor}
       className="transition-colors duration-300 ease-in-out"
       style={{ backgroundColor: bgColor }}
-      onMouseEnter={handleMouseEnter}  // Aplica a alteração ao passar o mouse
-      onMouseLeave={handleMouseLeave}  // Restaura ao sair
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {iconName && <Icon name={iconName} />}
       &nbsp;
       <span
         className="text-xs font-semibold"
-        style={{ color: textColor }}  // Aplica a cor do texto
+        style={{ color: textColor }}
       >
         {children}
       </span>

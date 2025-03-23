@@ -1,7 +1,7 @@
 import { useState } from "react";
 import InputField from "./Input";
 import TextArea from "./TextArea";
-import CaptchaCheckbox from "./CaptchaCheckbox"; // Importe o componente
+import CaptchaCheckbox from "./CaptchaCheckbox";
 import Button from "../Buttons/Button";
 import { useBreakpoint } from "../../hooks/useBreakpoint";
 
