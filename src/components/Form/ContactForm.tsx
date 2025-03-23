@@ -93,7 +93,9 @@ const ContactForm = ({ email, subject, message, handleInputChange, isFormValid }
                 required
             />
 
-            <ReCAPTCHA sitekey="6Lfeev0qAAAAAOxvaQ7TikINLNisNWtEudEnR4Ia" onChange={setRecaptchaToken} />
+            <div className="flex justify-center w-full scale-90 md:scale-100">
+                <ReCAPTCHA sitekey="6Lfeev0qAAAAAOxvaQ7TikINLNisNWtEudEnR4Ia" onChange={setRecaptchaToken} />
+            </div>
 
             <Button type="submit" disabled={!isFormValid || isSubmitting || !recaptchaToken}>
                 {buttonText}
