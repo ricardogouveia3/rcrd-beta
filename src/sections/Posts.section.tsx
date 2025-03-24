@@ -8,9 +8,11 @@ import { PostProps } from "../types/Post.type";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import ButtonLink from "../components/Buttons/ButtonLink";
 import gridClassNames from "@layout/grid";
+import {useTranslation} from "react-i18next";
 
 export default function PostsSection() {
-  const [posts, setPosts] = useState<PostProps[]>([]);
+const { t } = useTranslation();
+const [posts, setPosts] = useState<PostProps[]>([]);
   const [loading, setLoading] = useState(true);
   const { isAboveLg } = useBreakpoint("lg");
   const maxRendered = isAboveLg ? 4 : 3;
@@ -29,8 +31,8 @@ export default function PostsSection() {
   return (
     <Card classNames={`${gridClassNames.posts}`} loading={loading}>
       <header className="flex flex-row justify-between mb-4 items-center">
-        <h4 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">Latest posts:</h4>
-        <ButtonLink round="lg" link="https://dev.to/rcrd">See all posts</ButtonLink>
+        <h4 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">{t('posts.title')}</h4>
+        <ButtonLink round="lg" link={t('posts.link')}>{t('posts.seeAll')}</ButtonLink>
       </header>
 
       {!loading && (

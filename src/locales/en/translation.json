@@ -7,7 +7,7 @@
     "currentlyWorking": "currently working @"
   },
   "contact": {
-    "title": "Leave a message",
+    "title": "Leave a message:",
     "email": "Your e-mail",
     "subject": "Subject",
     "message": "Message",
@@ -19,8 +19,16 @@
       "sending": "Sending..."
     }
   },
-  "experience": {},
-  "footer": {},
+  "experience": {
+    "title": "Work experience:",
+    "present": "Present"
+  },
+  "footer": {
+    "copy": "(unless otherwise specified and/or in content replicated from other sources | Logos and trademarks belong to their respective owners)",
+    "source": "Source code",
+    "madeWith": "Made with React + Vite",
+    "inspired": "Inspired by "
+  },
   "header": {},
   "location": {
     "based": "Based in",
@@ -33,8 +41,14 @@
     "first": "As a front-end developer, I craft user experiences through clean code and thoughtful componentization.",
     "second": "With expertise in Angular, React, and more, I’ve been building digital solutions since 2015, focused on creating responsive, engaging interfaces that meet modern web standards."
   },
-  "posts": {},
-  "projects": {},
+  "posts": {
+    "title": "Latest posts:",
+    "seeAll": "See all posts",
+    "link": "https://dev.to/rcrd"
+  },
+  "projects": {
+    "title": "Projects:"
+  },
   "social": {
     "getInTouch": "Get in touch:"
   }

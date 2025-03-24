@@ -2,8 +2,10 @@ import { useState } from "react";
 import Card from "../components/Card/Card";
 import ContactForm from "../components/Form/ContactForm";
 import gridClassNames from "@layout/grid";
+import {useTranslation} from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
@@ -21,7 +23,7 @@ export default function Contact() {
   return (
     <Card classNames={gridClassNames.contact} contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
       <h3 className="text-lg/7 mb-4 font-medium text-gray-950 dark:text-white">
-        Leave a message:
+        {t('contact.title')}
       </h3>
       <ContactForm
         email={email}

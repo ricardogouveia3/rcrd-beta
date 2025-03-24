@@ -1,3 +1,5 @@
+import {useTranslation} from "react-i18next";
+
 type ExperienceItemProps = {
   jobTitle: string,
   company: string,
@@ -6,6 +8,7 @@ type ExperienceItemProps = {
 }
 
 const ExperienceItem = ({ jobTitle, company, startDate, endDate }: Readonly<ExperienceItemProps>) => {
+  const { t } = useTranslation();
   const experienceStyle = endDate ? 'opacity-60 text-sm lg:text-base line-through' : 'text-base lg:text-lg';
 
   return (
@@ -22,7 +25,7 @@ const ExperienceItem = ({ jobTitle, company, startDate, endDate }: Readonly<Expe
         </h4>
 
         <time className="mb-1 text-sm font-normal italic leading-none smooth-text-color">
-          {startDate} - {endDate ?? 'Present'}
+          {startDate} - {endDate ?? t('experience.present')}
         </time>
       </div>
 
