@@ -10,12 +10,20 @@ import gridClassNames from "@layout/grid";
 
 export default function LocationSection() {
   const [weatherInfo, setWeatherInfo] = useState<WeatherInfo | null>(null);
-
+  const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
   const [loading, setLoading] = useState(true);
 
   const map = { ...MAP_SP_BR }
   const coordinates = COORDINATES.SAO_PAULO;
   const timezones = TIMEZONES.SAO_PAULO;
+
+  const handleInteraction = () => {
+    setIsHoveredOrFocused(true);
+  };
+
+  const handleLeaveOrBlur = () => {
+    setIsHoveredOrFocused(false);
+  };
 
   useEffect(() => {
     async function fetchWeather() {
@@ -38,8 +46,13 @@ export default function LocationSection() {
       contentClassnames="w-full h-full"
       loading={loading}
     >
-      <div className="flex flex-col lg:flex-row h-full">
-        <LocationMap map={map} info={!!weatherInfo} />
+      <div className="flex flex-col lg:flex-row h-full"
+         onMouseOver={handleInteraction}
+         onFocus={handleInteraction}
+         onMouseLeave={handleLeaveOrBlur}
+         onBlur={handleLeaveOrBlur}
+      >
+        <LocationMap map={map} info={!!weatherInfo} hover={isHoveredOrFocused}  />
         {weatherInfo && (<LocationInfo loading={loading} weatherInfo={weatherInfo} currentTime={getCurrentTime(timezones)} />)}
       </div>
     </Card>
