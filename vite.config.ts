@@ -54,6 +54,8 @@ export default defineConfig((configEnv) => ({
       "@locales": path.resolve(__dirname, "./src/locales"),
       "@layout": path.resolve(__dirname, "./src/layout"),
       "@assets": path.resolve(__dirname, "./src/assets"),
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@context": path.resolve(__dirname, "./src/context"),
       "@logos": path.resolve(__dirname, "./src/assets/logos"),
       "@icons": path.resolve(__dirname, "./src/assets/icons"),
       "@flags": path.resolve(__dirname, "./src/assets/flags"),
