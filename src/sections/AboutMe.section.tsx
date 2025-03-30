@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../components/Card/Card";
 import { useTranslation } from "react-i18next";
-import gridClassNames from "@layout/grid";
+import { GridClassNames } from "@constants/layout.ts";
 import { images } from "@assets/images";
 
 export default function AboutMe() {
@@ -21,7 +21,7 @@ export default function AboutMe() {
   };
 
   return (
-    <Card classNames={gridClassNames.aboutMe} contentClassnames="">
+    <Card classNames={GridClassNames.aboutMe} contentClassnames="">
       <div
         className="default-text-color p-4 lg:p-6"
         onMouseOver={handleInteraction}

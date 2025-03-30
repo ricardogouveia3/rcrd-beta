@@ -1,34 +1,26 @@
-import { FC } from "react";
-import ToggleButton from "../components/Buttons/ToggleButton";
+import React, { FC } from "react";
+import ToggleButton from "@components/Buttons/ToggleButton";
 import { icons, images } from "@assets/images";
+import { useTheme } from "@context/ThemeContext.tsx";
 
 type HeaderProps = {
-  darkMode: boolean;
   language: string;
-  handleDarkModeToggle: () => void;
   handleLanguageToggle: () => void;
 };
 
-const Header: FC<HeaderProps> = ({
-  darkMode,
-  language,
-  handleDarkModeToggle,
-  handleLanguageToggle,
-}) => {
+const Header: FC<HeaderProps> = ({ language, handleLanguageToggle }) => {
+  const { darkMode, toggleDarkMode } = useTheme();
 
-  const ToogleDarkModeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>> = darkMode
-    ? icons.sun
-    : icons.moon;
+  const ToggleDarkModeIcon: React.ComponentType<React.SVGProps<SVGSVGElement>> =
+    darkMode ? icons.sun : icons.moon;
 
-  const ToogleLanguageIcon: string = language === 'pt-br'
-    ? images.flag_gb
-    : images.flag_br;
+  const ToggleLanguageIcon: string = language === "pt-br" ? images.flag_gb : images.flag_br;
 
   return (
     <header className="flex justify-center gap-3">
       <div className="flex flex-row gap-2">
-        <ToggleButton onClick={handleDarkModeToggle} icon={ToogleDarkModeIcon} />
-        <ToggleButton onClick={handleLanguageToggle} icon={ToogleLanguageIcon} />
+        <ToggleButton onClick={toggleDarkMode} icon={ToggleDarkModeIcon} />
+        <ToggleButton onClick={handleLanguageToggle} icon={ToggleLanguageIcon} />
       </div>
     </header>
   );

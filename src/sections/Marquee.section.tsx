@@ -2,7 +2,7 @@ import { useState } from "react";
 import MarqueeContent from "../components/Marquee/MarqueeContent";
 import Card from "../components/Card/Card";
 import { useTranslation } from "react-i18next";
-import gridClassNames from "@layout/grid";
+import { GridClassNames } from "@constants/layout.ts";
 
 type MarqueeSectionProps = {
   darkMode?: boolean;
@@ -16,7 +16,7 @@ export default function MarqueeSection({ darkMode = true }: Readonly<MarqueeSect
   const handleLeaveOrBlur = () => setIsHoveredOrFocused(false);
 
   return (
-    <Card classNames={`${gridClassNames.marquee}`} contentClassnames="">
+    <Card classNames={`${GridClassNames.marquee}`} contentClassnames="">
       <section className="p-4 lg:p-6" aria-labelledby="marquee-header" onMouseOver={handleInteraction}
         onFocus={handleInteraction}
         onMouseLeave={handleLeaveOrBlur}

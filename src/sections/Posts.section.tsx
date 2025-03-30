@@ -7,7 +7,7 @@ import PostsItem from "../components/PostItem";
 import { PostProps } from "../types/Post.type";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import ButtonLink from "../components/Buttons/ButtonLink";
-import gridClassNames from "@layout/grid";
+import { GridClassNames } from "@constants/layout.ts";
 import {useTranslation} from "react-i18next";
 
 export default function PostsSection() {
@@ -29,7 +29,7 @@ const [posts, setPosts] = useState<PostProps[]>([]);
   }, [maxRendered]);
 
   return (
-    <Card classNames={`${gridClassNames.posts}`} loading={loading}>
+    <Card classNames={`${GridClassNames.posts}`} loading={loading}>
       <header className="flex flex-row justify-between mb-4 items-center">
         <h4 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">{t('posts.title')}</h4>
         <ButtonLink round="lg" link={t('posts.link')}>{t('posts.seeAll')}</ButtonLink>

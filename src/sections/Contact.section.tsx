@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Card from "../components/Card/Card";
 import ContactForm from "../components/Form/ContactForm";
-import gridClassNames from "@layout/grid";
+import { GridClassNames } from "@constants/layout.ts";
 import {useTranslation} from "react-i18next";
 
 export default function Contact() {
@@ -21,7 +21,7 @@ export default function Contact() {
 
 
   return (
-    <Card classNames={gridClassNames.contact} contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
+    <Card classNames={GridClassNames.contact} contentClassnames="flex flex-col p-4 lg:p-6 h-full justify-between">
       <h3 className="text-lg/7 mb-4 font-medium text-gray-950 dark:text-white">
         {t('contact.title')}
       </h3>

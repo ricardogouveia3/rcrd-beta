@@ -1,20 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AppProvider } from "@context/AppContext";
 import Layout from "./layout/Layout";
-import Home from "@pages/Home";
-import Projects from "@pages/Projects";
+import HomePage from "./pages/Home";
 
 export default function App() {
   return (
-    <AppProvider>
-      <Router>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-          </Route>
-        </Routes>
-      </Router>
-    </AppProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }

@@ -1,4 +1,4 @@
-const gridClassNames = {
+export const GridClassNames = {
   container: "grid-cols-1 md:grid-cols-6 lg:grid-cols-12",
   aboutMe: "md:col-span-3 lg:col-span-6 2xl:col-span-5 col-start-1 row-start-1",
   contact:
@@ -19,5 +19,3 @@ const gridClassNames = {
   social:
     "md:col-span-4 lg:col-span-8 2xl:col-span-7 lg:col-start-1 lg:row-start-2",
 };
-
-export default gridClassNames;

@@ -1,4 +1,4 @@
-import gridClassNames from "@layout/grid";
+import {GridClassNames} from "@constants/layout.ts";
 import { ReactNode } from "react";
 
 type CardGridProps = {
@@ -6,7 +6,7 @@ type CardGridProps = {
   classNames?: string;
 };
 
-const MainWrapper = ({ children, classNames = gridClassNames.container }: Readonly<CardGridProps>) => {
+const MainWrapper = ({ children, classNames = GridClassNames.container }: Readonly<CardGridProps>) => {
   return (
     <div className={`grid ${classNames} grid-flow-row auto-rows-auto gap-4 my-4 sm:my-6`}>
       {children}
