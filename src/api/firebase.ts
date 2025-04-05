@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
+import { getRemoteConfig, fetchAndActivate, getValue } from "firebase/remote-config";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBiqGpKXFb9djae4D2xx2NMbzMYj5CBUSA",
@@ -13,7 +14,11 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
+const remoteConfig = getRemoteConfig(app);
 
-export { db, analytics };
+remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
+
+export { db, analytics, remoteConfig, fetchAndActivate, getValue };

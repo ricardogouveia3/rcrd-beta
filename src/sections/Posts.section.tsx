@@ -31,7 +31,7 @@ const [posts, setPosts] = useState<PostProps[]>([]);
   return (
     <Card classNames={`${GridClassNames.posts}`} loading={loading}>
       <header className="flex flex-row justify-between mb-4 items-center">
-        <h4 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">{t('posts.title')}</h4>
+        <h3 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">{t('posts.title')}</h3>
         <ButtonLink round="lg" link={t('posts.link')}>{t('posts.seeAll')}</ButtonLink>
       </header>
 
