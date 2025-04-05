@@ -1,16 +1,4 @@
-import React from "react";
-
-type InputProps = {
-    type: string,
-    id: string,
-    label: string,
-    value: string,
-    name?: string,
-    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
-    required?: boolean,
-    inputStyles?: string,
-    labelStyles?: string,
-};
+import {InputProps} from "../../types/Contact.type.ts";
 
 const inputDefaultStyles =
     "block w-full text-sm smooth-text-color rounded-lg p-2.5 dark:placeholder-quartz-750  bg-transparent border default-border";
@@ -28,7 +16,6 @@ const InputField = ({
                         required = false,
                         inputStyles = inputDefaultStyles,
                         labelStyles = labelDefaultStyles,
-
                     }: InputProps) => {
     return (
         <div>

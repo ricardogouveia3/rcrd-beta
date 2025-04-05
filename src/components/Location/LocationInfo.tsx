@@ -1,11 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { WeatherInfoType } from "../../types/WeatherInfo.type.ts";
-
-type LocationInfoProps = {
-  loading: boolean;
-  weatherInfo: WeatherInfoType | null;
-  currentTime: string;
-};
+import {LocationInfoProps} from "../../types/Location.type.ts";
 
 export default function LocationInfo({ loading = false, weatherInfo, currentTime }: Readonly<LocationInfoProps>) {
   const { t } = useTranslation();

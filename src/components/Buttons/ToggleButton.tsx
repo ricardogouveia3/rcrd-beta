@@ -1,7 +1,4 @@
-type HeaderToggleButtonProps = {
-  onClick: () => void;
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>> | string;
-};
+import {HeaderToggleButtonProps} from "../../types/Button.type.ts";
 
 const ToggleButton = ({ onClick, icon: Icon }: Readonly<HeaderToggleButtonProps>) => {
   return (

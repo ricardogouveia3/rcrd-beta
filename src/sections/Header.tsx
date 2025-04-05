@@ -1,12 +1,8 @@
 import React, { FC } from "react";
 import ToggleButton from "@components/Buttons/ToggleButton";
 import { icons, images } from "@assets/images";
-import { useTheme } from "@context/ThemeContext.tsx";
-
-type HeaderProps = {
-  language: string;
-  handleLanguageToggle: () => void;
-};
+import {useTheme} from "@hooks/useTheme.ts";
+import {HeaderProps} from "../types/Header.types.ts";
 
 const Header: FC<HeaderProps> = ({ language, handleLanguageToggle }) => {
   const { darkMode, toggleDarkMode } = useTheme();

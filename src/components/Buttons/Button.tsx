@@ -1,10 +1,4 @@
-import { ReactNode } from "react";
-
-type ButtonProps = {
-  children: ReactNode;
-  type: "submit" | "reset" | "button" | undefined;
-  disabled: boolean;
-}
+import {ButtonProps} from "../../types/Button.type.ts";
 
 export default function Button({ children, type, disabled }: Readonly<ButtonProps>) {
   const disabledClassnames = disabled ? 'opacity-50 cursor-not-allowed' : '';

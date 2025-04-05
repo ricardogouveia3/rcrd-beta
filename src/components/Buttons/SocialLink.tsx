@@ -1,16 +1,8 @@
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ButtonLink from "./ButtonLink";
 import Icon from "@components/Icon";
-import { IconName } from "../../types/Icon.type.ts";
 import { getContrastColor } from "@utils/color";
-
-type SocialLinkProps = {
-  children: ReactNode;
-  iconName?: IconName;
-  link: string;
-  hoverColor?: string;
-  darkMode?: boolean;
-};
+import {SocialLinkProps} from "../../types/Button.type.ts";
 
 export default function SocialLink({
   children,

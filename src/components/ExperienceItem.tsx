@@ -1,11 +1,5 @@
 import {useTranslation} from "react-i18next";
-
-type ExperienceItemProps = {
-  jobTitle: string,
-  company: string,
-  startDate: string,
-  endDate?: string
-}
+import {ExperienceItemProps} from "../types/Experience.type.ts";
 
 const ExperienceItem = ({ jobTitle, company, startDate, endDate }: Readonly<ExperienceItemProps>) => {
   const { t } = useTranslation();

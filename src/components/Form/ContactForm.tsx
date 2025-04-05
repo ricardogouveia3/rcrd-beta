@@ -5,14 +5,7 @@ import TextArea from "./TextArea";
 import Button from "../Buttons/Button";
 import { useBreakpoint } from "@hooks/useBreakpoint.ts";
 import { useTranslation } from "react-i18next";
-
-type ContactFormProps = {
-    email: string;
-    subject: string;
-    message: string;
-    handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    isFormValid: boolean;
-};
+import {ContactFormProps} from "../../types/Contact.type.ts";
 
 const ContactForm = ({ email, subject, message, handleInputChange, isFormValid }: ContactFormProps) => {
     const { t } = useTranslation();

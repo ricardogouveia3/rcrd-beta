@@ -1,9 +1,4 @@
-import { ReactNode } from "react";
-
-type AppContainerProps = {
-  children: ReactNode;
-  darkMode: boolean;
-};
+import {AppContainerProps} from "../../types/App.type.ts";
 
 export default function AppContainer({ children, darkMode }: Readonly<AppContainerProps>) {
   return (

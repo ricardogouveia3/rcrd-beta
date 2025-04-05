@@ -3,7 +3,7 @@ import i18n from "@utils/i18n";
 import MainWrapper from "@components/Containers/SectionContainer";
 import Header from "@sections/Header";
 import AboutMe from "@sections/AboutMe.section";
-import { useTheme } from "@context/ThemeContext.tsx";
+import {useTheme} from "@hooks/useTheme.ts";
 
 const LocationSection = lazy(() => import("@sections/Location.section"));
 const SocialSection = lazy(() => import("@sections/Social.section"));

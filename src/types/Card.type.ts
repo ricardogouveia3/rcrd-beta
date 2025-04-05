@@ -6,3 +6,7 @@ export type CardProps = {
   contentClassnames?: string;
   loading?: boolean;
 }
+
+export type CardSpinnerProps = {
+  isLoading: boolean;
+}

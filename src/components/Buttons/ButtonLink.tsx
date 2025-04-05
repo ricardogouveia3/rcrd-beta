@@ -1,15 +1,5 @@
-import { ReactNode, useState, CSSProperties, MouseEventHandler } from "react";
-
-type ButtonProps = {
-  children: ReactNode;
-  link: string;
-  round?: 'sm' | 'md' | 'lg' | 'full';
-  hoverColor?: string;
-  className?: string;
-  style?: CSSProperties;
-  onMouseEnter?: MouseEventHandler<HTMLAnchorElement>;
-  onMouseLeave?: MouseEventHandler<HTMLAnchorElement>;
-};
+import { useState } from "react";
+import {ButtonLinkProps} from "../../types/Button.type.ts";
 
 export default function ButtonLink({
   children,
@@ -20,7 +10,7 @@ export default function ButtonLink({
   style,
   onMouseEnter,
   onMouseLeave,
-}: Readonly<ButtonProps>) {
+}: Readonly<ButtonLinkProps>) {
   const [bgColor, setBgColor] = useState("transparent");
 
   let roundClassName = '';

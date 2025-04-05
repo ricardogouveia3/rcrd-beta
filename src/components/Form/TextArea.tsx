@@ -1,16 +1,4 @@
-import React from "react";
-
-type TextAreaProps = {
-  id: string;
-  label: string;
-  value: string;
-  name?: string;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  rows?: number;
-  required?: boolean;
-  inputStyles?: string;
-  labelStyles?: string;
-};
+import {TextAreaProps} from "../../types/Contact.type.ts";
 
 const inputDefaultStyles =
   "block w-full text-sm default-text-color rounded-lg p-2.5 dark:placeholder-quartz-750 bg-transparent border default-border";

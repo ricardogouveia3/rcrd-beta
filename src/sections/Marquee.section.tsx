@@ -3,17 +3,23 @@ import { useTranslation } from "react-i18next";
 import MarqueeContent from "../components/Marquee/MarqueeContent";
 import Card from "../components/Card/Card";
 import { GridClassNames } from "@constants/layout.ts";
-import {MarqueeSectionProps} from "../types/Marquee.type.ts";
+import { MarqueeSectionProps } from "../types/Marquee.type.ts";
+import { useStack } from "@hooks/useStack";
 
 const MarqueeSection = ({ darkMode = true }: Readonly<MarqueeSectionProps>) => {
   const { t } = useTranslation();
   const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
-  
+  const { tech: stack, loading } = useStack();
+
   const handleInteraction = useCallback(() => setIsHoveredOrFocused(true), []);
   const handleLeaveOrBlur = useCallback(() => setIsHoveredOrFocused(false), []);
-  
+
   return (
-    <Card classNames={GridClassNames.marquee} contentClassnames={`p-0`}>
+    <Card
+      classNames={GridClassNames.marquee}
+      contentClassnames="p-0"
+      loading={loading}
+    >
       <section
         className="p-4 lg:p-6 h-full"
         aria-labelledby="marquee-header"
@@ -28,10 +34,12 @@ const MarqueeSection = ({ darkMode = true }: Readonly<MarqueeSectionProps>) => {
         >
           {t("marquee.stack")}
         </p>
-        
+
         <MarqueeContent
           darkMode={darkMode}
           isHoveredOrFocused={isHoveredOrFocused}
+          stack={stack}
+          loading={loading}
         />
       </section>
     </Card>

@@ -1,6 +1,4 @@
-type CardSpinnerProps = {
-  isLoading: boolean;
-}
+import {CardSpinnerProps} from "../../types/Card.type.ts";
 
 const CardSpinner = ({ isLoading }: CardSpinnerProps) => {
   const spinnerToggle = isLoading ? 'flex' : 'hidden';

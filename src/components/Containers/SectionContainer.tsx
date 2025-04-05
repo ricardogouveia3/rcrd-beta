@@ -1,10 +1,5 @@
 import {GridClassNames} from "@constants/layout.ts";
-import { ReactNode } from "react";
-
-type CardGridProps = {
-  children: ReactNode;
-  classNames?: string;
-};
+import {CardGridProps} from "../../types/App.type.ts";
 
 const MainWrapper = ({ children, classNames = GridClassNames.container }: Readonly<CardGridProps>) => {
   return (
