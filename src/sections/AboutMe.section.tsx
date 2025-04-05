@@ -30,14 +30,18 @@ export default function AboutMe() {
         onBlur={handleLeaveOrBlur}
       >
         {avatar && (
-          <img
-            src={avatar}
-            alt="Ricardo Gouveia"
-            className={`max-w-24 lg:max-w-32 rounded-full mb-2 lg:mb-3 border-4 border-black dark:border-white transition-all ${hoverPhotoClassnames}`}
-          />
+          <picture>
+            <source srcSet={avatar} type="image/webp" />
+            <img
+              src={avatar}
+              alt="Ricardo Gouveia"
+              decoding="async"
+              loading="lazy"
+              className={`max-w-24 lg:max-w-32 rounded-full mb-2 lg:mb-3 border-4 border-black dark:border-white transition-all ${hoverPhotoClassnames}`}
+            />
+          </picture>
         )}
         <h1 className="font-bold text-2xl lg:text-4xl mb-1 lg:mb-3 tracking-tight">Ricardo Gouveia</h1>
-
         <h2 className="font-medium text-lg md:text-xl lg:text-2xl smooth-text-color tracking-tight mb-2">
           {t('aboutMe.a')} <span className="default-text-color font-bold">{t('aboutMe.primaryRole')}</span> {t('aboutMe.and')}&nbsp;
           <span className="default-text-color font-bold">{t('aboutMe.secondaryRole')}</span> {t('aboutMe.currentlyWorking')}&nbsp;

@@ -1,17 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
   darkMode: 'selector',
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['"Inter"', ...defaultTheme.fontFamily.sans],
+        sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         'noise-dark': "url('./assets/noise-dark.webp')",
@@ -42,7 +41,5 @@ export default {
       },
     },
   },
-  plugins: [
-    import('@tailwindcss/line-clamp'),
-  ],
+  plugins: [],
 };

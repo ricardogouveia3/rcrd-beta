@@ -6,17 +6,28 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { EsLinter, linterPlugin, TypeScriptLinter } from "vite-plugin-linter";
 import svgr from "vite-plugin-svgr";
 import gzipPlugin from "rollup-plugin-gzip";
+import Fonts from "unplugin-fonts/vite";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vitejs.dev/config/
 export default defineConfig((configEnv) => ({
   assetsInclude: ["**/*.webp", "**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.svg"],
   plugins: [
     react(),
     svgr(),
+    Fonts({
+      google: {
+        families: [
+          {
+            name: "Inter",
+            styles: "wght@400;500;600;700",
+          },
+        ],
+        display: "swap",
+      },
+    }),
     ViteMinifyPlugin({}),
     ViteImageOptimizer({}),
     gzipPlugin(),
