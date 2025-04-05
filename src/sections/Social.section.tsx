@@ -1,20 +1,24 @@
+import { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
 import SocialLink from "../components/Buttons/SocialLink";
 import { useTranslation } from "react-i18next";
 import { GridClassNames } from "@constants/layout.ts";
-import { IconName } from "src/types/Icon";
-import { socialItems } from "@data/Social";
-
-type SocialSectionProps = {
-  darkMode?: boolean;
-};
+import {fetchSocialItems } from "@apis/social";
+import {SocialItem, SocialSectionProps } from "src/types/Social";
 
 export default function SocialSection({ darkMode = true }: Readonly<SocialSectionProps>) {
   const { t } = useTranslation();
-
-  const renderSocialItems = (
-    items: { iconName: IconName; label: string; hoverColor?: string, link?: string }[],
-  ) => {
+  const [loading, setLoading] = useState(true);
+  const [socialItems, setSocialItems] = useState<SocialItem[]>([]);
+  
+  useEffect(() => {
+    fetchSocialItems().then((socialItems) => {
+      setSocialItems(socialItems);
+      setLoading(false);
+    });
+  }, []);
+  
+  const renderSocialItems = (items: SocialItem[]) => {
     return items.map(({ iconName, label, hoverColor, link = '' }) => (
       <SocialLink
         iconName={iconName}
@@ -27,9 +31,9 @@ export default function SocialSection({ darkMode = true }: Readonly<SocialSectio
       </SocialLink>
     ));
   };
-
+  
   return (
-    <Card classNames={`${GridClassNames.social}`} contentClassnames="p-4 lg:p-6 flex flex-col gap-4">
+    <Card loading={loading} classNames={`${GridClassNames.social}`} contentClassnames="p-4 lg:p-6 flex flex-col gap-4">
       <p className="text-lg/7 font-medium text-gray-950 dark:text-white">{t("social.getInTouch")}</p>
       <div className="flex gap-2 flex-wrap">
         {renderSocialItems(socialItems)}

@@ -5,7 +5,7 @@ import ExperienceItem from "../components/ExperienceItem";
 import { Experience } from "../types/Experience.type";
 import { GridClassNames } from "@constants/layout.ts";
 import { useTranslation } from "react-i18next";
-import { fetchExperiences } from "@apis/experiences"; // agora vem da "API" local
+import { fetchExperiences } from "@apis/experiences";
 
 export default function ExperienceSection() {
   const { t } = useTranslation();
