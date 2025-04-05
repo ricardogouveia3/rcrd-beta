@@ -16,6 +16,7 @@ export default function ExperienceSection() {
   useEffect(() => {
     fetchExperiences().then((experiences) => {
       setExperiences(experiences);
+      console.log(experiences);
       setLoading(false);
     });
   }, []);
