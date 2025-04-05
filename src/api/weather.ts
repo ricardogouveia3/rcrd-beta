@@ -1,10 +1,10 @@
 import { getWeatherApiUrl } from "../constants/constants";
-import { WeatherInfo } from "../types/WeatherInfo";
+import { WeatherInfoType } from "../types/WeatherInfo.type.ts";
 
 export async function getWeather(
   latitude: number,
   longitude: number
-): Promise<WeatherInfo | void> {
+): Promise<WeatherInfoType | void> {
   try {
     const response = await fetch(getWeatherApiUrl(latitude, longitude));
     const data = await response.json();

@@ -1,4 +1,4 @@
-export type WeatherInfo = {
+export type WeatherInfoType = {
   coordinates: {
     latitude: number;
     longitude: number;

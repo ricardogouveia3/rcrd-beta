@@ -4,7 +4,7 @@ import SocialLink from "../components/Buttons/SocialLink";
 import { useTranslation } from "react-i18next";
 import { GridClassNames } from "@constants/layout.ts";
 import {fetchSocialItems } from "@apis/social";
-import {SocialItem, SocialSectionProps } from "src/types/Social";
+import {SocialItem, SocialSectionProps } from "../types/Social.type.ts";
 
 export default function SocialSection({ darkMode = true }: Readonly<SocialSectionProps>) {
   const { t } = useTranslation();

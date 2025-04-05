@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from "react";
 import ButtonLink from "./ButtonLink";
 import Icon from "@components/Icon";
-import { IconName } from "../../types/Icon";
+import { IconName } from "../../types/Icon.type.ts";
 import { getContrastColor } from "@utils/color";
 
 type SocialLinkProps = {

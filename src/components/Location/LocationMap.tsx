@@ -1,4 +1,4 @@
-import {LocationMapProps} from "../../types/Location.ts";
+import {LocationMapProps} from "../../types/Location.type.ts";
 
 export default function LocationMap({ map, info = false, hover = false }: Readonly<LocationMapProps>) {
   const mapStyleIfInfoLoaded = info ? `lg:w-[60%]` : 'lg:w-full max-h-80';

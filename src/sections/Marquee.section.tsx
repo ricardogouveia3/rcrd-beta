@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import MarqueeContent from "../components/Marquee/MarqueeContent";
 import Card from "../components/Card/Card";
 import { GridClassNames } from "@constants/layout.ts";
-import {MarqueeSectionProps} from "../types/Marquee.ts";
+import {MarqueeSectionProps} from "../types/Marquee.type.ts";
 
 const MarqueeSection = ({ darkMode = true }: Readonly<MarqueeSectionProps>) => {
   const { t } = useTranslation();

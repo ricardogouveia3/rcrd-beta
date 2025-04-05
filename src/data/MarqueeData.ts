@@ -1,4 +1,4 @@
-import { IconName } from "../types/Icon";
+import { IconName } from "../types/Icon.type.ts";
 
 const marqueeItems = [
   { iconName: "angular" as IconName, label: "Angular", hoverColor: "#c3002f" },

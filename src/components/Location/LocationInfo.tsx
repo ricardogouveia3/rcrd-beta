@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { WeatherInfo } from "../../types/WeatherInfo";
+import { WeatherInfoType } from "../../types/WeatherInfo.type.ts";
 
 type LocationInfoProps = {
   loading: boolean;
-  weatherInfo: WeatherInfo | null;
+  weatherInfo: WeatherInfoType | null;
   currentTime: string;
 };
 

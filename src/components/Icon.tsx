@@ -1,5 +1,5 @@
 import {flags, icons, logos} from "@assets/images";
-import {FlagKey, IconKey, IconProps, LogoKey} from "../types/Icon";
+import {FlagKey, IconKey, IconProps, LogoKey} from "../types/Icon.type.ts";
 
 export default function Icon({
                                  name, className = "w-4", color = "currentColor",

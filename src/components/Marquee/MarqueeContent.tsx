@@ -2,7 +2,7 @@ import Marquee from "react-fast-marquee";
 import MarqueeItem from "./MarqueeItem";
 import { marqueeItemsLeft, marqueeItemsRight } from "@data/MarqueeData.ts";
 import { useBreakpoint } from "@hooks/useBreakpoint.ts";
-import { IconName } from "../../types/Icon";
+import { IconName } from "../../types/Icon.type.ts";
 import { memo, useMemo } from "react";
 
 type MarqueeItemData = {

@@ -1,5 +1,5 @@
 import Icon from "@components/Icon";
-import { IconName } from "../../types/Icon";
+import { IconName } from "../../types/Icon.type.ts";
 import { ReactNode, useEffect, useState } from "react";
 import { getContrastColor } from "@utils/color";
 

@@ -1,5 +1,5 @@
 import Spinner from "./Spinner";
-import { CardProps } from "../../types/Card.ts";
+import { CardProps } from "../../types/Card.type.ts";
 
 export default function Card({
                                children,

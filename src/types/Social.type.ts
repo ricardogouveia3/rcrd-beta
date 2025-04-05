@@ -1,4 +1,4 @@
-import {IconName} from "./Icon.ts";
+import {IconName} from "./Icon.type.ts";
 
 export type SocialSectionProps = {
   darkMode?: boolean;

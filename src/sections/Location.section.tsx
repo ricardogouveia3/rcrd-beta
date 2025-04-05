@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getWeather } from "../api/weather";
 import Card from "../components/Card/Card";
-import { WeatherInfo } from "../types/WeatherInfo";
+import { WeatherInfoType } from "../types/WeatherInfo.type.ts";
 import { getCurrentTime } from "../utils/time";
 import LocationMap from "../components/Location/LocationMap";
 import LocationInfo from "../components/Location/LocationInfo";
@@ -9,7 +9,7 @@ import { COORDINATES, MAP_SP_BR, TIMEZONES } from "../constants/constants";
 import { GridClassNames } from "@constants/layout.ts";
 
 export default function LocationSection() {
-  const [weatherInfo, setWeatherInfo] = useState<WeatherInfo | null>(null);
+  const [weatherInfo, setWeatherInfo] = useState<WeatherInfoType | null>(null);
   const [isHoveredOrFocused, setIsHoveredOrFocused] = useState(false);
   const [loading, setLoading] = useState(true);
 
