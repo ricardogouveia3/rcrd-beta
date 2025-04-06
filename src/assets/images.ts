@@ -19,6 +19,9 @@ import SassIcon from "@logos/sass.svg?react";
 import TypescriptIcon from "@logos/typescript.svg?react";
 import VueIcon from "@logos/vuejs.svg?react";
 import WordpressIcon from "@logos/wordpress.svg?react";
+import ViteIcon from "@logos/vite.svg?react";
+import FirebaseIcon from "@logos/firebase.svg?react";
+import TailwindIcon from "@logos/tailwind.svg?react";
 
 import bluesky from "@logos/bluesky.svg?react";
 import dribbble from "@logos/dribbble.svg?react";
@@ -57,6 +60,9 @@ export const logos = {
   typescript: TypescriptIcon,
   vue: VueIcon,
   wordpress: WordpressIcon,
+  tailwind: TailwindIcon,
+  firebase: FirebaseIcon,
+  vite: ViteIcon,
   bluesky: bluesky,
   dribbble: dribbble,
   email: email,
