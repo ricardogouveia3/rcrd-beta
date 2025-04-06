@@ -28,10 +28,10 @@ import instagram from "@logos/instagram.svg?react";
 import sun from "@icons/sun.svg?react";
 import moon from "@icons/moon.svg?react";
 
-import br from "@flags/flag-br.png";
-import gb from "@flags/flag-gb.png";
+import br from "@flags/flag-br.webp";
+import gb from "@flags/flag-gb.webp";
 
-import spbr from "@maps/sao-paulo.png";
+import spbr from "@maps/sao-paulo.webp";
 
 export const icons = {
   sun: sun,

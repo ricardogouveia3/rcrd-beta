@@ -38,6 +38,8 @@ export default function AboutMe() {
               decoding="async"
               loading="lazy"
               className={`max-w-24 lg:max-w-32 rounded-full mb-2 lg:mb-3 border-4 border-black dark:border-white transition-all ${hoverPhotoClassnames}`}
+              width={130}
+              height={130}
             />
           </picture>
         )}
