@@ -3,6 +3,8 @@
 
 /// <reference types="vite-plugin-svgr/client" />
 
+import avatar1 from "@avatar/avatar-1.webp";
+
 import AngularIcon from "@logos/angular.svg?react";
 import BootstrapIcon from "@logos/bootstrap.svg?react";
 import Css3Icon from "@logos/css3.svg?react";
@@ -64,7 +66,7 @@ export const logos = {
 };
 
 export const images = {
-  avatar: `https://www.gravatar.com/avatar/2fd6e9e968e8b59bcc70ca9c3adb9c24?s=256`,
+  avatar: avatar1,
   map_spbr: spbr,
   flag_br: br,
   flag_gb: gb,

@@ -14,7 +14,6 @@ export default function LocationMap({ map, info = false, hover = false }: Readon
             src={map.imgSrc}
             alt={map.alt}
             className={`transition-all object-cover object-center h-full w-full max-h-40 lg:max-h-full ${hoverMapClassnames}`}
-            loading="lazy"
             decoding="async"
           />
         </picture>

@@ -55,8 +55,8 @@ export default function Home() {
           <PhraseSection />
         </Suspense>
         
-          <ProjectSection />
-          <ExperienceSection />
+        <ProjectSection />
+        <ExperienceSection />
         
         <Suspense fallback={null}>
           <PostsSection />

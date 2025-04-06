@@ -71,6 +71,8 @@ export default defineConfig((configEnv) => ({
       "@icons": path.resolve(__dirname, "./src/assets/icons"),
       "@flags": path.resolve(__dirname, "./src/assets/flags"),
       "@maps": path.resolve(__dirname, "./src/assets/maps"),
+      "@avatar": path.resolve(__dirname, "./src/assets/avatar"),
+      "@types": path.resolve(__dirname, "./src/types"),
     },
   },
   build: {
