@@ -35,6 +35,10 @@ import moon from "@icons/moon.svg?react";
 
 import br from "@flags/flag-br.webp";
 import gb from "@flags/flag-gb.webp";
+import sp from "@flags/sp-br.webp";
+import pe from "@flags/pe-br.webp";
+import pa from "@flags/pa-br.webp";
+import br2 from "@flags/br.webp";
 
 import spbr from "@maps/sao-paulo.webp";
 
@@ -76,4 +80,8 @@ export const images = {
   map_spbr: spbr,
   flag_br: br,
   flag_gb: gb,
+  flag_br2: br2,
+  flag_pa: pa,
+  flag_pe: pe,
+  flag_sp: sp,
 };
