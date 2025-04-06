@@ -8,4 +8,5 @@ export type Project = {
   tags: string[];
   expanded?: boolean;
   soon?: boolean;
+  order?: number;
 };

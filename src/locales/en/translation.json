@@ -53,5 +53,15 @@
   },
   "social": {
     "getInTouch": "Get in touch:"
+  },
+  "weatherNames": {
+    "Thunderstorm": "Thunderstorm",
+    "Drizzle": "Drizzle",
+    "Rain": "Rain",
+    "Snow": "Snow",
+    "Atmosphere": "Haze & particles",
+    "Clear": "Clear sky",
+    "Clouds": "Clouds",
+    "Unknown": "Unknown"
   }
 }

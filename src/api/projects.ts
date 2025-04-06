@@ -15,9 +15,10 @@ export const fetchProjects = async () => {
         link: data.link,
         imgSrc: data.imgSrc,
         tags: data.tags,
-        expanded: data.expanded ?? false
+        expanded: data.expanded ?? false,
+        order: data.order ?? index,
       };
-    });
+    }).sort((a, b) => a.order - b.order);
     return(projectsData);
   } catch (error) {
     console.error("Error while fetching projects: ", error);

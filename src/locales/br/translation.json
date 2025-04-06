@@ -54,5 +54,15 @@
   },
   "social": {
     "getInTouch": "Entre em contato:"
+  },
+  "weatherNames": {
+    "Thunderstorm": "Trovoada",
+    "Drizzle": "Garoa",
+    "Rain": "Chuva",
+    "Snow": "Neve",
+    "Atmosphere": "Neblina e partículas",
+    "Clear": "Céu limpo",
+    "Clouds": "Nuvens",
+    "Unknown": "Desconhecido"
   }
 }

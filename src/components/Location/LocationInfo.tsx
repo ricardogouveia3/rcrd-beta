@@ -3,6 +3,7 @@ import {LocationInfoProps} from "../../types/Location.type.ts";
 
 export default function LocationInfo({ loading = false, weatherInfo, currentTime }: Readonly<LocationInfoProps>) {
   const { t } = useTranslation();
+  const weatherKey = `weatherNames.${weatherInfo?.weather ?? "Unknown"}`;
 
   return (
     <div>
@@ -27,7 +28,9 @@ export default function LocationInfo({ loading = false, weatherInfo, currentTime
               <div className="flex items-center justify-start">
                 <p className="default-text-color font-bold text-lg">{weatherInfo.temperature}°C</p>
                 &nbsp;
-                <span className="text-sm">{weatherInfo.weather}</span>
+                <span className="text-sm">
+  {t(weatherKey, { defaultValue: t("weatherNames.Unknown") })}
+</span>
               </div>
             </div>
           </div>
