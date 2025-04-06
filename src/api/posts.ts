@@ -1,4 +1,4 @@
-import { DEVTO_API_MY_POSTS } from "../constants/constants";
+const DEVTO_API_MY_POSTS = "https://dev.to/api/articles?username=rcrd";
 
 export const blogAPI = {
   getData: async () => {

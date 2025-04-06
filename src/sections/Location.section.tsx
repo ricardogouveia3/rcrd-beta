@@ -5,7 +5,7 @@ import { WeatherInfoType } from "../types/WeatherInfo.type.ts";
 import { getCurrentTime } from "../utils/time";
 import LocationMap from "../components/Location/LocationMap";
 import LocationInfo from "../components/Location/LocationInfo";
-import { COORDINATES, MAP_SP_BR, TIMEZONES } from "../constants/constants";
+import { COORDINATES, MAP_SP_BR, TIMEZONES } from "@constants/location.ts";
 import { GridClassNames } from "@constants/layout.ts";
 
 export default function LocationSection() {
@@ -31,13 +31,13 @@ export default function LocationSection() {
         const weatherData = await getWeather(coordinates.LATITUDE, coordinates.LONGITUDE);
         if (weatherData) setWeatherInfo(weatherData);
       } catch (error) {
-        console.error("Error fetching weather data:", error);
+        console.error("Error fetching weather data: ", error);
       } finally {
         setLoading(false);
       }
     }
 
-    fetchWeather();
+    fetchWeather().then();
   }, [coordinates]);
 
   return (

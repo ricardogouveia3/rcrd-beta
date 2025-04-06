@@ -1,5 +1,13 @@
-import { getWeatherApiUrl } from "../constants/constants";
 import { WeatherInfoType } from "../types/WeatherInfo.type.ts";
+
+const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
+
+const getWeatherApiUrl = (
+  latitude: number,
+  longitude: number
+): string => {
+  return `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+};
 
 export async function getWeather(
   latitude: number,
