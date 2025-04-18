@@ -1,43 +1,45 @@
 import { useState, useEffect } from "react";
 import { blogAPI } from "../api/posts";
-
 import Card from "../components/Card/Card";
 import PostsItem from "../components/PostItem";
-
-import { PostProps } from "../types/Post.type";
+import {ParsedPost} from "../types/Post.type";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import ButtonLink from "../components/Buttons/ButtonLink";
 import { GridClassNames } from "@constants/layout.ts";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
+import {parsePosts} from "@utils/posts.ts";
 
 export default function PostsSection() {
-const { t } = useTranslation();
-const [posts, setPosts] = useState<PostProps[]>([]);
+  const { t, i18n } = useTranslation();
+  const [posts, setPosts] = useState<ParsedPost[]>([]);
   const [loading, setLoading] = useState(true);
   const { isAboveLg } = useBreakpoint("lg");
   const maxRendered = isAboveLg ? 4 : 3;
-
+  
   useEffect(() => {
-    blogAPI.getData()
+    const lang = i18n.language;
+    
+    blogAPI.getData(lang)
       .then((data) => {
-        setPosts(data.slice(0, maxRendered));
+        const parsed = parsePosts(data, lang);
+        setPosts(parsed.slice(0, maxRendered));
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching posts:", error);
       });
-  }, [maxRendered]);
-
+  }, [i18n.language, maxRendered]);
+  
   return (
     <Card classNames={`${GridClassNames.posts}`} loading={loading}>
       <header className="flex flex-row justify-between mb-4 items-center">
         <h3 className="text-lg/7 font-medium text-gray-950 dark:text-white mb-0">{t('posts.title')}</h3>
         <ButtonLink round="lg" link={t('posts.link')}>{t('posts.seeAll')}</ButtonLink>
       </header>
-
+      
       {!loading && (
         <div className="flex flex-col gap-4">
-          {posts.map((post: PostProps) => (
+          {posts.map((post: ParsedPost) => (
             <PostsItem
               title={post.title}
               key={post.id}
