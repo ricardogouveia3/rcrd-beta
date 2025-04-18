@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { blogAPI } from "../api/posts";
-import Card from "../components/Card/Card";
-import PostsItem from "../components/PostItem";
-import {ParsedPost} from "../types/Post.type";
-import { useBreakpoint } from "../hooks/useBreakpoint";
-import ButtonLink from "../components/Buttons/ButtonLink";
+import { blogAPI } from "@apis/posts.ts";
+import Card from "../Card/Card.tsx";
+import PostsItem from "../PostItem.tsx";
+import {ParsedPost} from "../../types/Post.type.ts";
+import { useBreakpoint } from "@hooks/useBreakpoint.ts";
+import ButtonLink from "../Buttons/ButtonLink.tsx";
 import { GridClassNames } from "@constants/layout.ts";
 import { useTranslation } from "react-i18next";
 import {parsePosts} from "@utils/posts.ts";

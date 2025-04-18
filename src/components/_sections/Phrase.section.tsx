@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import Card from "../components/Card/Card";
+import Card from "../Card/Card.tsx";
 import { GridClassNames } from "@constants/layout.ts";
 
 export default function PhraseSection() {

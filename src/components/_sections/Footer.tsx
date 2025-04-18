@@ -1,8 +1,8 @@
 import { GridClassNames } from "@constants/layout.ts";
-import Card from "../components/Card/Card";
-import { currentYear } from "../utils/date";
+import Card from "../Card/Card.tsx";
+import { currentYear } from "@utils/date.ts";
 import {useTranslation} from "react-i18next";
-import { images } from "@assets/images";
+import { images } from "@assets/images.ts";
 
 export default function Footer() {
   const { t } = useTranslation();

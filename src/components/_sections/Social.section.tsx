@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Card from "../components/Card/Card";
-import SocialLink from "../components/Buttons/SocialLink";
+import Card from "../Card/Card.tsx";
+import SocialLink from "../Buttons/SocialLink.tsx";
 import { useTranslation } from "react-i18next";
 import { GridClassNames } from "@constants/layout.ts";
-import {fetchSocialItems } from "@apis/social";
-import {SocialItem, SocialSectionProps } from "../types/Social.type.ts";
+import {fetchSocialItems } from "@apis/social.ts";
+import {SocialItem, SocialSectionProps} from "../../types/Social.type.ts";
 
 export default function SocialSection({ darkMode = true }: Readonly<SocialSectionProps>) {
   const { t } = useTranslation();

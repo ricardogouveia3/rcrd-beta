@@ -22,12 +22,11 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@sections/*": ["src/sections/*"],
+      "@sections/*": ["src/components/_sections/*"],
       "@hooks/*": ["src/hooks/*"],
       "@apis/*": ["src/api/*"],
       "@constants/*": ["src/constants/*"],
       "@context/*": ["src/context/*"],
-      "@types/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"],
       "@data/*": ["src/data/*"],
       "@locales/*": ["src/locales/*"],

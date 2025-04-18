@@ -56,7 +56,7 @@ export default defineConfig((configEnv) => ({
   resolve: {
     alias: {
       "@components": path.resolve(__dirname, "./src/components"),
-      "@sections": path.resolve(__dirname, "./src/sections"),
+      "@sections": path.resolve(__dirname, "./src/components/_sections"),
       "@hooks": path.resolve(__dirname, "./src/hooks"),
       "@apis": path.resolve(__dirname, "./src/api"),
       "@constants": path.resolve(__dirname, "./src/constants"),
@@ -72,7 +72,6 @@ export default defineConfig((configEnv) => ({
       "@flags": path.resolve(__dirname, "./src/assets/flags"),
       "@maps": path.resolve(__dirname, "./src/assets/maps"),
       "@avatar": path.resolve(__dirname, "./src/assets/avatar"),
-      "@types": path.resolve(__dirname, "./src/types"),
     },
   },
   build: {

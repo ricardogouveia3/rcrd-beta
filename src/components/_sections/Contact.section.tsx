@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Card from "../components/Card/Card";
-import ContactForm from "../components/Form/ContactForm";
+import Card from "../Card/Card.tsx";
+import ContactForm from "../Form/ContactForm.tsx";
 import { GridClassNames } from "@constants/layout.ts";
 import {useTranslation} from "react-i18next";
 
